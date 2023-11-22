@@ -1,0 +1,512 @@
+
+/*
+Design by Free CSS Templates
+http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License
+*/
+
+body {
+	margin: 0;
+	padding: 0;
+	background: url(../images/bg_surfparadise.jpg) fixed;
+	background-size:cover;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #444;
+}
+
+h1, h2, h3 {
+	margin: 0;
+	padding: 0;
+	font-weight: normal;
+	_color: #077c91;
+}
+
+h1 {
+	font-size: 2em;
+}
+
+h2 {
+	font-size: 2.4em;
+}
+
+h3 {
+	font-size: 1.6em;
+}
+
+p, ul, ol {
+	margin-top: 0;
+	line-height: 180%;
+}
+
+ul, ol {
+}
+
+a {
+	text-decoration: none;
+	color: 	#077c91;
+}
+
+a:hover {
+}
+
+#wrapper {
+	width: 960px;
+	margin: 0 auto;
+	padding: 0;
+	background:rgba(250,250,250,.8)
+}
+
+/* Header */
+
+#header {
+	width: 940px;
+	height: 70px;
+	margin: 0 auto;
+}
+
+/* Logo */
+
+#logo {
+	float: left;
+	height: 40px;
+	margin: 10px 0;
+}
+
+#logo h1, #logo p {
+	margin: 0;
+	padding: 0;
+}
+
+#logo h1 {
+	float: left;
+	padding-left: 20px;
+	letter-spacing: -1px;
+	_text-transform: lowercase;
+	font-size: 3.8em;
+}
+
+#logo p {
+	float: left;
+	margin: 0;
+	padding: 26px 0 0 10px;
+	font: normal 14px Georgia, 'Times New Roman', Times, serif;
+	font-style: italic;
+	color: #077c91;
+} 
+
+#logo p a {
+	color: aqua;
+}
+
+#logo a {
+	border: none;
+	background: none;
+	text-decoration: none;
+	color: #077c91;
+	text-shadow:2px 2px 5px #444;
+
+}
+
+/* Search */
+
+#search {
+	float: right;
+	width: 280px;
+	height: 50px;
+	padding: 10px 0px 0px 0px;
+	background: #01accb;
+}
+
+#search form {
+	height: 41px;
+	margin: 0;
+	padding: 10px 0 0 20px;
+}
+
+#search fieldset {
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#search-text {
+	width: 170px;
+	padding: 6px 5px 7px 5px;
+	border: none;
+	background: #FFFFFF;
+	text-transform: lowercase;
+	font: normal 11px Arial, Helvetica, sans-serif;
+	color: #01accb;
+}
+
+#search-submit {
+	width: 50px;
+	height: 25px;
+	background: #077c91;
+	font-weight: bold;
+	font-size: 10px;
+	color: #FFFFFF;
+}
+
+/* Menu */
+
+#menu {
+	width: 940px;
+	height: 36px;
+	margin: 0 auto;
+	padding: 0;
+	background: #01accb;
+}
+
+    #menu ul {
+        margin: 0px 0px 0px 10px;
+        padding: 0;
+        list-style: none;
+        line-height: normal;
+    }
+
+    #menu li {
+        float: left;
+    }
+
+    #menu a {
+        display: block;
+        height: 26px;
+        margin-bottom: 10px;
+        padding: 10px 20px 0px 20px;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 11px;
+        font-weight: bold;
+        color: #FFFFFF;
+        border: none;
+    }
+
+    #menu a:hover, #menu .current_page_item a 
+    {
+        background: #077c91;
+        text-decoration: none;
+        color: #FFFFFF;
+    }
+
+    #menu .current_page_item a {
+        background: #077c91;
+
+    }
+
+/* Page */
+
+#page {
+	width: 940px;
+	margin: 0 auto;
+	padding: 0;
+}
+
+    #page-bgtop {
+        padding: 20px 0px;
+    }
+
+    #page-bgbtm {
+    }
+
+    /* Content */
+
+    #content {
+        float: right;
+        width: 623px;
+        padding: 0px 0px 0px 0px;
+    }
+
+        .post {
+            margin-bottom: 15px;
+        }
+
+        .post-bgtop {
+        }
+
+        .post-bgbtm {
+        }
+
+        .post .title {
+            margin-bottom: 10px;
+            padding: 12px 0 0 0px;
+            letter-spacing: -.5px;
+            color: #01accb;
+        }
+
+        .post .title a {
+            color: #01accb;
+            border: none;
+            text-shadow: 1px 1px 1px #01accb;
+        }
+
+        .post .meta {
+            height: 30px;
+            border-bottom: 1px solid #292929;
+            margin: 0px;
+            padding: 0px 0px 0px 0px;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+            /* flexible Größen erreicht man mit %, em oder mit vw (viewport with) 
+            -> font-size:5vw; */
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .post .meta .date {
+            float: left;
+            height: 24px;
+            padding: 3px 15px;
+            color: #BBBBBB;
+        }
+
+        .post .meta .posted {
+            float: right;
+            height: 24px;
+            padding: 3px 15px;
+            color: #BBBBBB;
+        }
+
+        .post .meta a {
+            color: #BBBBBB;
+        }
+
+        .post .entry {
+            padding: 0px 0px 22px 0px;
+            text-align: justify;
+        }
+
+        .links {
+            padding-top: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+/* Sidebar */
+
+#sidebar {
+	float: left;
+	width: 280px;
+	padding: 0px;
+	color: #787878;
+}
+
+    #sidebar ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    #sidebar li {
+        margin: 0;
+        padding: 0;
+    }
+
+    #sidebar li ul {
+        margin: 0px 0px;
+        padding-bottom: 30px;
+    }
+
+    #sidebar li li {
+        line-height: 35px;
+        border-bottom: 1px dotted #292929;
+        margin: 0px 30px;
+        border-right: none;
+    }
+
+    #sidebar li a {
+        padding-left: 10px;
+        background: url(images/img03.gif) no-repeat left 5px;
+    }
+
+    #sidebar li li span {
+        display: block;
+        margin-top: -20px;
+        padding: 0;
+        font-size: 11px;
+        font-style: italic;
+    }
+
+    #sidebar h2 {
+        padding-left: 30px;
+        padding-top: 6px;
+        padding-bottom: 6px;
+        background: #01accb;
+        letter-spacing: -.5px;
+        font-size: 1.8em;
+        color: #FFFFFF;
+    }
+
+    #sidebar p {
+        margin: 0 0px;
+        padding: 10px 30px 20px 30px;
+        text-align: justify;
+    }
+
+    #sidebar a {
+        border: none;
+        color: #898989;
+    }
+
+    #sidebar a:hover {
+        text-decoration: underline;
+        color: #077c91;
+    }
+
+/* Calendar */
+
+#calendar {
+}
+
+#calendar_wrap {
+	padding: 20px;
+}
+
+#calendar table {
+	width: 100%;
+}
+
+#calendar tbody td {
+	text-align: center;
+}
+
+#calendar #next {
+	text-align: right;
+}
+
+/* Footer */
+
+#footer {
+	width: 940px;
+	height: 50px;
+	margin: 0 auto;
+	padding: 0px 0 15px 0;
+	border-top: 4px solid #077c91;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+    #footer p {
+        margin: 0;
+        padding-top: 20px;
+        line-height: normal;
+        font-size: 10px;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+    }
+
+    #footer a {
+        color: aqua;
+    }
+
+
+/* +++++++++++++++++++++++++++  Ende DESKTOP  ++++++++++++++++*/
+
+
+/* Festlegungen für diverse Geräte -> Darstellung bis max 800px Screenbreite */
+/* MEDIA QUERY */
+@media screen and (max-width:800px) {
+
+/* hier kommen Angaben rein, die bei mobilder Darstellung anders sein sollen als auf dem Desktop -> zu sehen bei 800px und kleiner */
+/* nie vergessen, die Elternelemente zu berücksichtigen und ggf. mit zu ändern -> ist die Navi-Zeile am PC flacher als im Mobil Phone, wird der Inhalt der 2. Box in meiner höheren Navi am Handy dargestellt */
+
+#wrapper
+{
+    width:90%;
+    padding:10px 10px;
+}
+    
+    #header
+        {
+            width:100%;
+            height:5em;
+            /* flexible Größen erreicht man mit 90%, .9em oder mit 2vw (viewport with) */ 
+            font-size: 2vw;
+            padding:0px;
+            margin:0px;
+            float:none;
+        }
+        #logo
+            {
+                padding:0px;
+                margin:0px;
+                float:none;
+            }
+        #logo h1
+            {
+                padding:0px;
+                margin:0px;
+            }
+    nav
+        {
+            width:100%;
+            float:left;
+            padding:0px;
+            margin:10px 0px;
+        }
+    
+#page-bgtop
+    {
+        width:100%;
+        padding:10px 0px 0px 0px;
+        margin:0px;
+        float:none;
+    }
+
+#page-bgbtm
+    {
+        width:100%;
+        padding:0px;
+        margin:0px;
+        float:none;
+    }
+
+#page
+    {
+        width:100%;
+        float:none;
+    }
+    
+    #content
+        {
+        width:99%;
+        padding:0em .5em;
+        margin:0px;
+        float:none;
+        }
+    .post {
+        width:99%;
+        padding:0px;
+        margin:0px;
+        float:none;
+        }
+    .post .entry {
+        padding: 0px;
+        }
+    .links 
+        {
+        padding:0px;
+        }
+    
+#sidebar, #gallery-wrapper
+    {
+        display:none;
+    }
+
+#footer
+    {
+        width:80%;
+        height:5%;
+    }
+
+/* Bildgröße wird immer auf 100% runtergerechnet */
+    img
+    {
+        max-width:100%;
+        height:auto;
+    }
+	
+}
