@@ -24,7 +24,6 @@
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/webfonts/fonts-all.css" />
     <link rel="stylesheet" type="text/css" href="css/navi.css" />
-    <link rel="stylesheet" type="text/css" href="css/gallery.css" />
     <link
       rel="stylesheet"
       type="text/css"
@@ -76,12 +75,42 @@
       flipbox.ontouchstart = this.classList.toggle("hover");
     </script>
     <!-- Ende Flippbox -->
+
+    <!-- für Cookie-Popup -->
+    <!-- Boxicons CSS -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="js/cookie.js" defer></script>
+    <!-- Ende Cookie-Popup -->
   </head>
 
   <!-- Beginn Body -->
   <body>
     <!-- Page für Suchmaschionen optimieren mit Rubriken-Layout header, section, nav -->
 
+    <!-- Beginn Cookie-Popup -->
+    <div class="consent-wrapper">
+      <header>
+        <i class="bx bx-cookie"></i>
+        <h2>Cookies Consent</h2>
+      </header>
+      <div class="data">
+        <p>
+          This website uses cookies to help you have a superior and more
+          relevant browsing experience on the website.
+          <!-- <a href="#"> Read more...</a> -->
+        </p>
+      </div>
+      <div class="buttons">
+        <button class="button" id="acceptBtn">Accept</button>
+        <button class="button" id="declineBtn">Decline</button>
+      </div>
+    </div>
+    <!-- Ende Cookie-Popup -->
+
+    <!-- Beginn Website -->
     <main id="wrapper">
       <!-- Headline -->
       <header id="head">
@@ -148,7 +177,7 @@
             <div class="front">
               <img
                 src="images/pexels_aviv-perets_11634737.jpg"
-                width="90%"
+                width="100%"
                 height="auto"
                 alt="Ponta Da Ferraria"
               />
