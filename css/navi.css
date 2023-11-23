@@ -6,90 +6,75 @@ ul.topnav {
   background-color: #01accb;
 }
 
-ul.topnav li 
-{
-	float: left;
+ul.topnav li {
+  float: left;
 }
 
-ul.topnav li a 
-{
+ul.topnav li a {
   display: inline-block;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 0.2em 0.5em;
   text-decoration: none;
   transition: 0.3s;
   font-size: 17px;
 }
 
-ul.topnav li a:hover 
-{
-	background-color: #077c91;
+ul.topnav li a:hover {
+  background-color: #077c91;
 }
 
-ul.topnav li.icon 
-{
-	display: none;
+ul.topnav li.icon {
+  display: none;
 }
 
 /* Optional für eine second level Navigation in der Screen Ansicht */
-.innen
-{
-	color:white;
-	display:none;
-	padding:3px;
+.innen {
+  color: white;
+  display: none;
+  padding: 3px;
 }
 
-li:hover .innen
-{
-	color:red;
-	display:inline-block;
+li:hover .innen {
+  color: red;
+  display: inline-block;
 }
 /* Ende second level Navigation Screen */
 
-@media screen and (max-width:680px) {
+@media screen and (max-width: 680px) {
+  ul.topnav li:not(:first-child) {
+    display: none;
+  }
 
-ul.topnav li:not(:first-child) 
-{
-	display: none;
-}
-
-ul.topnav li.icon 
-{
+  ul.topnav li.icon {
     float: right;
     display: inline-block;
-}
+  }
 
-  ul.topnav.responsive 
-{
-	position: relative;
-}
+  ul.topnav.responsive {
+    position: relative;
+  }
 
-  ul.topnav.responsive li.icon 
-{
+  ul.topnav.responsive li.icon {
     position: absolute;
     right: 0;
     top: 0;
-}
+  }
 
-ul.topnav.responsive li 
-{
+  ul.topnav.responsive li {
     float: none;
     display: inline;
-}
+  }
 
-ul.topnav.responsive li a 
-{
+  ul.topnav.responsive li a {
     display: block;
     text-align: left;
- }
- 
- /* Optional für eine second level Navigation in der Mobile Ansicht */
- .innen
-{
-	color:white;
-	display:inline-block;
-}
-/* Ende second level Navigation Mobile */
+  }
 
+  /* Optional für eine second level Navigation in der Mobile Ansicht */
+  .innen {
+    color: white;
+    display: inline-block;
+  }
+  /* Ende second level Navigation Mobile */
 }
