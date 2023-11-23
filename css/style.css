@@ -78,6 +78,7 @@ a:hover {
 h2 {
   color: sienna;
   font-size: 1.3em;
+  font-size: 3vh;
   text-shadow: 0.05em 0.05em 0.1em rgb(241, 239, 230);
 }
 
@@ -100,7 +101,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 33.25%;
+  width: 33.33%;
   height: 15em;
   margin: 0;
   border: 0.05em solid #077c91;
@@ -119,13 +120,6 @@ h2 {
   transform: rotateY(180deg);
 }
 
-.flipbox,
-.front,
-.back {
-  _width: 100%;
-  _height: auto;
-}
-
 .flipper {
   position: relative;
   transition: 1s;
@@ -134,6 +128,8 @@ h2 {
 
 .front,
 .back {
+  width: 100%;
+  _padding: 1.5em;
   backface-visibility: hidden;
 }
 
@@ -153,15 +149,17 @@ h2 {
 }
 
 #kalenderblatt .flipper .back {
+  font-size: 0.8em;
   position: absolute;
-  top: -200%;
+  top: -100%;
+  bottom: 0%;
   left: 0;
 }
 
 #urlaubsdetektive .flipper .back {
   position: absolute;
-  top: 10%;
-  left: 33.3%;
+  top: 20%;
+  left: 0%;
 }
 
 #wissenwertes {
@@ -170,9 +168,11 @@ h2 {
 }
 
 #wissenwertes .flipper .back {
+  font-size: 0.8em;
   position: absolute;
-  top: -150%;
-  width: 100%;
+  top: -100%;
+  bottom: 0%;
+  left: 0;
 }
 
 /* zweite Reihe der 9 Quadrate */
@@ -184,11 +184,16 @@ h2 {
     ),
     url(../images/bg_surfparadise.jpg) fixed;
   display: inline-block;
-  _display: table;
   align-content: center;
 }
 
-/* zweite Reihe der 9 Quadrate */
+/* dritte Reihe der 9 Quadrate */
+
+#visitenkarte .flipper .back {
+  position: absolute;
+  top: 20%;
+  left: 0%;
+}
 
 .links {
   padding-top: 20px;
@@ -321,6 +326,7 @@ body {
   padding: 15px 25px 22px;
   transition: right 0.3s ease;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  z-index: 7;
 }
 .consent-wrapper.show {
   right: 5em;
