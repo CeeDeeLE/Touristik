@@ -6,22 +6,15 @@ Released for free under a Creative Commons Attribution 2.5 License
 
 body {
   width: 100%;
-  height: 100vh;
+  height: 200vh;
   margin: 0;
   padding: 0;
   background: url(../images/bg_surfparadise.jpg) fixed;
   background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9em;
+  font-size: 2.5vh;
   font-weight: normal;
   color: #444;
-}
-
-h1 {
-  margin: 0;
-  padding: 0;
-  font-weight: normal;
-  color: #077c91;
 }
 
 a {
@@ -46,38 +39,35 @@ a:hover {
 #head {
   text-align: center;
   width: 100%;
-  height: 4em;
   margin: 0 auto;
-  padding-top: 0.5em;
+  padding-top: 2vh;
+}
+
+#topnav {
+  margin-top: 2vh;
 }
 
 /* geteilte Head für reponsive Darstellung */
-#h1-all,
+.h1-all,
 #h1-pc,
 #h1-cont {
+  font-size: 5vh;
   letter-spacing: -1px;
   border: none;
   background: none;
   text-decoration: none;
   color: #077c91;
-}
-
-#h1-all,
-#h1-pc,
-#h1-cont {
-  font-size: 1.5em;
   text-shadow: 0.05em 0.05em 0.1em #444;
 }
 
 #h1-cont {
-  margin: 2em auto;
+  margin: 5vh auto;
 }
 
 /* Page */
 
 h2 {
   color: sienna;
-  font-size: 1.3em;
   font-size: 3vh;
   text-shadow: 0.05em 0.05em 0.1em rgb(241, 239, 230);
 }
@@ -85,34 +75,42 @@ h2 {
 #page {
   width: 100%;
   margin: 0 auto;
-  padding: 0.3 0;
+  padding: 0;
   justify-content: center;
   text-align: center;
   align-items: center;
   vertical-align: middle;
-  display: inline-block;
-  _background: rgba(250, 250, 250, 0.8);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
 }
 
 /* Content mit 9 Quadraten */
 
 .quader {
-  float: left;
+  width: 100%;
+  height: 100%;
+  min-height: 33vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 33.33%;
-  height: 15em;
   margin: 0;
   border: 0.05em solid #077c91;
   background-color: rgba(222, 184, 135, 0.4);
+}
+
+#lexikon-c2,
+#visitenkarte-c2,
+#sprechstunde-c2 {
+  display: none;
 }
 
 /* erste Reihe der 9 Quadrate */
 
 .flipbox {
   perspective: 2000px;
-  max-width: 100%;
 }
 
 .flipbox:hover .flipper,
@@ -121,7 +119,6 @@ h2 {
 }
 
 .flipper {
-  position: relative;
   transition: 1s;
   transform-style: preserve-3d;
 }
@@ -129,7 +126,6 @@ h2 {
 .front,
 .back {
   width: 100%;
-  _padding: 1.5em;
   backface-visibility: hidden;
 }
 
@@ -149,9 +145,9 @@ h2 {
 }
 
 #kalenderblatt .flipper .back {
-  font-size: 0.8em;
+  font-size: 2.5vh;
   position: absolute;
-  top: -100%;
+  top: -150%;
   bottom: 0%;
   left: 0;
 }
@@ -168,9 +164,9 @@ h2 {
 }
 
 #wissenwertes .flipper .back {
-  font-size: 0.8em;
+  font-size: 2.5vh;
   position: absolute;
-  top: -100%;
+  top: -150%;
   bottom: 0%;
   left: 0;
 }
@@ -196,111 +192,30 @@ h2 {
 }
 
 .links {
-  padding-top: 20px;
-  font-size: 1.5em;
+  padding-top: 0.05em;
+  font-size: 2.2vh;
   font-weight: bold;
 }
 
 /* Footer */
 
 #footer {
-  float: left;
   width: 100%;
-  height: 3em;
+  height: 7vh;
   margin: 0 auto;
   padding: 1em 0;
   border-top: 0.05em solid #077c91;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 0.9em;
+  font-size: 2.5vh;
   font-weight: 700;
   color: #077c91;
   text-shadow: 0.05em 0.05em 0.1em #444;
   text-align: center;
-  background: rgba(250, 250, 250, 0.8);
 }
 
 #footer a {
   color: aqua;
   text-shadow: 0.05em 0.05em 0.1em #444;
-}
-
-/* +++++++++++++++++++++++++++  Ende DESKTOP  ++++++++++++++++*/
-
-/* Stile für mobile Phones mit 768px Breite Hochkant @media only screen and (device-width:768px) and (orientation:portrait) { }*/
-/* andere Stile für Desktop-PC 768px Breite quer @media only screen and (device-width:768px) and (orientation:landscape) { }*/
-/* Stile für Laptops verschiedener Breite @media only screen and (min-width:600px) (max-width:920px){}*/
-
-/* Festlegungen für diverse Geräte -> Darstellung bis max 7680px Screenbreite */
-/* MEDIA QUERY */
-@media screen and (max-width: 768px) {
-  /* hier kommen Angaben rein, die bei mobilder Darstellung anders sein sollen als auf dem Desktop -> zu sehen bei 800px und kleiner */
-  /* nie vergessen, die Elternelemente zu berücksichtigen und ggf. mit zu ändern -> ist die Navi-Zeile am PC flacher als im Mobil Phone, wird der Inhalt der 2. Box in meiner höheren Navi am Handy dargestellt */
-
-  /* flexible Größen erreicht man mit 90%, .9em oder mit 2vw (viewport with) */
-
-  #wrapper {
-    width: 90%;
-    padding: 10px 10px;
-  }
-
-  #head {
-    width: 100%;
-    height: 5em;
-    font-size: 2vw;
-    padding: 0px;
-    margin: 0px;
-    float: none;
-  }
-
-  #h1-all {
-    padding: 0px;
-    margin: 0px;
-    float: none;
-  }
-
-  #h1-pc {
-    display: none;
-  }
-
-  #logo h1 {
-    padding: 0px;
-    margin: 0px;
-  }
-
-  nav {
-    width: 100%;
-    float: left;
-    padding: 0px;
-    margin: 10px 0px;
-  }
-
-  #page {
-    width: 100%;
-    float: none;
-  }
-
-  #kalenderblatt,
-  #wissenwertes,
-  #urlaubsdetektive {
-    width: 33, 3%;
-    margin: 0;
-    background-color: rgba(222, 184, 135, 0.5);
-  }
-
-  .links {
-    padding: 0px;
-  }
-
-  #footer {
-    width: 100%;
-    height: 5%;
-  }
-
-  /* Bildgröße wird immer auf 100% runtergerechnet */
-  img {
-    max-width: 100%;
-    height: auto;
-  }
 }
 
 /* ####################### für Cookie-Popup #################### */
@@ -317,9 +232,9 @@ body {
 }
 .consent-wrapper {
   position: fixed;
-  bottom: 50px;
-  right: -370px;
-  max-width: 345px;
+  bottom: 20vh;
+  right: -100vb;
+  max-width: 50vb;
   width: 100%;
   background: rgba(250, 250, 250, 1);
   border-radius: 8px;
@@ -349,7 +264,7 @@ header h2 {
 }
 .consent-wrapper .data p {
   color: #333;
-  font-size: 1.1em;
+  font-size: 2vh;
 }
 .data p a {
   color: rgb(7, 125, 146);
@@ -387,4 +302,150 @@ header h2 {
 #declineBtn:hover {
   background: rgba(222, 184, 135, 0.4);
   color: rgb(7, 125, 146);
+}
+
+/* +++++++++++++++++++++++++++  Ende DESKTOP  ++++++++++++++++*/
+
+/* Stile für mobile Phones mit 768px Breite Hochkant @media only screen and (device-width:768px) and (orientation:portrait) { }*/
+/* andere Stile für Desktop-PC 768px Breite quer @media only screen and (device-width:768px) and (orientation:landscape) { }*/
+/* Stile für Laptops verschiedener Breite @media only screen and (min-width:600px) (max-width:920px){}*/
+
+/* Festlegungen für diverse Geräte -> Darstellung bis max 7680px Screenbreite */
+/* MEDIA QUERY */
+/* @media screen and (max-width: 768px) and (orientation: landscape) {} */
+/* @media screen and (max-width: 768px) and (orientation: portrait) {} */
+
+@media screen and (max-width: 768px) {
+  /* hier kommen Angaben rein, die bei mobilder Darstellung anders sein sollen als auf dem Desktop -> zu sehen bei 800px und kleiner */
+  /* nie vergessen, die Elternelemente zu berücksichtigen und ggf. mit zu ändern -> ist die Navi-Zeile am PC flacher als im Mobil Phone, wird der Inhalt der 2. Box in meiner höheren Navi am Handy dargestellt */
+
+  /* flexible Größen erreicht man mit 90%, .9em oder mit 2vw (viewport with) */
+
+  /* body */
+
+  body {
+    font-size: 2vh;
+  }
+
+  /* Wrapper - Inhalt über HG-Bild */
+
+  /* #head + #topnav - Inhalt des header */
+
+  #head {
+    padding-top: 1.8vh;
+  }
+
+  nav {
+    width: 100%;
+    float: left;
+    padding: 0px;
+  }
+
+  #topnav {
+    margin-top: 1.2vh;
+  }
+
+  /* #page + .flipbx - Inhalt der main */
+
+  /* geteilte Head für reponsive Darstellung */
+  .h1-all,
+  #h1-pc,
+  #h1-cont {
+    font-size: 4vh;
+  }
+
+  #h1-cont {
+    margin: 5vh auto;
+  }
+
+  /* Page */
+
+  h2 {
+    color: sienna;
+    font-size: 3vh;
+    text-shadow: 0.05em 0.05em 0.1em rgb(241, 239, 230);
+  }
+
+  #lexikon-c2,
+  #visitenkarte-c2,
+  #sprechstunde-c2 {
+    display: flex;
+  }
+
+  #lexikon,
+  #calendar,
+  #visitenkarte,
+  #sprechstunde {
+    display: none;
+  }
+
+  #heute,
+  #heute div {
+    visibility: hidden;
+    display: none !important;
+  }
+
+  #page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 0.7fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  /* Content mit 9 Quadraten */
+
+  /* erste Reihe der 8 Quadrate */
+
+  #kalenderblatt .flipper .back {
+    font-size: 2.2vh;
+    position: absolute;
+    top: -150%;
+    bottom: 0%;
+    left: 0;
+  }
+
+  #urlaubsdetektive .flipper .back {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+  }
+
+  #wissenwertes .flipper .back {
+    font-size: 2.2vh;
+    position: absolute;
+    top: -150%;
+    bottom: 0%;
+    left: 0;
+  }
+
+  /* zweite Reihe der 8 Quadrate */
+
+  /* dritte Reihe der 8 Quadrate */
+
+  #visitenkarte-c2 .flipper .back {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    bottom: 0%;
+  }
+
+  .links {
+    padding-top: 0.05em;
+    font-size: 2.2vh;
+    font-weight: bold;
+  }
+
+  /* #footer - Inhalt Fuszzeile */
+
+  #footer {
+    height: 6vh;
+    font-size: 2.5vh;
+  }
+
+  /* Bildgröße wird immer auf 100% runtergerechnet */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
 }
