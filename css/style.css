@@ -306,16 +306,13 @@ header h2 {
 
 /* +++++++++++++++++++++++++++  Ende DESKTOP  ++++++++++++++++*/
 
-/* Stile für mobile Phones mit 768px Breite Hochkant @media only screen and (device-width:768px) and (orientation:portrait) { }*/
-/* andere Stile für Desktop-PC 768px Breite quer @media only screen and (device-width:768px) and (orientation:landscape) { }*/
-/* Stile für Laptops verschiedener Breite @media only screen and (min-width:600px) (max-width:920px){}*/
-
-/* Festlegungen für diverse Geräte -> Darstellung bis max 7680px Screenbreite */
-/* MEDIA QUERY */
-/* @media screen and (max-width: 768px) and (orientation: landscape) {} */
-/* @media screen and (max-width: 768px) and (orientation: portrait) {} */
-
-@media screen and (max-width: 768px) {
+/* Stile für Laptops verschiedener Breite */
+/* @media (min-aspect-ratio: 4/3) {} */
+/* @media (aspect-ratio <= 1.33) {} */
+/* @media only screen and (min-width: 42em) and (max-width: 64em) {  /* Tablet-Size } */
+/* @media only screen and (min-width:600px) (max-width:920px){} */
+/* @media only screen and (max-height: 575.98px) and (orientation: landscape) {} */
+@media only screen and (min-width: 390px) and (max-width: 680px) {
   /* hier kommen Angaben rein, die bei mobilder Darstellung anders sein sollen als auf dem Desktop -> zu sehen bei 800px und kleiner */
   /* nie vergessen, die Elternelemente zu berücksichtigen und ggf. mit zu ändern -> ist die Navi-Zeile am PC flacher als im Mobil Phone, wird der Inhalt der 2. Box in meiner höheren Navi am Handy dargestellt */
 
@@ -359,6 +356,10 @@ header h2 {
   }
 
   /* Page */
+
+  .quader {
+    min-height: 50vh;
+  }
 
   h2 {
     color: sienna;
@@ -441,6 +442,219 @@ header h2 {
   #footer {
     height: 6vh;
     font-size: 2.5vh;
+  }
+
+  /* Bildgröße wird immer auf 100% runtergerechnet */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* ################# neuer Media-Port ##############*/
+@media only screen and (max-width: 520px) and (orientation: portrait) {
+  body {
+    font-size: 2vh;
+  }
+
+  /* Wrapper - Inhalt über HG-Bild */
+
+  /* #head + #topnav - Inhalt des header */
+
+  #head {
+    padding-top: 1.8vh;
+  }
+
+  nav {
+    width: 100%;
+    float: left;
+    padding: 0px;
+  }
+
+  #topnav {
+    margin-top: 1.2vh;
+  }
+
+  /* #page + .flipbx - Inhalt der main */
+
+  /* geteilte Head für reponsive Darstellung */
+  .h1-all,
+  #h1-pc,
+  #h1-cont {
+    font-size: 4vh;
+  }
+
+  #h1-cont {
+    margin: 5vh auto;
+  }
+
+  /* Page */
+
+  h2 {
+    color: sienna;
+    font-size: 3vh;
+    text-shadow: 0.05em 0.05em 0.1em rgb(241, 239, 230);
+  }
+
+  #lexikon-c2,
+  #visitenkarte-c2,
+  #sprechstunde-c2 {
+    display: flex;
+  }
+
+  #lexikon,
+  #calendar,
+  #visitenkarte,
+  #sprechstunde {
+    display: none;
+  }
+
+  #heute,
+  #heute div {
+    visibility: hidden;
+    display: none !important;
+  }
+
+  #page {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Content mit 9 Quadraten */
+
+  /* erste Reihe der 8 Quadrate */
+
+  #kalenderblatt .flipper .back {
+    font-size: 2.2vh;
+    position: absolute;
+    top: -150%;
+    bottom: 0%;
+    left: 0;
+  }
+
+  #urlaubsdetektive .flipper .back {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+  }
+
+  #wissenwertes .flipper .back {
+    font-size: 2.2vh;
+    position: absolute;
+    top: -150%;
+    bottom: 0%;
+    left: 0;
+  }
+
+  /* zweite Reihe der 8 Quadrate */
+
+  /* dritte Reihe der 8 Quadrate */
+
+  #visitenkarte-c2 .flipper .back {
+    position: absolute;
+    top: 20%;
+    left: 0%;
+    bottom: 0%;
+  }
+
+  .links {
+    padding-top: 0.05em;
+    font-size: 2.2vh;
+    font-weight: bold;
+  }
+
+  /* #footer - Inhalt Fuszzeile */
+
+  #footer {
+    height: 6vh;
+    font-size: 2vh;
+  }
+
+  /* Google Fonts - Poppins */
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    font-size: 3vh;
+  }
+  body {
+    min-height: 100vh;
+  }
+  .consent-wrapper {
+    position: fixed;
+    bottom: 20vh;
+    right: -30vb;
+    max-width: 30vb;
+    width: 100%;
+    background: rgba(250, 250, 250, 1);
+    border-radius: 8px;
+    padding: 2px 5px 4px;
+    transition: right 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: 7;
+  }
+  .consent-wrapper.show {
+    right: 3em;
+  }
+  .consent-wrapper header {
+    display: flex;
+    align-items: center;
+    column-gap: 1em;
+  }
+  header i {
+    color: #077c91;
+    font-size: 1.5em;
+  }
+  header h2 {
+    color: #077c91;
+    font-weight: 500;
+  }
+  .consent-wrapper .data {
+    margin-top: 1.1em;
+  }
+  .consent-wrapper .data p {
+    color: #333;
+    font-size: 2vh;
+  }
+  .data p a {
+    color: rgb(7, 125, 146);
+    text-decoration: none;
+  }
+  .data p a:hover {
+    color: sienna;
+    text-decoration: underline;
+  }
+  .consent-wrapper .buttons {
+    margin-top: 1.1em;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 3vh;
+  }
+  .buttons .button {
+    border: none;
+    color: rgb(7, 125, 146);
+    padding: 0.1em;
+    border-radius: 0.1em;
+    background: rgba(222, 184, 135, 0.4);
+    cursor: pointer;
+    width: calc(100% / 2 - 10px);
+    transition: all 0.2s ease;
+  }
+  .buttons #acceptBtn:hover {
+    background: rgba(222, 184, 135, 0.4);
+  }
+  #declineBtn {
+    border: 1px solid rgb(222, 184, 135);
+    background-color: #fff;
+    color: rgb(7, 125, 146);
+  }
+  #declineBtn:hover {
+    background: rgba(222, 184, 135, 0.4);
+    color: rgb(7, 125, 146);
   }
 
   /* Bildgröße wird immer auf 100% runtergerechnet */
