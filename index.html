@@ -19,7 +19,37 @@
     <title>Touristikpsychologie</title>
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Ansicht auf mobilen Geräten NICHT skalierbar -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <!-- Ansicht auf mobilen Geräten skalierbar -->
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1/> -->
+
+    <!-- Suchmaschinen-Optimierung -->
+    <meta
+      name="robots"
+      content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
+    />
+    <link rel="canonical" href="https://touristik.vercel.app/" />
+
+    <!-- Ergänzung -->
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Tourismuspsychologie - Wissenskalender"
+    />
+    <meta
+      property="og:description"
+      content="Touristik im Wandel - in Zeit und Ort"
+    />
+    <meta property="og:url" content="https://touristik.vercel.app/" />
+    <meta property="og:site_name" content="touristik" />
+    <!-- <meta property="article:publisher" content="https://www.facebook.com/..."> -->
+    <meta property="article:section" content="Link" />
+    <meta property="og:updated_time" content="2023-11-23T23:00:00-08:00" />
 
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/webfonts/fonts-all.css" />
@@ -38,14 +68,28 @@
     />
     <!-- Ende Link aus Vorlage, analog: Download von Font-Awesome direkt -->
 
+    <!-- Google Webfont Cabin einbinden -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Webfont Cabin einbinden -->
+
+    <link
+      rel="search"
+      type="lib/opensearchdescription+xml"
+      href="/opensearch.xml"
+      title="Search Page Content"
+    />
+
     <!-- Icon im Reiter ausgeben -->
-    <link rel="shortcut icon" type="image/vnd.icon" href="/favicon.ico" />
-    <!-- <link rel="icon" type="image/png" href="/favicon.png" sizes="32x32" /> -->
-    <!-- <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" /> -->
-    <!-- <link rel="icon" type="image/svg+xml" href="favicon.svg" sizes="any" /> -->
-    <!-- <link rel="icon" href="/favicon.png" type="image/png" /> -->
-    <!-- <meta name="msapplication-TileColor" content="#ffffff" /> -->
-    <!-- <meta name="msapplication-TileImage" content="/mstile-144x144.png" /> -->
+    <link
+      rel="shortcut icon"
+      type="image/vnd.icon"
+      href="/favicon.ico"
+      size="any"
+    />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- ANFANG KOPIE Script Kalenderanzeige -->
     <script type="text/javascript" src="js/calendar_js.js"></script>
@@ -57,16 +101,7 @@
     <!-- ENDE KOPIE Datumsanzeige -->
 
     <!-- Anfang Kopie Script für mobiles Menue -->
-    <script>
-      function myFunction() {
-        var x = document.getElementById("topnav");
-        if (x.className === "topnav") {
-          x.className += " responsive";
-        } else {
-          x.className = "topnav";
-        }
-      }
-    </script>
+    <script type="text/javascript" src="js/navi.js"></script>
     <!-- Ende Kopie Script für mobiles Menue -->
 
     <!-- JS für Flipbox -->
@@ -124,9 +159,6 @@
           <!-- Beginn responsives menue ohne Subnav -->
           <ul class="topnav" id="topnav">
             <li>
-              <a href="#home">Home</a>
-            </li>
-            <li>
               <a href="#news">Neues</a>
             </li>
             <li>
@@ -138,7 +170,7 @@
             <li>
               <a href="#about">Kontakt</a>
             </li>
-            <li>
+            <li id="imphidden">
               <a href="impressum-dasch.html">Impressum</a>
             </li>
             <li class="icon">
@@ -172,10 +204,12 @@
             </div>
             <div class="back">
               <b>28.11.1520:</b>
-              <br />Vier Wochen nach ihrer Entdeckung gelingt Ferdinand Magellan
-              die Durchfahrt durch die später nach ihm benannte Magellanstraße
-              an der Südspitze Amerikas; er erreicht mit drei Schiffen den
-              Pazifik. <br /><br />
+              <p>
+                Vier Wochen nach ihrer Entdeckung gelingt Ferdinand Magellan die
+                Durchfahrt durch die später nach ihm benannte Magellanstraße an
+                der Südspitze Amerikas; er erreicht mit drei Schiffen den
+                Pazifik.
+              </p>
               <!-- <b>28.11.1983:</b> <br />Als erster
               (West-)Deutscher startet Ulf Merbold mit der US-Raumfähre Columbia
               in den Weltraum. Mit an Bord ist das europäische Weltraumlabor

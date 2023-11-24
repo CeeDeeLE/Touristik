@@ -1,15 +1,21 @@
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 2.5 License
-*/
+/* Design inspired by Free CSS Templates: http://www.freecsstemplates.org
+Released for free under a Creative Commons Attribution 2.5 License */
+
+/* Android benötigt die .ttf-Datei */
+@font-face {
+  font-family: "Sundayscript"; /* regular font */
+  src: local("Sundayscript"),
+    url("/css/webfonts/Sundayscript.ttf") format("truetype"),
+    url("/css/webfonts/Sundayscript.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
   width: 100%;
-  height: 200vh;
-  margin: 0;
+  margin: 2vh auto;
   padding: 0;
-  background: url(../images/bg_surfparadise.jpg) fixed;
+  background: url(../images/pexels_lucas-meneses_4712714.jpg) fixed;
   background-size: cover;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5vh;
@@ -43,6 +49,14 @@ a:hover {
   padding-top: 2vh;
 }
 
+#imphidden {
+  visibility: hidden;
+}
+
+.fa-home {
+  color: white;
+}
+
 #topnav {
   margin-top: 2vh;
 }
@@ -51,6 +65,7 @@ a:hover {
 .h1-all,
 #h1-pc,
 #h1-cont {
+  font-family: "Cabin", Helvetica, sans-serif;
   font-size: 5vh;
   letter-spacing: -1px;
   border: none;
@@ -67,9 +82,11 @@ a:hover {
 /* Page */
 
 h2 {
+  font-family: "Cabin", Helvetica, sans-serif;
   color: sienna;
-  font-size: 3vh;
-  text-shadow: 0.05em 0.05em 0.1em rgb(241, 239, 230);
+  font-size: 4vh;
+  text-shadow: 0.03em 0.03em 0.07em rgb(241, 239, 230);
+  margin: 0 0.5em;
 }
 
 #page {
@@ -92,12 +109,14 @@ h2 {
 .quader {
   width: 100%;
   height: 100%;
-  min-height: 33vh;
+  background-image: url("../images/pexels_kate-graur_5425708.jpg");
+  background-size: cover;
+  min-height: 18em;
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 0;
-  border: 0.05em solid #077c91;
+  border: 0.03em solid sienna;
   background-color: rgba(222, 184, 135, 0.4);
 }
 
@@ -126,68 +145,73 @@ h2 {
 .front,
 .back {
   width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  _position: relative;
+  width: 100%;
   backface-visibility: hidden;
 }
 
 .front {
   transform: rotateY(0deg);
-  z-index: 3;
 }
 
 .back {
   transform: rotateY(180deg);
-  z-index: 4;
 }
 
-#kalenderblatt {
-  background: url(../images/pexels_picjumbocom_196650.jpg);
-  background-size: cover;
+.front img,
+.back img {
+  size-adjust: inherit;
 }
 
 #kalenderblatt .flipper .back {
   font-size: 2.5vh;
   position: absolute;
-  top: -150%;
+  top: -20%;
   bottom: 0%;
-  left: 0;
+}
+
+#urlaubsdetektive .flipper .front {
+  display: block;
+  object-fit: cover;
 }
 
 #urlaubsdetektive .flipper .back {
   position: absolute;
-  top: 20%;
+  top: 0%;
   left: 0%;
-}
-
-#wissenwertes {
-  background: url(../images/pexels-monoar-rahman-109371.jpg);
-  background-size: cover;
 }
 
 #wissenwertes .flipper .back {
   font-size: 2.5vh;
   position: absolute;
-  top: -150%;
+  top: -20%;
   bottom: 0%;
-  left: 0;
 }
 
 /* zweite Reihe der 9 Quadrate */
 
 #heute {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.5)
     ),
-    url(../images/bg_surfparadise.jpg) fixed;
-  display: inline-block;
-  align-content: center;
+    url(../images/pexels_lucas-meneses_4712714.jpg) fixed;
 }
 
 /* dritte Reihe der 9 Quadrate */
 
 #visitenkarte .flipper .back {
   position: absolute;
-  top: 20%;
+  top: 0%;
   left: 0%;
 }
 
@@ -203,13 +227,13 @@ h2 {
   width: 100%;
   height: 7vh;
   margin: 0 auto;
-  padding: 1em 0;
+  padding: 1em 0 2em 0;
   border-top: 0.05em solid #077c91;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5vh;
   font-weight: 700;
   color: #077c91;
-  text-shadow: 0.05em 0.05em 0.1em #444;
+  text-shadow: 0.01em 0.01em 0.05em #444;
   text-align: center;
 }
 
@@ -241,7 +265,7 @@ body {
   padding: 15px 25px 22px;
   transition: right 0.3s ease;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-  z-index: 7;
+  z-index: 4;
 }
 .consent-wrapper.show {
   right: 5em;
@@ -306,19 +330,15 @@ header h2 {
 
 /* +++++++++++++++++++++++++++  Ende DESKTOP  ++++++++++++++++*/
 
-/* Stile für Laptops verschiedener Breite */
-/* @media (min-aspect-ratio: 4/3) {} */
-/* @media (aspect-ratio <= 1.33) {} */
-/* @media only screen and (min-width: 42em) and (max-width: 64em) {  /* Tablet-Size } */
-/* @media only screen and (min-width:600px) (max-width:920px){} */
-/* @media only screen and (max-height: 575.98px) and (orientation: landscape) {} */
-@media only screen and (min-width: 390px) and (max-width: 680px) {
-  /* hier kommen Angaben rein, die bei mobilder Darstellung anders sein sollen als auf dem Desktop -> zu sehen bei 800px und kleiner */
-  /* nie vergessen, die Elternelemente zu berücksichtigen und ggf. mit zu ändern -> ist die Navi-Zeile am PC flacher als im Mobil Phone, wird der Inhalt der 2. Box in meiner höheren Navi am Handy dargestellt */
-
+@media only screen and (min-width: 380px) and (max-width: 680px) {
+  /* hier kommen Angaben rein, die bei mobilder Darstellung anders sein sollen als auf dem Desktop 
+  -> zu sehen bei 390 bis 680px */
+  /* nie vergessen, die Elternelemente zu berücksichtigen und ggf. mit zu ändern 
+  -> ist die Navi-Zeile am PC flacher als im Mobil Phone, 
+  wird der Inhalt der 2. Box in einer höheren Navi am Handy dargestellt */
   /* flexible Größen erreicht man mit 90%, .9em oder mit 2vw (viewport with) */
 
-  /* body */
+  /* Body */
 
   body {
     font-size: 2vh;
@@ -330,6 +350,10 @@ header h2 {
 
   #head {
     padding-top: 1.8vh;
+  }
+
+  #imphidden {
+    visibility: visible;
   }
 
   nav {
@@ -452,6 +476,7 @@ header h2 {
 }
 
 /* ################# neuer Media-Port ##############*/
+/* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
 @media only screen and (max-width: 520px) and (orientation: portrait) {
   body {
     font-size: 2vh;
@@ -524,12 +549,22 @@ header h2 {
 
   /* erste Reihe der 8 Quadrate */
 
+  #kalenderblatt .flipper .front {
+    display: block;
+    object-fit: cover;
+  }
+
   #kalenderblatt .flipper .back {
     font-size: 2.2vh;
     position: absolute;
     top: -150%;
     bottom: 0%;
     left: 0;
+  }
+
+  #urlaubsdetektive .flipper .front {
+    display: block;
+    object-fit: cover;
   }
 
   #urlaubsdetektive .flipper .back {
@@ -585,15 +620,15 @@ header h2 {
   .consent-wrapper {
     position: fixed;
     bottom: 20vh;
-    right: -30vb;
-    max-width: 30vb;
+    right: -45vb;
+    max-width: 40vb;
     width: 100%;
     background: rgba(250, 250, 250, 1);
     border-radius: 8px;
     padding: 2px 5px 4px;
     transition: right 0.3s ease;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-    z-index: 7;
+    z-index: 4;
   }
   .consent-wrapper.show {
     right: 3em;
