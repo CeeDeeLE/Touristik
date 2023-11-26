@@ -536,7 +536,7 @@ header h2 {
 
 /* ################# minimaler Screen - 1-spaltige Darstellung ##############*/
 /* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
-@media only screen and (max-width: 400px) and (orientation: portrait) {
+@media only screen and (max-width: 768px) and (orientation: portrait) {
   body {
     font-size: 2.2vh;
     margin: 1.8vh auto;
