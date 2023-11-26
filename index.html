@@ -20,12 +20,9 @@
 
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <!-- Ansicht auf mobilen Geräten NICHT skalierbar -->
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" /> -->
     <!-- Ansicht auf mobilen Geräten skalierbar -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1/> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <!-- Suchmaschinen-Optimierung -->
     <meta
@@ -200,7 +197,10 @@
         <div id="kalenderblatt" class="quader flipbox">
           <div class="flipper">
             <div class="front">
-              <h2>Das touristische Kalenderblatt</h2>
+              <h2>
+                <i class="fa fa-fw fa-calendar"></i>
+                <br />Das touristische Kalenderblatt
+              </h2>
             </div>
             <div class="back">
               <b>28.11.1520:</b>
@@ -215,7 +215,7 @@
               in den Weltraum. Mit an Bord ist das europäische Weltraumlabor
               Spacelab unter dem Gesamtkommando von John Young, der als erster
               Mensch einen sechsten Weltraumflug unternimmt. -->
-              <a href="#">mehr ...</a>
+              <p><a href="#">mehr ...</a></p>
             </div>
           </div>
         </div>
@@ -226,32 +226,45 @@
               <img
                 src="images/pexels_aviv-perets_11634737.jpg"
                 width="100%"
-                height="auto"
+                height="100%"
                 alt="Ponta Da Ferraria"
               />
             </div>
             <div class="back">
-              <h2>Kennen Sie diesen Ort?</h2>
-              <br /><br />
-              <a href="#">zur Lösung</a>
+              <h2>
+                <i class="fa fa-fw fa-map-pin sienna"></i>
+                <br />Kennen Sie diesen Ort?
+              </h2>
+              <!-- <br /> -->
+              <p><a href="#">zur Lösung</a></p>
             </div>
           </div>
         </div>
 
         <div id="lexikon-c2" class="quader">
-          <h2>Begriffe aus der Touristik</h2>
+          <h2>
+            <i class="fa fa-fw fa-graduation-cap sienna"></i>
+            <br />Begriffe aus der Touristik
+          </h2>
         </div>
 
         <div id="wissenwertes" class="quader flipbox">
           <div class="flipper">
             <div class="front">
-              <h2>WusstenSie, dass...</h2>
+              <h2>
+                <i class="fa fa-fw fa-lightbulb-o sienna"></i>
+                <br />Wussten Sie, dass...
+              </h2>
             </div>
             <div class="back">
-              … die älteste Airline, die noch ihren Gründernamen trägt, die KLM
-              Royal Dutch Airline ist, sie wurde am 7. Oktober 1919 gegründet.
-              <br /><br />
-              <a href="#">mehr Wissenswertes ...</a>
+              <p>
+                … die älteste Airline, die noch ihren Gründernamen trägt, die
+                KLM Royal Dutch Airline ist, sie wurde am 7. Oktober 1919
+                gegründet.
+              </p>
+              <p>
+                <a href="#">mehr ...</a>
+              </p>
             </div>
           </div>
         </div>
@@ -267,37 +280,55 @@
               />
             </div>
             <div class="back">
-              <h2>Regionen stellen sich vor</h2>
-              <br /><br />
-              <a
-                href="https://www.heidelberg.de/hd/HD/Besuchen.html
+              <h2>
+                <i class="fa fa-fw fa-map-signs sienna"></i>
+                <br />Regionen stellen sich vor
+              </h2>
+              <!-- <br /> -->
+              <p>
+                <a
+                  href="https://www.heidelberg.de/hd/HD/Besuchen.html
               "
-                alt="Link zur Seite von Heidelberg"
-                >Heidelberg...</a
-              >
+                  alt="Link zur Seite von Heidelberg"
+                  >Heidelberg...</a
+                >
+              </p>
             </div>
           </div>
         </div>
 
         <div id="lexikon" class="quader">
-          <h2>Begriffe aus der Touristik</h2>
+          <h2>
+            <i class="fa fa-fw fa-graduation-cap sienna"></i>
+            <br />Begriffe aus der Touristik
+          </h2>
         </div>
 
         <div id="heute" class="quader" alt="Kalendar">
           <div id="calendar">[Calendar JS by derletztekick.com]</div>
-          <div class="links"><a href="impressum-dasch.html">Impressum</a></div>
+          <div id="implink">
+            <a href="impressum-dasch.html">Impressum & DSGVO</a>
+          </div>
         </div>
 
         <div id="nachhaltigkeit" class="quader">
-          <h2>Umwelt- & Nachhaltigkeits-Initiativen in der Touristik</h2>
+          <h2>
+            <i class="fa fa-fw fa-globe sienna"></i>
+            <br />Umwelt- & Nachhaltigkeits-Initiativen in der Touristik
+          </h2>
         </div>
 
         <div id="sprechstunde-c2" class="quader">
-          <h2>Sprechstunde für Reiselustige</h2>
+          <h2>
+            <i class="fa fa-fw fa-comments-o sienna"></i>
+            <br />Sprechstunde für Reiselustige
+          </h2>
         </div>
 
         <div id="buchtipp" class="quader">
-          <h2>Reisezeit ist Lesezeit</h2>
+          <h2>
+            <i class="fa fa-fw fa-book sienna"></i> <br />Reisezeit ist Lesezeit
+          </h2>
         </div>
 
         <div id="visitenkarte" class="quader flipbox">
@@ -311,20 +342,29 @@
               />
             </div>
             <div class="back">
-              <h2>Regionen stellen sich vor</h2>
-              <br /><br />
-              <a
-                href="https://www.heidelberg.de/hd/HD/Besuchen.html
+              <h2>
+                <i class="fa fa-fw fa-map-signs sienna"></i>
+                <br />Regionen stellen sich vor
+              </h2>
+              <!-- <br /> -->
+              <p>
+                <a
+                  href="https://www.heidelberg.de/hd/HD/Besuchen.html
               "
-                alt="Link zur Seite von Heidelberg"
-                >Heidelberg...</a
-              >
+                  alt="Link zur Seite von Heidelberg"
+                  >Heidelberg...</a
+                >
+              </p>
             </div>
           </div>
         </div>
 
         <div id="sprechstunde" class="quader">
-          <h2>Sprechstunde für Reiselustige</h2>
+          <h2>
+            <i class="fa fa-fw fa-comments-o sienna"></i>
+            <br />
+            Sprechstunde für Reiselustige
+          </h2>
         </div>
       </main>
       <!-- Ende der 9-Quader-Section -->
