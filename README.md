@@ -22,3 +22,27 @@ Bild Nr. 17151652: https://www.pexels.com/photo/heidelberg-old-bridge-and-castle
 besondere Reiseziele
 https://reisevergnuegen.com/urlaubsziele-europa-meer/
 
+
+Formen des Tourismus:
+https://docupedia.de/zg/Tourismus_und_Tourismusgeschichte
+Rüdiger Hachtmann
+
+(Pilgertourismus)
+adliger Individualtourismus
+Bädertourismus
+kleinbürgerliche Sommerfrische
+sozialer Erholungstourismus
+Kommerzieller Massentourismus
+
+Motivation für Reisen:
+https://docupedia.de/zg/Tourismus_und_Tourismusgeschichte
+Rüdiger Hachtmann
+kirchlicher Tourismus
+Bildungstourismus
+politischer Tourismus
+Erholunghstourismus
+Abenteuertourismus
+Sensationstourismus
+
+
+

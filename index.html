@@ -35,7 +35,6 @@
       name="robots"
       content="follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large"
     />
-    <link rel="canonical" href="https://touristik.vercel.app/" />
 
     <!-- Ergänzung -->
     <meta property="og:locale" content="de_DE" />
@@ -54,6 +53,7 @@
     <meta property="article:section" content="Link" />
     <meta property="og:updated_time" content="2023-11-23T23:00:00-08:00" />
 
+    <link rel="canonical" href="https://touristik.vercel.app/" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/navi.css" />
     <link
@@ -180,7 +180,7 @@
               <a href="impressum-dasch.html">Impressum</a>
             </li>
             <li class="icon">
-              <a href="javascript:void(0);" onclick="myFunction()">
+              <a href="javascript:void(0);" onclick="BuergerNav()">
                 <i class="fa fa-bars" aria-hidden="true"></i>
               </a>
             </li>
@@ -252,8 +252,10 @@
 
         <div id="lexikon-c2" class="quader">
           <h2>
-            <i class="fa fa-fw fa-graduation-cap sienna"></i>
-            <br />Begriffe aus der Touristik
+            <a class="ignorestyle" href="templates/touristik-lexikon.html">
+              <i class="fa fa-fw fa-graduation-cap sienna"></i>
+              <br />Begriffe aus der Touristik</a
+            >
           </h2>
         </div>
 
@@ -308,15 +310,17 @@
 
         <div id="lexikon" class="quader">
           <h2>
-            <i class="fa fa-fw fa-graduation-cap sienna"></i>
-            <br />Begriffe aus der Touristik
+            <a class="ignorestyle" href="templates/touristik-lexikon.html">
+              <i class="fa fa-fw fa-graduation-cap sienna"></i>
+              <br />Begriffe aus der Touristik</a
+            >
           </h2>
         </div>
 
         <div id="heute" class="quader" alt="Kalendar">
           <div id="calendar">[Calendar JS by derletztekick.com]</div>
           <div id="implink">
-            <a href="impressum-dasch.html">Impressum & DSGVO</a>
+            <a href="templates/impressum-dasch.html">Impressum & DSGVO</a>
           </div>
         </div>
 

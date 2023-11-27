@@ -1,5 +1,5 @@
 // responsive Nav-Bar
-function myFunction() {
+function BuergerNav() {
   var x = document.getElementById("topnav");
   if (x.className === "topnav") {
     x.className += " responsive";

@@ -129,7 +129,8 @@ nav {
 
 /* **************** Page ************************* */
 
-h2 {
+h2,
+.ignorestyle {
   font-family: "Cabin", Helvetica, sans-serif;
   color: var(--h2-color);
   font-size: 3.5vh;
@@ -429,7 +430,6 @@ header h2 {
 
   #imphidden {
     visibility: visible;
-    display: flex !important;
   }
 
   /* #page + .flipbx - Inhalt der main */
@@ -601,8 +601,8 @@ header h2 {
 
   #imphidden {
     visibility: visible;
-    display: flex !important;
   }
+
   /* #page + .flipbx - Inhalt der main */
 
   /* geteilte Head für reponsive Darstellung */
