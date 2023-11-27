@@ -289,17 +289,17 @@ h3 {
   margin: 0 auto;
   padding: 2vh 0 2vh 0;
 
-  border-top: 0.05vh solid #077c91;
+  border-top: 0.05vh solid var(--h1-color);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5vh;
   font-weight: 700;
-  color: #077c91;
+  color: var(--h1-color);
   text-shadow: var(--h1-shadow);
   text-align: center;
 }
 
 #footer a {
-  color: sienna;
+  color: var(--link-color);
 }
 
 /* ************************* für Cookie-Popup *********************** */
@@ -336,7 +336,7 @@ body {
   column-gap: 1em;
 }
 header i {
-  color: #077c91;
+  color: var(--h1-color);
   font-size: 1.5em;
 }
 header h2 {
@@ -417,11 +417,6 @@ header h2 {
     padding-top: 1.8vh;
   }
 
-  #imphidden {
-    visibility: visible;
-    display: flex !important;
-  }
-
   nav {
     width: 100%;
     float: left;
@@ -430,6 +425,11 @@ header h2 {
 
   #topnav {
     margin-top: 1.2vh;
+  }
+
+  #imphidden {
+    visibility: visible;
+    display: flex !important;
   }
 
   /* #page + .flipbx - Inhalt der main */
@@ -589,11 +589,6 @@ header h2 {
     padding-top: 1.8vh;
   }
 
-  #imphidden {
-    visibility: visible;
-    display: flex !important;
-  }
-
   nav {
     width: 100%;
     float: left;
@@ -604,6 +599,10 @@ header h2 {
     margin-top: 1.2vh;
   }
 
+  #imphidden {
+    visibility: visible;
+    display: flex !important;
+  }
   /* #page + .flipbx - Inhalt der main */
 
   /* geteilte Head für reponsive Darstellung */
@@ -757,10 +756,6 @@ header h2 {
 
   /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
 
-  #imphidden {
-    visibility: visible;
-  }
-
   #head {
     padding-top: 1.8vh;
   }
@@ -773,6 +768,10 @@ header h2 {
 
   #topnav {
     margin-top: 1.2vh;
+  }
+
+  #imphidden {
+    visibility: visible;
   }
 
   /* #page + .flipbx - Inhalt der main */
@@ -921,10 +920,6 @@ header h2 {
 
   /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
 
-  #imphidden {
-    visibility: visible;
-  }
-
   #head {
     padding-top: 1.8vh;
   }
@@ -937,6 +932,10 @@ header h2 {
 
   #topnav {
     margin-top: 1.2vh;
+  }
+
+  #imphidden {
+    visibility: visible;
   }
 
   /* #page + .flipbx - Inhalt der main */
