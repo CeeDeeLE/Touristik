@@ -1,3 +1,9 @@
+/****************** DESIGNED BY *****************/
+/*               Constanze Deten                */
+/* Idee und Inhalt: Hans-Peter Herrmann         */
+/*                   c 2023                     */
+/************************************************/
+
 ul.topnav {
   list-style-type: none;
   margin: 0;
@@ -39,9 +45,49 @@ li:hover .innen {
   color: red;
   display: inline-block;
 }
-/* Ende second level Navigation Screen */
+/* ############Ende second level Navigation Screen ###############*/
 
-@media screen and (max-width: 680px) {
+/* ##################### Media Screen für Switch ###############*/
+@media only screen and (max-width: 800px) and (orientation: landscape) {
+  ul.topnav li:not(:first-child) {
+    display: none;
+  }
+
+  ul.topnav li.icon {
+    float: right;
+    display: inline-block;
+  }
+
+  ul.topnav.responsive {
+    position: relative;
+  }
+
+  ul.topnav.responsive li.icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  ul.topnav.responsive li {
+    float: none;
+    display: inline;
+  }
+
+  ul.topnav.responsive li a {
+    display: block;
+    text-align: left;
+  }
+
+  /* Optional für eine second level Navigation in der Mobile Ansicht */
+  .innen {
+    color: white;
+    display: inline-block;
+  }
+  /* Ende second level Navigation Mobile */
+}
+
+/* ##################### Media Screen für Switch ###############*/
+@media screen and (max-width: 680px) and (orientation: portrait) {
   ul.topnav li:not(:first-child) {
     display: none;
   }
