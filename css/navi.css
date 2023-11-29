@@ -4,12 +4,14 @@
 /*                   c 2023                     */
 /************************************************/
 
+@import url(style.css);
+
 ul.topnav {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: rgb(5, 109, 113);
+  background-color: var(--darkturquoise100);
 }
 
 ul.topnav li,
@@ -20,7 +22,7 @@ ul.topnav li,
 ul.topnav li a,
 #logo {
   display: inline-block;
-  color: #f2f2f2;
+  color: var(--weisz80);
   text-align: center;
   padding: 0.2em 0.5em;
   text-decoration: none;
@@ -29,26 +31,23 @@ ul.topnav li a,
 }
 
 ul.topnav li a:hover {
-  background-color: rgb(
-    3,
-    60,
-    63
-  ); /* bg: rgb(5, 109, 113) -> alt/ bisher: #077c91 */
+  background-color: var(--greyturquoise100);
 }
 
 ul.topnav li.icon {
+  float: right;
   display: none;
 }
 
 /* Optional für eine second level Navigation in der Screen Ansicht */
 .innen {
-  color: white;
+  color: var(--weisz80);
   display: none;
   padding: 3px;
 }
 
 li:hover .innen {
-  color: red;
+  color: var(--sienna100);
   display: inline-block;
 }
 /* ############Ende second level Navigation Screen ###############*/
@@ -60,7 +59,6 @@ li:hover .innen {
   }
 
   ul.topnav li.icon {
-    float: right;
     display: inline-block;
   }
 
@@ -86,7 +84,6 @@ li:hover .innen {
 
   /* Optional für eine second level Navigation in der Mobile Ansicht */
   .innen {
-    color: white;
     display: inline-block;
   }
   /* Ende second level Navigation Mobile */
@@ -99,7 +96,6 @@ li:hover .innen {
   }
 
   ul.topnav li.icon {
-    float: right;
     display: inline-block;
   }
 
@@ -125,7 +121,6 @@ li:hover .innen {
 
   /* Optional für eine second level Navigation in der Mobile Ansicht */
   .innen {
-    color: white;
     display: inline-block;
   }
   /* Ende second level Navigation Mobile */
