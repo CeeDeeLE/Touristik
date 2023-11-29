@@ -114,10 +114,6 @@ a:hover {
   text-shadow: var(--h1-shadow);
 }
 
-nav {
-  color: var(--weisz80);
-}
-
 header h1 {
   margin: 0 auto 2vh auto;
 }
@@ -183,7 +179,7 @@ h2,
   text-align: center;
 
   display: grid;
-  grid-template-columns: repeat(3, 2fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
@@ -196,7 +192,6 @@ h2,
   text-align: justify;
   padding: 0 2vw;
 }
-
 
 .content-page {
   width: 100%;
@@ -279,7 +274,7 @@ h2,
   padding: 0 0.9vw;
 }
 
-/* z-index 1: #wrapper, z-index 2: #page */
+/* z-index 1: #wrapper, z-index 2: .page */
 .front {
   transform: rotateY(0deg);
   /* z-index 1 unter back-Div */
@@ -448,19 +443,18 @@ header h2 {
 
   /* Body */
 
-/* 
   body {
     font-size: 2.3vh;
     margin: 1.5vh auto;
-  } */
+  }
 
   /* Wrapper - Inhalt über HG-Bild */
   /* #header + #topnav - Inhalt des header */
   /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
 
-  /* #head {
+  #head {
     padding-top: 1.8vh;
-  } */
+  }
 
   nav {
     width: 100%;
@@ -471,11 +465,11 @@ header h2 {
   #topnav {
     margin-top: 1.2vh;
   }
- 
-  /* #page + .flipbx - Inhalt der main */
+
+  /* .page + .flipbx - Inhalt der main */
 
   /* geteilte Head für reponsive Darstellung */
-  /* .h1-all,
+  .h1-all,
   .h1-pc,
   .h1-cont {
     font-size: 4vh;
@@ -487,9 +481,8 @@ header h2 {
 
   h2,
   .ignorestyle {
-    _color: var(--sienna100);
     font-size: 3vh;
-    _text-shadow: var(--h2-shadow);
+    text-shadow: var(--h2-shadow);
   }
 
   #lexikon-c2,
@@ -511,24 +504,18 @@ header h2 {
     display: none !important;
   }
 
-  #page {
+  .index-page {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
     grid-column-gap: 0px;
     grid-row-gap: 0px;
   }
- */
-  /* Content mit 9 Quadraten */
-  /* .quader {
-    height: 30vh;
-    width: 100%;
-  }
- */
+
   /* Flipcards */
   /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
 
-  /* .flipbox {
+  .flipbox {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
     -o-perspective: 800px;
@@ -540,22 +527,22 @@ header h2 {
     font-size: 15vh;
     color: brown;
     font-weight: bold;
-  } */
+  }
 
   /* ENDE Inhalt main */
 
   /* #footer - Inhalt Fuszzeile */
-/* 
+
   #footer {
     height: 8vh;
     padding: 2vh 0 2vh 0;
     font-size: 2vh;
     font-weight: 700;
     text-shadow: var(--link-shadow);
-  } */
+  }
 
   /* *************** Conset-Popup mit Google Fonts - Poppins ************* */
-  /* * {
+  * {
     font-size: 2vh;
   }
   body {
@@ -601,32 +588,32 @@ header h2 {
     padding: 0.1vh 0.1vw;
     border-radius: 0.1vh 0.1vw;
     width: calc(100% / 2 - 10px);
-  } */
+  }
 
   /* Bildgröße wird immer auf 100% runtergerechnet */
-  /* img {
+  img {
     max-width: 100%;
     height: auto;
   }
-} */
+}
 
 /* ############## 2. Schritt 2-spaltig, Landscape ################ */
 
 @media only screen and (min-width: 400px) and (max-width: 820px) and (orientation: landscape) {
   /* Body */
-/* 
+
   body {
     font-size: 5vh;
     margin: 1.5vh auto;
-  } */
+  }
 
   /* Wrapper - Inhalt über HG-Bild */
   /* #header + #topnav - Inhalt des header */
   /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
-/* 
+
   #head {
     padding-top: 1.8vh;
-  } */
+  }
 
   nav {
     width: 100%;
@@ -636,12 +623,12 @@ header h2 {
 
   #topnav {
     margin-top: 1.2vh;
-  } 
+  }
 
-  /* #page + .flipbx - Inhalt der main */
+  /* .page + .flipbx - Inhalt der main */
 
   /* geteilte Head für reponsive Darstellung */
-  /* .h1-all,
+  .h1-all,
   .h1-pc,
   .h1-cont {
     font-size: 6vh;
@@ -675,7 +662,7 @@ header h2 {
     display: none !important;
   }
 
-  #page {
+  .index-page {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(4, 1fr);
@@ -683,17 +670,11 @@ header h2 {
     grid-row-gap: 0px;
 
     font-size: 5vh;
-  } */
-
-  /* Content mit 9 Quadraten */
-  /* .quader {
-    height: 45vh;
-    width: 100%;
-  } */
+  }
 
   /* Flipcards */
   /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
-/* 
+
   .flipbox {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
@@ -706,12 +687,12 @@ header h2 {
     font-size: 15vh;
     color: brown;
     font-weight: bold;
-  } */
+  }
 
   /* ENDE Inhalt main */
 
   /* #footer - Inhalt Fuszzeile */
-/* 
+
   #footer {
     height: 8vh;
     padding: 2vh 0 2vh 0;
@@ -719,10 +700,10 @@ header h2 {
     font-weight: 700;
     _text-shadow: 0.03vw 0.03vw 0.1vw #444;
     text-shadow: var(--link-shadow);
-  } */
+  }
 
   /* ************ Conset-Popup mit Google Fonts - Poppins ************** */
-  /* * {
+  * {
     font-size: 2vh;
   }
   body {
@@ -768,7 +749,7 @@ header h2 {
     padding: 0.1vh 0.1vw;
     border-radius: 0.1vh 0.1vw;
     width: calc(100% / 2 - 10px);
-  } */
+  }
 
   /* Bildgröße wird immer auf 100% runtergerechnet */
   img {
@@ -780,18 +761,19 @@ header h2 {
 /* ################# 3. Schritt: 1-spaltig, Portrait ##############*/
 /* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
 @media only screen and (max-width: 430px) and (orientation: portrait) {
-  /* body {
+  /* Body */
+  body {
     font-size: 3vh;
     margin: 1.8vh auto 10vh auto;
-  } */ */
+  }
 
-/* Wrapper - Inhalt über HG-Bild */
-/* #header + #topnav - Inhalt des header */
-/* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
-/* 
+  /* Wrapper - Inhalt über HG-Bild */
+  /* #header + #topnav - Inhalt des header */
+  /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
+
   #head {
     padding-top: 1.8vh;
-  } */
+  }
 
   nav {
     width: 100%;
@@ -803,10 +785,10 @@ header h2 {
     margin-top: 1.2vh;
   }
 
-/* #page + .flipbx - Inhalt der main */
+  /* .page + .flipbx - Inhalt der main */
 
-/* geteilte Head für reponsive Darstellung */
-/* .h1-all,
+  /* geteilte Head für reponsive Darstellung */
+  .h1-all,
   .h1-pc,
   .h1-cont {
     font-size: 4vh;
@@ -814,25 +796,25 @@ header h2 {
 
   .h1-cont {
     margin: 4vh auto;
-  } */
+  }
 
-/* Page */
-/* 
+  /* Page */
+
   h2 {
     font-size: 3vh;
     _text-shadow: 0.02vw 0.02vw 0.05vw rgb(241, 239, 230);
     _margin: 0vh 1vw;
   }
 
-  #page {
+  .index-page {
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0 auto;
-  } */
+  }
 
-/* Content mit 8/9 Flächen */
-/* 
+  /* Content mit 8/9 Flächen */
+
   .quader {
     height: 32vh;
     border: 0.03vw solid var(--sienna100);
@@ -855,11 +837,11 @@ header h2 {
   #heute div {
     visibility: hidden;
     display: none !important;
-  } */
+  }
 
-/* Flipcards */
-/* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
-/* 
+  /* Flipcards */
+  /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
+
   .flipbox {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
@@ -872,19 +854,19 @@ header h2 {
     font-size: 15vh;
     color: brown;
     font-weight: bold;
-  } */
+  }
 
-/* ENDE Inhalt main */
+  /* ENDE Inhalt main */
 
-/* #footer - Inhalt Fuszzeile */
-/* 
+  /* #footer - Inhalt Fuszzeile */
+
   #footer {
     height: 8vh;
     font-size: 2vh;
-  } */
+  }
 
-/* **************** Conset-Popup mit Google Fonts - Poppins *********** */
-/* * {
+  /* **************** Conset-Popup mit Google Fonts - Poppins *********** */
+  * {
     font-size: 1.8vh;
   }
   body {
@@ -926,30 +908,31 @@ header h2 {
     padding: 0.1vh 0.1vw;
     border-radius: 0.1em;
     width: calc(100% / 2 - 10px);
-  } */
+  }
 
-/* Bildgröße wird immer auf 100% runtergerechnet */
-/* img {
+  /* Bildgröße wird immer auf 100% runtergerechnet */
+  img {
     max-width: 100%;
     height: auto;
   }
-} */
+}
 
 /* ################# 4. Schritt: 1-spaltig, Landscape ##############*/
 /* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
-/* @media only screen and (max-width: 400px) and (orientation: landscape) {
+@media only screen and (max-width: 400px) and (orientation: landscape) {
+  /* Body */
   body {
     font-size: 2.7vh;
     margin: 1.8vh auto 10vh auto;
   }
- */
-/* Wrapper - Inhalt über HG-Bild */
-/* #header + #topnav - Inhalt des header */
-/* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
-/* 
+
+  /* Wrapper - Inhalt über HG-Bild */
+  /* #header + #topnav - Inhalt des header */
+  /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
+
   #head {
     padding-top: 1.8vh;
-  } */
+  }
 
   nav {
     width: 100%;
@@ -961,10 +944,10 @@ header h2 {
     margin-top: 1.2vh;
   }
 
-/* #page + .flipbx - Inhalt der main */
+  /* .page + .flipbx - Inhalt der main */
 
-/* geteilte Head für reponsive Darstellung */
-/* .h1-all,
+  /* geteilte Head für reponsive Darstellung */
+  .h1-all,
   .h1-pc,
   .h1-cont {
     font-size: 4vh;
@@ -972,28 +955,21 @@ header h2 {
 
   .h1-cont {
     margin: 4vh auto;
-  } */
+  }
 
-/* Page */
-/* 
+  /* Page */
+
   h2 {
     font-size: 3vh;
     _text-shadow: 0.02vw 0.02vw 0.05vw rgb(241, 239, 230);
     _margin: 0vh 1vw;
   }
 
-  #page {
+  .index-page {
     display: flex;
     flex-direction: column;
     padding: 0;
     margin: 0 auto;
-  } */
-
-/* Content mit 8/9 Flächen */
-
-/* .quader {
-    height: 30vh;
-    border: 0.03vw solid var(--sienna100);
   }
 
   #lexikon-c2,
@@ -1014,11 +990,11 @@ header h2 {
     visibility: hidden;
     display: none !important;
   }
- */
-/* Flipcards */
-/* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
 
-/* .flipbox {
+  /* Flipcards */
+  /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
+
+  .flipbox {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
     -o-perspective: 800px;
@@ -1030,7 +1006,8 @@ header h2 {
     font-size: 15vh;
     color: brown;
     font-weight: bold;
-  } */
+  }
+  */
 
 /* ENDE Inhalt main */
 
@@ -1084,11 +1061,11 @@ header h2 {
     padding: 0.1vh 0.1vw;
     border-radius: 0.1em;
     width: calc(100% / 2 - 10px);
-  } */
+  }
 
 /* Bildgröße wird immer auf 100% runtergerechnet */
-/* img {
+img {
     max-width: 100%;
     height: auto;
   }
-} */
+}
