@@ -15,29 +15,34 @@
 }
 
 :root {
-  --bg-color: rgba(250, 250, 250, 0.8); /* weisz */
-  --bg-color-body: rgba(7, 125, 146, 0.8); /* dark-cyan */
+  --bg-color-wrapper: rgba(250, 250, 250, 0.8); /* weisz */
+  --bg-color-body: rgb(5, 109, 113); /* dark-cyan, urspr. rgb(7, 125, 146) */
   --bg-color-quader: rgba(222, 184, 135, 0.4); /* sand, #deb887 */
   --bg-img: url(../images/pexels_lucas-meneses_4712714.jpg);
 
-  --h1-color: rgb(7, 125, 146); /* dark-cyan, #077c91 */
+  --h1-color: rgb(5, 109, 113); /* dark-cyan, #077c91 */
   --h2-color: rgb(158, 81, 46); /* sienna, #9f512d */
 
   --text-color: #444; /* anthrazit */
 
-  --link-color: rgb(7, 125, 146); /* dark-cyan, #077c91 */
+  --link-color: rgb(
+    5,
+    109,
+    113
+  ); /* #077c91 -> neu (weniger blau): rgb(5, 109, 113) */
   --link-hover-color: rgb(158, 81, 46); /* sienna, #9f512d */
-
-  --dark-bg-color: rgb(6, 6, 6); /* anthrazit */
-  --dark-bg-text-color: rgb(250, 250, 250); /* weisz */
 
   --text-nav-color: #f2f2f2;
 
-  --h1-shadow: 0.1vw 0.1vw 0.3vw #444;
+  --h1-shadow: 0.2vw 0.2vw 0.5vw rgb(127, 250, 252);
+  --h2-imp-shadow: 0.1vw 0.1vw 0.5vw rgb(222, 184, 135);
   --h2-shadow: 0.07vw 0.07vw 0.5vw rgb(222, 184, 135);
-  --link-shadow: ;
+  --link-shadow: 0.07vw 0.07vw 0.5vw rgb(69, 69, 69); /* anthrazit */
 
   --navbar-height: 1vh;
+
+  --dark-bg-color: rgb(69, 69, 69); /* anthrazit */
+  --dark-bg-text-color: rgb(250, 250, 250); /* weisz */
 }
 
 * {
@@ -53,68 +58,58 @@ html {
   height: 100%;
 }
 
-/* #############ENDE Intro ################# */
+/* ################# ENDE Intro ################# */
 
 body {
   width: 100%;
   height: 200vh;
-  /* background: url(../images/pexels_lucas-meneses_4712714.jpg)
-    var(--bg-color-body) fixed; */
-  background: var(--bg-img) var(--bg-color-body) fixed;
-  background-size: cover;
-
   color: var(--text-color);
-
   margin: 2vh auto;
 }
-.dark-bg {
+
+.index-page {
+  background: var(--bg-img) var(--bg-color-body) fixed;
+  background-size: cover;
+}
+
+.content-page {
   background: var(--bg-color);
 }
+
 a {
   text-decoration: none;
   color: var(--link-color);
 }
-
 a:hover {
   color: var(--link-hover-color);
+}
+
+.font-as {
+  color: var(--text-nav-color);
 }
 
 /* Wrapper - Inhalt über HG-Bild */
 #wrapper {
   width: 90%;
-  background: var(--bg-color);
+  background: var(--bg-color-wrapper);
   padding: 0;
   margin: 0 auto;
 }
 
 /* Header */
 
-#head {
+#header {
   width: 100%;
   text-align: center;
   padding-top: 2vh;
   margin: 0 auto;
 }
-
-/* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
-#imphidden {
-  visibility: hidden;
-}
-
-nav {
-  color: var(--text-nav-color);
-}
-
-#topnav {
-  margin-top: 2vh;
-}
-
 /* geteilte Head für reponsive Darstellung */
 .h1-all,
-#h1-pc,
-#h1-cont {
+.h1-pc {
   font-family: "Cabin", Helvetica, sans-serif;
   font-size: 5vh;
+  font-weight: 900;
   letter-spacing: -1px;
   border: none;
   background: none;
@@ -123,8 +118,57 @@ nav {
   text-shadow: var(--h1-shadow);
 }
 
-#h1-cont {
-  margin: 5vh auto;
+nav {
+  color: var(--text-nav-color);
+}
+
+header h1 {
+  margin: 0 auto 2vh auto;
+}
+
+.h1-cont {
+  padding: 4vh 0 1vh 0;
+  margin: 0 auto;
+
+  font-family: "Cabin", Helvetica, sans-serif;
+  font-size: 5vh;
+  font-weight: 900;
+
+  letter-spacing: -1px;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: var(--h2-color);
+  text-shadow: var(--h2-imp-shadow);
+}
+
+.h2-imp {
+  padding: 2vh 0 1vh 0;
+  margin: 0;
+  color: var(--h2-color);
+  font-size: 4vh;
+  font-weight: 800;
+  text-shadow: var(--h2-shadow);
+}
+
+.h3-imp {
+  padding: 2vh 0 1vh 0;
+  margin: 0;
+  color: var(--text-color);
+  font-size: 3vh;
+  font-weight: 600;
+}
+
+.h4-imp {
+  padding: 2vh 0 1vh 0;
+  margin: 0;
+  color: var(--text-color);
+  font-size: 2.5vh;
+  font-weight: 600;
+}
+
+p {
+  padding: 0.9vh 0 0.5vh 0;
 }
 
 /* **************** Page ************************* */
@@ -139,12 +183,7 @@ h2,
   margin: 0vh 0.7vw;
 }
 
-h3 {
-  color: var(--text-nav-color);
-  padding: 0.2em 0.5em;
-}
-
-#page {
+.page {
   width: 100%;
   text-align: center;
 
@@ -155,6 +194,12 @@ h3 {
   grid-row-gap: 0px;
 }
 
+#page-impdasch {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
 /* Content mit 8/9 Flächen */
 
 .quader {
@@ -295,13 +340,13 @@ h3 {
   font-size: 2.5vh;
   font-weight: 700;
   color: var(--h1-color);
-  text-shadow: var(--h1-shadow);
+  text-shadow: var(--link-shadow);
   text-align: center;
 }
 
-#footer a {
+/* #footer a {
   color: var(--link-color);
-}
+} */
 
 /* ************************* für Cookie-Popup *********************** */
 /* Conset-Popup mit Google Fonts - Poppins */
@@ -341,22 +386,22 @@ header i {
   font-size: 1.5em;
 }
 header h2 {
-  color: #077c91;
+  color: var(--h2-color);
   font-weight: 500;
 }
 .consent-wrapper .data {
   margin-top: 1.1em;
 }
 .consent-wrapper .data p {
-  color: #333;
+  color: var(--text-color);
   font-size: 2vh;
 }
 .data p a {
-  color: rgb(7, 125, 146);
+  color: var(--link-color);
   text-decoration: none;
 }
 .data p a:hover {
-  color: sienna;
+  color: var(--link-hover-color);
   text-decoration: underline;
 }
 .consent-wrapper .buttons {
@@ -368,25 +413,26 @@ header h2 {
 }
 .buttons .button {
   border: none;
-  color: rgb(7, 125, 146);
+  color: var(--bg-color-body);
   padding: 0.8vw;
   border-radius: 5px;
-  background: rgba(222, 184, 135, 0.4);
+  background: var(--bg-color-quader);
   cursor: pointer;
   width: calc(100% / 2 - 10px);
   transition: all 0.2s ease;
 }
 .buttons #acceptBtn:hover {
-  background: rgba(222, 184, 135, 0.4);
+  border: 1px solid rgb(222, 184, 135);
+  background: var(--bg-color-quader);
 }
 #declineBtn {
   border: 1px solid rgb(222, 184, 135);
-  background-color: #fff;
-  color: rgb(7, 125, 146);
+  background-color: var(--bg-color-wrapper);
+  color: var(--link-color);
 }
 #declineBtn:hover {
-  background: rgba(222, 184, 135, 0.4);
-  color: rgb(7, 125, 146);
+  background: var(--bg-color-quader);
+  color: var(--link-color);
 }
 
 /* #########################  Ende DESKTOP  ##################### */
@@ -428,27 +474,24 @@ header h2 {
     margin-top: 1.2vh;
   }
 
-  #imphidden {
-    visibility: visible;
-  }
-
   /* #page + .flipbx - Inhalt der main */
 
   /* geteilte Head für reponsive Darstellung */
   .h1-all,
-  #h1-pc,
-  #h1-cont {
+  .h1-pc,
+  .h1-cont {
     font-size: 4vh;
   }
 
-  #h1-cont {
+  .h1-cont {
     margin: 4vh auto;
   }
 
-  h2 {
-    color: sienna;
+  h2,
+  .ignorestyle {
+    color: var(--h2-color);
     font-size: 3vh;
-    text-shadow: 0.05vw 0.05vw 0.1vw rgb(241, 239, 230);
+    text-shadow: var(--h2-shadow);
   }
 
   #lexikon-c2,
@@ -510,7 +553,7 @@ header h2 {
     padding: 2vh 0 2vh 0;
     font-size: 2vh;
     font-weight: 700;
-    text-shadow: 0.03vw 0.03vw 0.1vw #444;
+    text-shadow: var(--link-shadow);
   }
 
   /* *************** Conset-Popup mit Google Fonts - Poppins ************* */
@@ -599,27 +642,24 @@ header h2 {
     margin-top: 1.2vh;
   }
 
-  #imphidden {
-    visibility: visible;
-  }
-
   /* #page + .flipbx - Inhalt der main */
 
   /* geteilte Head für reponsive Darstellung */
   .h1-all,
-  #h1-pc,
-  #h1-cont {
+  .h1-pc,
+  .h1-cont {
     font-size: 6vh;
   }
 
-  #h1-cont {
+  .h1-cont {
     margin: 3vh auto;
   }
 
-  h2 {
-    color: sienna;
+  h2,
+  .ignorestyle {
+    color: var(--h2-color);
     font-size: 4vh;
-    text-shadow: 0.05vw 0.05vw 0.1vw rgb(241, 239, 230);
+    text-shadow: var(--h2-shadow);
   }
 
   #lexikon-c2,
@@ -683,7 +723,8 @@ header h2 {
     padding: 2vh 0 2vh 0;
     font-size: 3vh;
     font-weight: 700;
-    text-shadow: 0.03vw 0.03vw 0.1vw #444;
+    _text-shadow: 0.03vw 0.03vw 0.1vw #444;
+    text-shadow: var(--link-shadow);
   }
 
   /* ************ Conset-Popup mit Google Fonts - Poppins ************** */
@@ -744,18 +785,16 @@ header h2 {
 
 /* ################# 3. Schritt: 1-spaltig, Portrait ##############*/
 /* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
-@media only screen and (max-width: 430px) and (orientation: portrait) {
+/* @media only screen and (max-width: 430px) and (orientation: portrait) {
   body {
     font-size: 3vh;
     margin: 1.8vh auto 10vh auto;
-  }
+  } */
 
-  /* Wrapper - Inhalt über HG-Bild */
-
-  /* #head + #topnav - Inhalt des header */
-
-  /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
-
+/* Wrapper - Inhalt über HG-Bild */
+/* #header + #topnav - Inhalt des header */
+/* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
+/* 
   #head {
     padding-top: 1.8vh;
   }
@@ -770,28 +809,24 @@ header h2 {
     margin-top: 1.2vh;
   }
 
-  #imphidden {
-    visibility: visible;
-  }
+/* #page + .flipbx - Inhalt der main */
 
-  /* #page + .flipbx - Inhalt der main */
-
-  /* geteilte Head für reponsive Darstellung */
-  .h1-all,
-  #h1-pc,
-  #h1-cont {
+/* geteilte Head für reponsive Darstellung */
+/* .h1-all,
+  .h1-pc,
+  .h1-cont {
     font-size: 4vh;
   }
 
-  #h1-cont {
+  .h1-cont {
     margin: 4vh auto;
-  }
+  } */
 
-  /* Page */
-
+/* Page */
+/* 
   h2 {
     font-size: 3vh;
-    text-shadow: 0.02vw 0.02vw 0.05vw rgb(241, 239, 230);
+    _text-shadow: 0.02vw 0.02vw 0.05vw rgb(241, 239, 230);
     _margin: 0vh 1vw;
   }
 
@@ -800,13 +835,13 @@ header h2 {
     flex-direction: column;
     padding: 0;
     margin: 0 auto;
-  }
+  } */
 
-  /* Content mit 8/9 Flächen */
-
+/* Content mit 8/9 Flächen */
+/* 
   .quader {
     height: 32vh;
-    border: 0.03vw solid sienna;
+    border: 0.03vw solid var(--h2-color);
   }
 
   #lexikon-c2,
@@ -826,11 +861,11 @@ header h2 {
   #heute div {
     visibility: hidden;
     display: none !important;
-  }
+  } */
 
-  /* Flipcards */
-  /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
-
+/* Flipcards */
+/* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
+/* 
   .flipbox {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
@@ -843,19 +878,19 @@ header h2 {
     font-size: 15vh;
     color: brown;
     font-weight: bold;
-  }
+  } */
 
-  /* ENDE Inhalt main */
+/* ENDE Inhalt main */
 
-  /* #footer - Inhalt Fuszzeile */
-
+/* #footer - Inhalt Fuszzeile */
+/* 
   #footer {
     height: 8vh;
     font-size: 2vh;
-  }
+  } */
 
-  /* **************** Conset-Popup mit Google Fonts - Poppins *********** */
-  * {
+/* **************** Conset-Popup mit Google Fonts - Poppins *********** */
+/* * {
     font-size: 1.8vh;
   }
   body {
@@ -897,29 +932,27 @@ header h2 {
     padding: 0.1vh 0.1vw;
     border-radius: 0.1em;
     width: calc(100% / 2 - 10px);
-  }
+  } */
 
-  /* Bildgröße wird immer auf 100% runtergerechnet */
-  img {
+/* Bildgröße wird immer auf 100% runtergerechnet */
+/* img {
     max-width: 100%;
     height: auto;
   }
-}
+} */
 
 /* ################# 4. Schritt: 1-spaltig, Landscape ##############*/
 /* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
-@media only screen and (max-width: 400px) and (orientation: landscape) {
+/* @media only screen and (max-width: 400px) and (orientation: landscape) {
   body {
     font-size: 2.7vh;
     margin: 1.8vh auto 10vh auto;
   }
-
-  /* Wrapper - Inhalt über HG-Bild */
-
-  /* #head + #topnav - Inhalt des header */
-
-  /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
-
+ */
+/* Wrapper - Inhalt über HG-Bild */
+/* #header + #topnav - Inhalt des header */
+/* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
+/* 
   #head {
     padding-top: 1.8vh;
   }
@@ -934,28 +967,24 @@ header h2 {
     margin-top: 1.2vh;
   }
 
-  #imphidden {
-    visibility: visible;
-  }
+/* #page + .flipbx - Inhalt der main */
 
-  /* #page + .flipbx - Inhalt der main */
-
-  /* geteilte Head für reponsive Darstellung */
-  .h1-all,
-  #h1-pc,
-  #h1-cont {
+/* geteilte Head für reponsive Darstellung */
+/* .h1-all,
+  .h1-pc,
+  .h1-cont {
     font-size: 4vh;
   }
 
-  #h1-cont {
+  .h1-cont {
     margin: 4vh auto;
-  }
+  } */
 
-  /* Page */
-
+/* Page */
+/* 
   h2 {
     font-size: 3vh;
-    text-shadow: 0.02vw 0.02vw 0.05vw rgb(241, 239, 230);
+    _text-shadow: 0.02vw 0.02vw 0.05vw rgb(241, 239, 230);
     _margin: 0vh 1vw;
   }
 
@@ -964,13 +993,13 @@ header h2 {
     flex-direction: column;
     padding: 0;
     margin: 0 auto;
-  }
+  } */
 
-  /* Content mit 8/9 Flächen */
+/* Content mit 8/9 Flächen */
 
-  .quader {
+/* .quader {
     height: 30vh;
-    border: 0.03vw solid sienna;
+    _border: 0.03vw solid var(--h2-color);
   }
 
   #lexikon-c2,
@@ -991,11 +1020,11 @@ header h2 {
     visibility: hidden;
     display: none !important;
   }
+ */
+/* Flipcards */
+/* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
 
-  /* Flipcards */
-  /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
-
-  .flipbox {
+/* .flipbox {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
     -o-perspective: 800px;
@@ -1007,19 +1036,19 @@ header h2 {
     font-size: 15vh;
     color: brown;
     font-weight: bold;
-  }
+  } */
 
-  /* ENDE Inhalt main */
+/* ENDE Inhalt main */
 
-  /* #footer - Inhalt Fuszzeile */
-
+/* #footer - Inhalt Fuszzeile */
+/* 
   #footer {
     height: 8vh;
     font-size: 2vh;
-  }
+  } */
 
-  /* ######## Conset-Popup mit Google Fonts - Poppins ######## */
-  * {
+/* ######## Conset-Popup mit Google Fonts - Poppins ######## */
+/* * {
     font-size: 1.8vh;
   }
   body {
@@ -1061,11 +1090,11 @@ header h2 {
     padding: 0.1vh 0.1vw;
     border-radius: 0.1em;
     width: calc(100% / 2 - 10px);
-  }
+  } */
 
-  /* Bildgröße wird immer auf 100% runtergerechnet */
-  img {
+/* Bildgröße wird immer auf 100% runtergerechnet */
+/* img {
     max-width: 100%;
     height: auto;
   }
-}
+} */

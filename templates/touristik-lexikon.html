@@ -119,104 +119,82 @@
   </head>
 
   <!-- Beginn Body -->
-  <body class="dark-bg">
+  <body>
     <!-- Page für Suchmaschionen optimieren mit Rubriken-Layout header, section, nav -->
 
-    <main id="wrapper">
+    <div id="wrapper">
       <!-- Headline -->
-      <header id="head">
+      <header id="header">
         <h1>
-          <span class="h1-all">Urlaub & Reisen</span
-          ><span id="h1-pc"> - Wissenskalender</span>
+          <span class="h1-all">Wissenskalender</span
+          ><span class="h1-pc"> - Urlaub & Reisen</span>
         </h1>
-      </header>
-      <!-- end #head -->
+        <!-- end #head -->
 
-      <nav>
-        <!-- Beginn responsives menue ohne Subnav -->
-        <ul class="topnav" id="topnav">
-          <li>
-            <a href="../index.html"><i class="fa fa-fw fa-home white"></i></a>
-          </li>
-          <li>
-            <a href="#news">Neues</a>
-          </li>
-          <li>
-            <a href="#hist_cal">Historisches</a>
-          </li>
-          <li>
-            <a href="#about">Lexikon</a>
-          </li>
-          <li>
-            <a href="#about">Kontakt</a>
-          </li>
-          <li class="icon">
-            <a href="javascript:void(0);" onclick="myFunction()">
-              <i class="fa fa-bars" aria-hidden="true"></i>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- end #menu -->
+        <nav>
+          <!-- Beginn responsives menue ohne Subnav -->
+          <ul class="topnav" id="topnav">
+            <li>
+              <a href="../index.html"
+                ><i class="fa fa-fw fa-home font-as"></i
+              ></a>
+            </li>
+            <li>
+              <!-- Wissen:  + nützliches (Lexikon) + historische Fakten -->
+              <a href="#news">Wissen</a>
+            </li>
+            <li>
+              <!-- täglich: neue Regionen + unnützes Wissen (wusstest du) -->
+              <a href="#hist_cal">Überraschung</a>
+            </li>
+            <li>
+              <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
+              <a href="#about">Überzeugung</a>
+            </li>
+            <li>
+              <a href="#about">Kontakt</a>
+            </li>
+            <li class="icon">
+              <a href="javascript:void(0);" onclick="BuergerNav()">
+                <i class="fa fa-bars font-as" aria-hidden="true"></i>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <!-- end #menu -->
+
+        <head>
+          <img
+            src="../images/pexels-asad-photo-maldives-15923411.jpg"
+            width="100%"
+            height="100%"
+            alt="Verbinungen und Fangseile"
+          />
+        </head>
+      </header>
 
       <!-- Beginn main frame mit seitenweise Text -->
-      <section>
-        <img
-          src="../images/pexels-tatiana-syrikova-3975680.jpg"
-          width="100%"
-          height="100%"
-          alt="Suche & Studium"
-        />
-      </section>
-      <section id="lexikon">
-        <!-- erster großer Abschnitt: Impressum -->
-        <h1 id="h1-cont">Impressum &amp; Datenschutzerkl&auml;rung</h1>
-        <article class="imp" id="imp">
-          <div class="impressum">
-            <h1>Impressum</h1>
-            <p>Angaben gemäß § 5 TMG</p>
-            <p>
-              Max Muster <br />
-              Musterweg<br />
-              12345 Musterstadt <br />
-            </p>
-            <p>
-              <strong>Vertreten durch: </strong><br />
-              Max Muster<br />
-            </p>
-            <p>
-              <strong>Kontakt:</strong> <br />
-              Telefon: 01234-789456<br />
-              Fax: 1234-56789<br />
-              E-Mail: <a href="mailto:max@muster.de">max@muster.de</a> <br />
-            </p>
-            <p>
-              <strong>Umsatzsteuer-ID: </strong> <br />
-              Umsatzsteuer-Identifikationsnummer gemäß §27a Umsatzsteuergesetz:
-              Musterustid.<br /><br />
-              <strong>Wirtschafts-ID: </strong><br />
-              Musterwirtschaftsid<br />
-            </p>
-            <p>
-              <strong>Aufsichtsbehörde:</strong><br />
-              Musteraufsicht Musterstadt<br />
-            </p>
-            <p>
-              <strong
-                >Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</strong
-              ><br />
-              Max Muster <br />
-              Musterweg<br />
-              12345 Musterstadt <br />
-            </p>
-        </article>
-      </section>
+      <main class="content-page">
+        <section id="page-lexikon">
+          <!-- erster großer Abschnitt: Impressum -->
+          <h1 class="h1-cont">Begriffe aus der Touristik</h1>
+          <article class="imp" id="imp">
+            <div class="impressum">
+              <h2 class="h2-imp">A bis Z</h2>
+              <p>...</p>
+            </div>
+          </article>
+        </section>
 
-      <!-- Footer innerhalb des Wrappers -->
-      <footer id="footer">
-        <p>Copyright (c) 2023 Hans-Peter Herrmann & Constanze Deten</p>
-      </footer>
-      <!-- end #footer -->
-    </main>
+        <!-- Footer innerhalb des Wrappers -->
+        <footer id="footer">
+          <p>
+            Copyright (c) 2023 | <a href="impressum-dasch.htm">Impressum</a>
+            <br />Hans-Peter Herrmann & Constanze Deten
+          </p>
+        </footer>
+        <!-- end #footer -->
+      </main>
+    </div>
   </body>
 </html>

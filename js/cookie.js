@@ -1,6 +1,7 @@
 const cookieBox = document.querySelector(".consent-wrapper"),
   buttons = document.querySelectorAll(".button");
 
+let classList = {};
 //
 const executeCodes = () => {
   //if cookie contains codinglab it will be returned and below of this code will not run

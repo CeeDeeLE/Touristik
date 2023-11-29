@@ -9,14 +9,16 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #01accb;
+  background-color: rgb(5, 109, 113);
 }
 
-ul.topnav li {
+ul.topnav li,
+#logo {
   float: left;
 }
 
-ul.topnav li a {
+ul.topnav li a,
+#logo {
   display: inline-block;
   color: #f2f2f2;
   text-align: center;
@@ -27,7 +29,11 @@ ul.topnav li a {
 }
 
 ul.topnav li a:hover {
-  background-color: #077c91;
+  background-color: rgb(
+    3,
+    60,
+    63
+  ); /* bg: rgb(5, 109, 113) -> alt/ bisher: #077c91 */
 }
 
 ul.topnav li.icon {
