@@ -118,6 +118,11 @@ header h1 {
   margin: 0 auto 2vh auto;
 }
 
+/* Navigation im Header */
+.hidden-item {
+  display: none;
+}
+
 .h1-cont {
   padding: 4vh 0 1vh 0;
   margin: 0 auto;
@@ -133,6 +138,29 @@ header h1 {
   color: var(--sienna100);
   text-shadow: var(--h2-imp-shadow);
   text-align: center;
+}
+
+.obj-center {
+  width: 40%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1vh auto;
+}
+
+.button-cont {
+  border: 1px solid rgb(222, 184, 135);
+  padding: 0.8vw;
+  background: var(--sand40);
+  border-radius: 5px;
+  font-weight: 700;
+  color: var(--darkturquoise100);
+  cursor: pointer;
+  width: calc(100% / 2 - 10px);
+  transition: all 0.2s ease;
+}
+.button-cont:hover {
+  background-color: var(--sand100);
 }
 
 .h2-cont {
@@ -185,19 +213,12 @@ h2,
   grid-row-gap: 0px;
 }
 
-.impdasch-page {
+.page-pad {
   width: 100%;
   display: flex;
   flex-direction: column;
   text-align: justify;
   padding: 0 2vw;
-}
-
-.content-page {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: justify;
 }
 
 /* Index-Seite: Content mit 8/9 Flächen */
@@ -210,6 +231,7 @@ h2,
   background-size: cover;
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -319,9 +341,32 @@ h2,
     var(--bg-img) fixed;
 }
 
+/*  */
+
 #implink {
   padding-top: 0.05vh;
   font-weight: bold;
+}
+
+#hist-fakt {
+  display: none;
+  margin: 3vh 0;
+}
+.date {
+  color: var(--sienna100);
+  border: solid var(--sienna100) 1px;
+  border-radius: 0 0 0 15px;
+  margin: 0 2vw 0 0;
+}
+.date-y {
+  background: var(--darkturquoise100);
+  color: var(--weisz80);
+  padding: 1vh;
+}
+.date-date {
+  background: var(--sand40);
+  color: var(--sienna100);
+  padding: 1vh;
 }
 
 /* *************** ENDE Inhalt main ******************** */
@@ -455,6 +500,8 @@ header h2 {
   #head {
     padding-top: 1.8vh;
   }
+
+  /* Navigation im Header */
 
   nav {
     width: 100%;
@@ -614,6 +661,8 @@ header h2 {
   #head {
     padding-top: 1.8vh;
   }
+
+  /* Navigation im Header */
 
   nav {
     width: 100%;
@@ -775,6 +824,8 @@ header h2 {
     padding-top: 1.8vh;
   }
 
+  /* Navigation im Header */
+
   nav {
     width: 100%;
     float: left;
@@ -933,6 +984,8 @@ header h2 {
   #head {
     padding-top: 1.8vh;
   }
+
+  /* Navigation im Header */
 
   nav {
     width: 100%;

@@ -56,7 +56,12 @@
     <link rel="canonical" href="https://touristik.vercel.app/" />
     <link rel="stylesheet" type="text/css" href="../css/style.css" />
     <link rel="stylesheet" type="text/css" href="../css/navi.css" />
-    <!-- <link rel="stylesheet" type="text/css" href="../css/calendar_js.css" media="screen"/> -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../css/calendar_js.css"
+      media="screen"
+    />
 
     <!-- Link zur Vorlage für Symbole und Icons -->
     <!-- <link
@@ -74,7 +79,7 @@
 
     <link
       rel="search"
-      type="../data/opensearchdescription+xml"
+      type="lib/opensearchdescription+xml"
       href="/opensearch.xml"
       title="Search Page Content"
     />
@@ -88,25 +93,27 @@
     />
     <link rel="apple-touch-icon" href="../images/apple-touch-icon.png" />
 
-    <!-- ANFANG KOPIE Script Kalenderanzeige -->
-    <!-- <script type="text/javascript" src="../js/calendar_js.js"></script> -->
-    <!-- Ende KOPIE Script Kalenderanzeige -->
+    <!-- ANFANG Script Kalenderanzeige -->
+    <!-- <script type="text/javascript" src="../js/calendar.js"></script> -->
+    <!-- Ende Script Kalenderanzeige -->
 
-    <!-- ANFANG KOPIE Datumsanzeige -->
+    <!-- ANFANG Datumsanzeige -->
     <script type="text/javascript" src="../js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="../js/jquery.gallerax-0.2.js"></script>
-    <!-- ENDE KOPIE Datumsanzeige -->
+    <!-- ENDE Datumsanzeige -->
 
-    <!-- Anfang Kopie Script für mobiles Menue -->
+    <!-- Anfang Script für mobiles Menue -->
     <script type="text/javascript" src="../js/navi.js"></script>
-    <!-- Ende Kopie Script für mobiles Menue -->
+    <!-- Ende Script für mobiles Menue -->
 
     <!-- JS für Flipbox -->
-    <script>
-      const flipbox = document.querySelector(".flipbox");
-      flipbox.ontouchstart = this.classList.toggle("hover");
-    </script>
+    <script type="text/javascript" src="../js/flipbox.js"></script>
+    <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
     <!-- Ende Flippbox -->
+
+    <!-- Anfang Script für Inhaltsaufruf durch Button-Click -->
+    <script type="text/javascript" src="../js/btn-toggle.js"></script>
+    <!-- Ende Kopie Script für mobiles Menue -->
 
     <!-- für Cookie-Popup -->
     <!-- Boxicons CSS -->
@@ -114,7 +121,7 @@
       href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
       rel="stylesheet"
     />
-    <script src=",,/js/cookie.js" defer></script>
+    <script src="../js/cookie.js" defer></script>
     <!-- Ende Cookie-Popup -->
   </head>
 
@@ -139,25 +146,28 @@
                 ><i class="fa fa-fw fa-home font-as"></i
               ></a>
             </li>
-            <li>
+            <li class="hidden-item">
               <!-- Wissen:  + nützliches (Lexikon) + historische Fakten -->
-              <a href="#news">Wissen</a>
+              <a href="wissen.html">Wissen</a>
             </li>
             <li>
               <!-- täglich: neue Regionen + unnützes Wissen (wusstest du) -->
-              <a href="#hist_cal">Überraschung</a>
+              <a href="ueberraschung.html">Überraschung</a>
             </li>
             <li>
               <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
-              <a href="#about">Überzeugung</a>
+              <a href="ueberzeugung.html">Überzeugung</a>
             </li>
             <li>
-              <a href="#about">Kontakt</a>
+              <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
+              <a href="kontakt.html">Kontakt</a>
             </li>
-            <li class="icon">
-              <a href="javascript:void(0);" onclick="BuergerNav()">
-                <i class="fa fa-bars font-as" aria-hidden="true"></i>
-              </a>
+            <li class="nav-icon">
+              <i
+                class="fa fa-bars font-as"
+                aria-hidden="true"
+                onclick="BuergerNav()"
+              ></i>
             </li>
           </ul>
         </nav>
@@ -174,15 +184,34 @@
       </header>
 
       <!-- Beginn main frame mit seitenweise Text -->
-      <main class="content-page">
-        <section id="page-lexikon">
+      <main class="page-pad">
+        <section>
           <!-- erster großer Abschnitt: Impressum -->
-          <h1 class="h1-cont">Begriffe aus der Touristik</h1>
-          <article class="imp" id="imp">
-            <div class="impressum">
-              <h2 class="h2-imp">A bis Z</h2>
-              <p>...</p>
+          <h1 class="h1-cont">Begriffe & Fakten</h1>
+          <article>
+            <div class="obj-center">
+              <button class="button-cont" onclick="histFakt()">
+                <!-- <a href="#history"> -->
+                Heute vor ...
+                <!-- </a> -->
+              </button>
+              <button class="button-cont">Begriffe von A bis Z</button>
             </div>
+            <div name="history" id="hist-fakt" class="hist-fakt">
+              <div class="date">
+                <div class="date-y">Jahr aus DB (hier: 2013)</div>
+                <div class="date-date">
+                  Tag & Monat wie aktuell (hier: 01.01.)
+                </div>
+              </div>
+              <div>
+                Das Beschränkungsverbot für Fernbuslinien in Deutschland wird
+                aufgehoben. Mit der Liberalisierung des Busfernlinienverkehrs
+                entstehen zahlreiche neue Bus-Unternehmen, die sich mehrheitlich
+                nicht etablieren konnten.
+              </div>
+            </div>
+            <p>...</p>
           </article>
         </section>
 

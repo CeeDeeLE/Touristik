@@ -20,6 +20,7 @@ ul.topnav li,
 }
 
 ul.topnav li a,
+.nav-icon,
 #logo {
   display: inline-block;
   color: var(--weisz80);
@@ -34,7 +35,7 @@ ul.topnav li a:hover {
   background-color: var(--greyturquoise100);
 }
 
-ul.topnav li.icon {
+ul.topnav li.nav-icon {
   float: right;
   display: none;
 }
@@ -58,7 +59,7 @@ li:hover .innen {
     display: none;
   }
 
-  ul.topnav li.icon {
+  ul.topnav li.nav-icon {
     display: inline-block;
   }
 
@@ -66,7 +67,7 @@ li:hover .innen {
     position: relative;
   }
 
-  ul.topnav.responsive li.icon {
+  ul.topnav.responsive li.nav-icon {
     position: absolute;
     right: 0;
     top: 0;
@@ -95,7 +96,7 @@ li:hover .innen {
     display: none;
   }
 
-  ul.topnav li.icon {
+  ul.topnav li.nav-icon {
     display: inline-block;
   }
 
@@ -103,7 +104,7 @@ li:hover .innen {
     position: relative;
   }
 
-  ul.topnav.responsive li.icon {
+  ul.topnav.responsive li.nav-icon {
     position: absolute;
     right: 0;
     top: 0;

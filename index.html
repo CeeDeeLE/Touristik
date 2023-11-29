@@ -94,17 +94,17 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
     <!-- ANFANG KOPIE Script Kalenderanzeige -->
-    <script type="text/javascript" src="js/calendar_js.js"></script>
+    <script type="text/javascript" src="js/calendar.js"></script>
     <!-- Ende KOPIE Script Kalenderanzeige -->
 
-    <!-- ANFANG KOPIE Datumsanzeige -->
+    <!-- ANFANG Datumsanzeige -->
     <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.gallerax-0.2.js"></script>
-    <!-- ENDE KOPIE Datumsanzeige -->
+    <!-- ENDE Datumsanzeige -->
 
-    <!-- Anfang Kopie Script für mobiles Menue -->
+    <!-- Anfang Script für mobiles Menue -->
     <script type="text/javascript" src="js/navi.js"></script>
-    <!-- Ende Kopie Script für mobiles Menue -->
+    <!-- Ende Script für mobiles Menue -->
 
     <!-- JS für Flipbox -->
     <script>
@@ -112,6 +112,10 @@
       flipbox.ontouchstart = this.classList.toggle("hover");
     </script>
     <!-- Ende Flippbox -->
+
+    <!-- Anfang Script für Inhaltsaufruf durch Button-Click -->
+    <script type="text/javascript" src="js/btn-toggle.js"></script>
+    <!-- Ende Kopie Script für mobiles Menue -->
 
     <!-- für Cookie-Popup -->
     <!-- Boxicons CSS -->
@@ -161,30 +165,33 @@
           <!-- Beginn responsives menue ohne Subnav -->
           <ul class="topnav" id="topnav">
             <li>
-              <!-- LOGO !!! für Vergrößerungen fa-lg auf fa-2x, fa-3x etc ändern -->
-              <span id="logo"
-                ><i class="fa fa-camera-retro fa-lg font-as"></i
+              <span id="logo">
+                <!-- LOGO !!! für Vergrößerungen fa-lg auf fa-2x, fa-3x etc ändern -->
+                <i class="fa fa-camera-retro fa-lg font-as"></i
               ></span>
             </li>
             <li>
               <!-- Wissen:  + nützliches (Lexikon) + historische Fakten -->
-              <a href="#news">Wissen</a>
+              <a href="templates/wissen.html">Wissen</a>
             </li>
             <li>
               <!-- täglich: neue Regionen + unnützes Wissen (wusstest du) -->
-              <a href="#hist_cal">Überraschung</a>
+              <a href="templates/ueberraschung.html">Überraschung</a>
             </li>
             <li>
               <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
-              <a href="#about">Überzeugung</a>
+              <a href="templates/ueberzeugung.html">Überzeugung</a>
             </li>
             <li>
-              <a href="#about">Kontakt</a>
+              <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
+              <a href="templates/kontakt.html">Kontakt</a>
             </li>
-            <li class="icon">
-              <a href="javascript:void(0);" onclick="BuergerNav()">
-                <i class="fa fa-bars font-as" aria-hidden="true"></i>
-              </a>
+            <li class="nav-icon">
+              <i
+                class="fa fa-bars font-as"
+                aria-hidden="true"
+                onclick="BuergerNav()"
+              ></i>
             </li>
           </ul>
         </nav>
@@ -225,7 +232,7 @@
               in den Weltraum. Mit an Bord ist das europäische Weltraumlabor
               Spacelab unter dem Gesamtkommando von John Young, der als erster
               Mensch einen sechsten Weltraumflug unternimmt. -->
-              <p><a href="#">mehr ...</a></p>
+              <p><a href="templates/wissen.html">mehr ...</a></p>
             </div>
           </div>
         </div>
@@ -246,14 +253,14 @@
                 <br />Kennen Sie diesen Ort?
               </h2>
               <!-- <br /> -->
-              <p><a href="#">zur Lösung</a></p>
+              <p><a href="templates/ueberraschung.html">zur Lösung</a></p>
             </div>
           </div>
         </div>
 
         <div id="lexikon-c2" class="quader">
           <h2>
-            <a class="ignorestyle" href="templates/touristik-lexikon.html">
+            <a class="ignorestyle" href="templates/wissen.html">
               <i class="fa fa-fw fa-graduation-cap sienna"></i>
               <br />Begriffe aus der Touristik</a
             >
@@ -275,7 +282,7 @@
                 gegründet.
               </p>
               <p>
-                <a href="#">mehr ...</a>
+                <a href="templates/ueberraschung.html">mehr ...</a>
               </p>
             </div>
           </div>
@@ -311,7 +318,7 @@
 
         <div id="lexikon" class="quader">
           <h2>
-            <a class="ignorestyle" href="templates/touristik-lexikon.html">
+            <a class="ignorestyle" href="templates/wissen.html">
               <i class="fa fa-fw fa-graduation-cap sienna"></i>
               <br />Begriffe aus der Touristik</a
             >
@@ -330,6 +337,7 @@
             <i class="fa fa-fw fa-globe sienna"></i>
             <br />Umwelt- & Nachhaltigkeits-Initiativen in der Touristik
           </h2>
+          <p><a href="templates/ueberzeugung.html">hier lang ...</a></p>
         </div>
 
         <div id="sprechstunde-c2" class="quader">
@@ -337,12 +345,16 @@
             <i class="fa fa-fw fa-comments-o sienna"></i>
             <br />Sprechstunde für Reiselustige
           </h2>
+          <p>
+            <a href="templates/ueberzeugung.html">Was möchtest du wissen?</a>
+          </p>
         </div>
 
         <div id="buchtipp" class="quader">
           <h2>
             <i class="fa fa-fw fa-book sienna"></i> <br />Reisezeit ist Lesezeit
           </h2>
+          <p><a href="templates/ueberzeugung.html">einige Ideen ...</a></p>
         </div>
 
         <div id="visitenkarte" class="quader flipbox">
@@ -379,6 +391,9 @@
             <br />
             Sprechstunde für Reiselustige
           </h2>
+          <p>
+            <a href="templates/ueberzeugung.html">Was möchtest du wissen?</a>
+          </p>
         </div>
       </main>
       <!-- Ende der 9-Quader-Section -->
