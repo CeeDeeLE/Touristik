@@ -3,6 +3,9 @@
 /* Idee und Inhalt: Hans-Peter Herrmann         */
 /*                   c 2023                     */
 /************************************************/
+@import url(navi.css);
+@import url(popup-cookies.css);
+@import url(calendar_js.css);
 
 /* Android benötigt die .ttf-Datei */
 /* @font-face {
@@ -18,7 +21,9 @@
   /* schmutziges weisz, Wrapper, Text NavBar */
   --weisz80: rgba(250, 250, 250, 0.8);
   /* dark-türkis, urspr. rgb(7, 125, 146), #077c91 */
-  --darkturquoise100: rgb(5, 109, 113);
+  --water100: rgb(5, 109, 113);
+  /* light-water, Schatten für H1 */
+  --water30: rgb(127, 250, 252);
   /* dunkles dark-türkis, Hover Navi-Item */
   --greyturquoise100: rgb(3, 60, 63);
   /* sienna, #9f512d */
@@ -28,13 +33,19 @@
   /* light-sand, #deb887, Quader-BG, Button-BG */
   --sand40: rgba(222, 184, 135, 0.4);
   /* rgb(69, 69, 69), #444, anthrazit */
-  --anthrazit100: #444; /* anthrazit */
+  --anthrazit100: #444;
 
   --bg-img: url(../images/pexels_lucas-meneses_4712714.jpg);
+  --bg-img-sand: url(../images/bg-sand.jpg);
 
-  --h1-shadow: 0.2vw 0.2vw 0.5vw rgb(127, 250, 252);
-  --h2-imp-shadow: 0.1vw 0.1vw 0.5vw rgb(222, 184, 135);
-  --h2-shadow: 0.07vw 0.07vw 0.5vw var(--sand100);
+  --h1-shadow-1: 0.2vw 0.2vw 0.5vw var(--water30);
+  --h1-shadow-2: 0.1vw 0.1vw 0.5vw var(--water30);
+  --h1-shadow-3: 0.07vw 0.07vw 0.5vw var(--water30);
+
+  --h2-shadow-1: 0.1vw 0.1vw 0.5vw var(--sand100);
+  --h2-shadow-2: 0.07vw 0.07vw 0.5vw var(--sand100);
+  --h2-shadow-3: 0.07vw 0.07vw 0.5vw var(--sand100);
+
   --link-shadow: 0.07vw 0.07vw 0.5vw rgb(69, 69, 69); /* anthrazit */
 
   --navbar-height: 1vh;
@@ -45,6 +56,8 @@
   font-size: 2.5vh;
   font-weight: normal;
 
+  word-wrap: normal;
+  word-wrap: break-word;
   padding: 0;
   margin: 0 auto;
 }
@@ -63,17 +76,17 @@ body {
 }
 
 .index-body {
-  background: var(--bg-img) var(--darkturquoise100) fixed;
+  background: var(--bg-img) var(--water100) fixed;
   background-size: cover;
 }
 
 .content-body {
-  background: var(--sand40);
+  background: var(--bg-img-sand) var(--sand40);
 }
 
 a {
   text-decoration: none;
-  color: var(--darkturquoise100);
+  color: var(--water100);
   clear: both;
 }
 a:hover {
@@ -110,8 +123,8 @@ a:hover {
   border: none;
   background: none;
   text-decoration: none;
-  color: var(--darkturquoise100);
-  text-shadow: var(--h1-shadow);
+  color: var(--water100);
+  text-shadow: var(--h1-shadow-1);
 }
 
 header h1 {
@@ -124,6 +137,7 @@ header h1 {
 }
 
 .h1-cont {
+  width: 100%;
   padding: 4vh 0 1vh 0;
   margin: 0 auto;
 
@@ -140,39 +154,51 @@ header h1 {
   text-align: center;
 }
 
-.obj-center {
-  width: 40%;
+.layer-1 {
+  position: absolute;
+  left: 15vw;
+  top: 20vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  row-gap: 2vh;
+  z-index: 3;
+}
+
+.obj-center {
+  width: 100%;
+  display: inline-block;
   justify-content: space-between;
   margin: 1vh auto;
 }
 
 .button-cont {
-  border: 1px solid rgb(222, 184, 135);
+  min-width: 15vw;
   padding: 0.8vw;
-  background: var(--sand40);
-  border-radius: 5px;
+  background: var(--sand100);
+  border: 0.1vw solid var(--sand100);
+  border-radius: 1vw;
   font-weight: 700;
-  color: var(--darkturquoise100);
+  color: var(--water100);
   cursor: pointer;
-  width: calc(100% / 2 - 10px);
   transition: all 0.2s ease;
 }
 .button-cont:hover {
-  background-color: var(--sand100);
+  background-color: var(--water100);
+  color: var(--weisz80);
 }
 
 .h2-cont {
+  text-align: left;
   padding: 2vh 0 1vh 0;
   margin: 0;
   color: var(--sienna100);
   font-size: 4vh;
   font-weight: 800;
-  text-shadow: var(--h2-shadow);
+  text-shadow: var(--h2-shadow-1);
 }
 
 .h3-cont {
+  text-align: left;
   padding: 2vh 0 1vh 0;
   margin: 0;
   font-size: 3vh;
@@ -180,6 +206,7 @@ header h1 {
 }
 
 .h4-cont {
+  text-align: left;
   padding: 2vh 0 1vh 0;
   margin: 0;
   font-size: 2.5vh;
@@ -197,9 +224,13 @@ h2,
   font-family: "Cabin", Helvetica, sans-serif;
   color: var(--sienna100);
   font-size: 3.5vh;
-  text-shadow: var(--h2-shadow);
+  text-shadow: var(--h2-shadow-2);
 
   margin: 0vh 0.7vw;
+}
+
+.ignorstylelink {
+  color: var(--anthrazit100);
 }
 
 .index-page {
@@ -209,19 +240,20 @@ h2,
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  grid-column-gap: 1vw;
+  grid-row-gap: 1vw;
 }
 
+/* liefert geringes Padding für gesamte Page, z.B. Impressum */
 .page-pad {
   width: 100%;
   display: flex;
   flex-direction: column;
-  text-align: justify;
+  text-align: block;
   padding: 0 2vw;
 }
 
-/* Index-Seite: Content mit 8/9 Flächen */
+/* ************ Index-Seite: Content mit 8/9 Flächen *********** */
 
 .quader {
   width: 100%;
@@ -229,14 +261,14 @@ h2,
   /* rgba hinter url, falls img nicht geladen wird */
   background: url(../images/pexels_kate-graur_5425708.jpg) var(--sand40);
   background-size: cover;
+  border-radius: 2vw;
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  margin: 0;
-  border: 0.03vw solid sienna;
+  _border: 0.03vw solid sienna;
 }
 
 #lexikon-c2,
@@ -293,6 +325,7 @@ h2,
   -o-backface-visibility: hidden;
   backface-visibility: hidden;
 
+  border-radius: 2vw;
   padding: 0 0.9vw;
 }
 
@@ -326,7 +359,14 @@ h2,
   font-weight: bold;
   /* Flip-Cards mit 0px Padding und Margin */
   padding: 0;
+  border-radius: 2vw;
   margin: 0;
+}
+
+#urlaubsdetektive .flipper .front img,
+#visitenkarte .flipper .front img,
+#visitenkarte-c2 .flipper .front img {
+  border-radius: 2vw;
 }
 
 #heute {
@@ -341,10 +381,11 @@ h2,
     var(--bg-img) fixed;
 }
 
-/*  */
+/* Impressum unter Kalender */
 
 #implink {
   padding-top: 0.05vh;
+  font-size: 1.5vw;
   font-weight: bold;
 }
 
@@ -352,20 +393,41 @@ h2,
   display: none;
   margin: 3vh 0;
 }
+
+.fakt {
+  display: flex;
+  flex-direction: row;
+  margin: 2vh 0;
+}
+
+.fakt-detail {
+  padding: 1vw;
+}
+
+table tr:nth-of-type(odd) td {
+  background-color: var(--sand40);
+}
+
 .date {
   color: var(--sienna100);
   border: solid var(--sienna100) 1px;
-  border-radius: 0 0 0 15px;
+  border-radius: 0 0 0 2vw;
   margin: 0 2vw 0 0;
 }
 .date-y {
-  background: var(--darkturquoise100);
+  background: var(--water100);
+  font-weight: bold;
   color: var(--weisz80);
+  text-align: center;
   padding: 1vh;
 }
 .date-date {
-  background: var(--sand40);
+  _background: var(--sand40);
+  border-radius: 0 0 0 2vw;
+
+  font-weight: bold;
   color: var(--sienna100);
+  text-align: center;
   padding: 1vh;
 }
 
@@ -379,105 +441,18 @@ h2,
   margin: 0 auto;
   padding: 2vh 0 2vh 0;
 
-  border-top: 0.05vh solid var(--darkturquoise100);
+  _border-top: 0.05vh solid var(--water100);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5vh;
   font-weight: 700;
-  color: var(--darkturquoise100);
+  color: var(--water100);
   text-shadow: var(--link-shadow);
   text-align: center;
-}
-
-/* ************************* für Cookie-Popup *********************** */
-/* Conset-Popup mit Google Fonts - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-body {
-  min-height: 100vh;
-  color: var(--anthrazit100);
-}
-.consent-wrapper {
-  position: fixed;
-  bottom: 20vh;
-  right: -25vw;
-  max-width: 25vw;
-  width: 100%;
-  background: rgba(250, 250, 250, 1);
-  border-radius: 8px;
-  padding: 1.5vh 2vw;
-  transition: right 0.3s ease;
-  box-shadow: 0 0.5vw 2vw rgba(0, 0, 0, 0.1);
-  z-index: 4;
-}
-.consent-wrapper.show {
-  right: 5em;
-}
-.consent-wrapper header {
-  display: flex;
-  align-items: center;
-  column-gap: 1em;
-}
-header i {
-  color: var(--darkturquoise100);
-  font-size: 1.5em;
-}
-header h2 {
-  color: var(--sienna100);
-  font-weight: 500;
-}
-.consent-wrapper .data {
-  margin-top: 1.1em;
-}
-.consent-wrapper .data p {
-  _color: var(--anthrazit100);
-  font-size: 2vh;
-}
-.data p a {
-  color: var(--darkturquoise100);
-  text-decoration: none;
-}
-.data p a:hover {
-  color: var(--sienna100);
-  text-decoration: underline;
-}
-.consent-wrapper .buttons {
-  margin-top: 1.1em;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.buttons .button {
-  border: 1px solid rgb(222, 184, 135);
-  padding: 0.8vw;
-  background: var(--sand40);
-  border-radius: 5px;
-  font-weight: 700;
-  color: var(--darkturquoise100);
-  cursor: pointer;
-  width: calc(100% / 2 - 10px);
-  transition: all 0.2s ease;
-}
-.buttons #acceptBtn:hover {
-  background-color: var(--sand100);
-}
-#declineBtn {
-  border: 1px solid rgb(222, 184, 135);
-  background-color: var(--weisz80);
-}
-#declineBtn:hover {
-  background-color: var(--sand100);
 }
 
 /* #########################  Ende DESKTOP  ##################### */
 
 /* ############## 1. Schritt 2-spaltig, Portrait ################ */
-
 @media only screen and (max-width: 1080px) and (orientation: portrait) {
   /* hier kommen Angaben rein, die bei mobilder Darstellung anders sein sollen als auf dem Desktop 
   -> zu sehen bei 390 bis 680px */
@@ -529,7 +504,7 @@ header h2 {
   h2,
   .ignorestyle {
     font-size: 3vh;
-    text-shadow: var(--h2-shadow);
+    text-shadow: var(--h2-shadow-2);
   }
 
   #lexikon-c2,
@@ -581,60 +556,10 @@ header h2 {
   /* #footer - Inhalt Fuszzeile */
 
   #footer {
-    height: 8vh;
     padding: 2vh 0 2vh 0;
     font-size: 2vh;
     font-weight: 700;
     text-shadow: var(--link-shadow);
-  }
-
-  /* *************** Conset-Popup mit Google Fonts - Poppins ************* */
-  * {
-    font-size: 2vh;
-  }
-  body {
-    min-height: 100vh;
-  }
-  .consent-wrapper {
-    bottom: 20vh;
-    right: -50vw;
-    max-width: 45vw;
-    width: 100%;
-    border-radius: 0.3vh 0.3vw;
-    padding: 1vw 1vh;
-    box-shadow: 0 0.03vw 0.06vw rgba(0, 0, 0, 0.1);
-    z-index: 4;
-  }
-  .consent-wrapper.show {
-    right: 1vw;
-  }
-  .consent-wrapper header {
-    column-gap: 1em;
-  }
-  header i {
-    font-size: 1.5em;
-  }
-  header h2 {
-    font-weight: 500;
-  }
-  .consent-wrapper .data {
-    margin-top: 1.1vh;
-  }
-  .consent-wrapper .data p {
-    font-size: 2vh;
-  }
-  .data p a {
-    text-decoration: none;
-  }
-  .consent-wrapper .buttons {
-    margin-top: 1.1em;
-    width: 100%;
-    font-size: 2.2vh;
-  }
-  .buttons .button {
-    padding: 0.1vh 0.1vw;
-    border-radius: 0.1vh 0.1vw;
-    width: calc(100% / 2 - 10px);
   }
 
   /* Bildgröße wird immer auf 100% runtergerechnet */
@@ -645,7 +570,6 @@ header h2 {
 }
 
 /* ############## 2. Schritt 2-spaltig, Landscape ################ */
-
 @media only screen and (min-width: 400px) and (max-width: 820px) and (orientation: landscape) {
   /* Body */
 
@@ -743,61 +667,11 @@ header h2 {
   /* #footer - Inhalt Fuszzeile */
 
   #footer {
-    height: 8vh;
     padding: 2vh 0 2vh 0;
     font-size: 3vh;
     font-weight: 700;
     _text-shadow: 0.03vw 0.03vw 0.1vw #444;
     text-shadow: var(--link-shadow);
-  }
-
-  /* ************ Conset-Popup mit Google Fonts - Poppins ************** */
-  * {
-    font-size: 2vh;
-  }
-  body {
-    min-height: 100vh;
-  }
-  .consent-wrapper {
-    bottom: 20vh;
-    right: -50vw;
-    max-width: 45vw;
-    width: 100%;
-    border-radius: 0.3vh 0.3vw;
-    padding: 1vw 1vh;
-    box-shadow: 0 0.03vw 0.06vw rgba(0, 0, 0, 0.1);
-    z-index: 4;
-  }
-  .consent-wrapper.show {
-    right: 1vw;
-  }
-  .consent-wrapper header {
-    column-gap: 1em;
-  }
-  header i {
-    font-size: 1.5em;
-  }
-  header h2 {
-    font-weight: 500;
-  }
-  .consent-wrapper .data {
-    margin-top: 1.1vh;
-  }
-  .consent-wrapper .data p {
-    font-size: 2vh;
-  }
-  .data p a {
-    text-decoration: none;
-  }
-  .consent-wrapper .buttons {
-    margin-top: 1.1em;
-    width: 100%;
-    font-size: 2.2vh;
-  }
-  .buttons .button {
-    padding: 0.1vh 0.1vw;
-    border-radius: 0.1vh 0.1vw;
-    width: calc(100% / 2 - 10px);
   }
 
   /* Bildgröße wird immer auf 100% runtergerechnet */
@@ -912,53 +786,10 @@ header h2 {
   /* #footer - Inhalt Fuszzeile */
 
   #footer {
-    height: 8vh;
+    padding: 2vh 0 2vh 0;
     font-size: 2vh;
-  }
-
-  /* **************** Conset-Popup mit Google Fonts - Poppins *********** */
-  * {
-    font-size: 1.8vh;
-  }
-  body {
-    min-height: 100vh;
-  }
-  .consent-wrapper {
-    bottom: 20vh;
-    right: -50vw;
-    max-width: 45vw;
-    width: 100%;
-    border-radius: 0.3vh 0.3vw;
-    padding: 1vw 1vh;
-    box-shadow: 0 0.03vw 0.06vw rgba(0, 0, 0, 0.1);
-  }
-  .consent-wrapper.show {
-    right: 1vw;
-  }
-  .consent-wrapper header {
-    column-gap: 1em;
-  }
-  header i {
-    font-size: 1.5em;
-  }
-  header h2 {
-    font-weight: 500;
-  }
-  .consent-wrapper .data {
-    margin-top: 1.1em;
-  }
-  .consent-wrapper .data p {
-    font-size: 2vh;
-  }
-  .consent-wrapper .buttons {
-    margin-top: 1.1em;
-    width: 100%;
-    font-size: 2vh;
-  }
-  .buttons .button {
-    padding: 0.1vh 0.1vw;
-    border-radius: 0.1em;
-    width: calc(100% / 2 - 10px);
+    font-weight: 700;
+    text-shadow: var(--link-shadow);
   }
 
   /* Bildgröße wird immer auf 100% runtergerechnet */
@@ -1060,64 +891,20 @@ header h2 {
     color: brown;
     font-weight: bold;
   }
-  */
 
-/* ENDE Inhalt main */
+  /* ENDE Inhalt main */
 
-/* #footer - Inhalt Fuszzeile */
-/* 
+  /* #footer - Inhalt Fuszzeile */
+
   #footer {
-    height: 8vh;
+    padding: 2vh 0 2vh 0;
     font-size: 2vh;
-  } */
-
-/* ######## Conset-Popup mit Google Fonts - Poppins ######## */
-/* * {
-    font-size: 1.8vh;
-  }
-  body {
-    min-height: 100vh;
-  }
-  .consent-wrapper {
-    bottom: 20vh;
-    right: -50vw;
-    max-width: 45vw;
-    width: 100%;
-    border-radius: 0.3vh 0.3vw;
-    padding: 1vw 1vh;
-    box-shadow: 0 0.03vw 0.06vw rgba(0, 0, 0, 0.1);
-  }
-  .consent-wrapper.show {
-    right: 1vw;
-  }
-  .consent-wrapper header {
-    column-gap: 1em;
-  }
-  header i {
-    font-size: 1.5em;
-  }
-  header h2 {
-    font-weight: 500;
-  }
-  .consent-wrapper .data {
-    margin-top: 1.1em;
-  }
-  .consent-wrapper .data p {
-    font-size: 2vh;
-  }
-  .consent-wrapper .buttons {
-    margin-top: 1.1em;
-    width: 100%;
-    font-size: 2vh;
-  }
-  .buttons .button {
-    padding: 0.1vh 0.1vw;
-    border-radius: 0.1em;
-    width: calc(100% / 2 - 10px);
+    font-weight: 700;
+    text-shadow: var(--link-shadow);
   }
 
-/* Bildgröße wird immer auf 100% runtergerechnet */
-img {
+  /* Bildgröße wird immer auf 100% runtergerechnet */
+  img {
     max-width: 100%;
     height: auto;
   }

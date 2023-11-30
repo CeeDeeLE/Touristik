@@ -161,40 +161,6 @@
         </h1>
         <!-- end #head -->
 
-        <nav>
-          <!-- Beginn responsives menue ohne Subnav -->
-          <ul class="topnav" id="topnav">
-            <li>
-              <span id="logo">
-                <!-- LOGO !!! für Vergrößerungen fa-lg auf fa-2x, fa-3x etc ändern -->
-                <i class="fa fa-camera-retro fa-lg font-as"></i
-              ></span>
-            </li>
-            <li>
-              <!-- Wissen:  + nützliches (Lexikon) + historische Fakten -->
-              <a href="templates/wissen.html">Wissen</a>
-            </li>
-            <li>
-              <!-- täglich: neue Regionen + unnützes Wissen (wusstest du) -->
-              <a href="templates/ueberraschung.html">Überraschung</a>
-            </li>
-            <li>
-              <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
-              <a href="templates/ueberzeugung.html">Überzeugung</a>
-            </li>
-            <li>
-              <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
-              <a href="templates/kontakt.html">Kontakt</a>
-            </li>
-            <li class="nav-icon">
-              <i
-                class="fa fa-bars font-as"
-                aria-hidden="true"
-                onclick="BuergerNav()"
-              ></i>
-            </li>
-          </ul>
-        </nav>
         <!-- end #menu -->
       </header>
 
@@ -213,27 +179,29 @@
         <!-- Flipbox -->
         <div id="kalenderblatt" class="quader flipbox">
           <div class="flipper">
-            <div class="front">
+            <hgroup class="front">
               <h2>
                 <i class="fa fa-fw fa-calendar"></i>
-                <br />Das touristische Kalenderblatt
+                <br />touristisches Kalenderblatt
               </h2>
-            </div>
-            <div class="back">
-              <b>28.11.1520:</b>
-              <p>
-                Vier Wochen nach ihrer Entdeckung gelingt Ferdinand Magellan die
-                Durchfahrt durch die später nach ihm benannte Magellanstraße an
-                der Südspitze Amerikas; er erreicht mit drei Schiffen den
-                Pazifik.
-              </p>
-              <!-- <b>28.11.1983:</b> <br />Als erster
+            </hgroup>
+            <hgroup class="back">
+              <a href="templates/wissen.html">
+                <h2>28. Nov. 1520:</h2>
+                <p class="ignorstylelink">
+                  Vier Wochen nach ihrer Entdeckung gelingt Ferdinand Magellan
+                  die Durchfahrt durch die später nach ihm benannte
+                  Magellanstraße an der Südspitze Amerikas; er erreicht mit drei
+                  Schiffen den Pazifik.
+                </p>
+                <!-- <b>28.11.1983:</b> <br />Als erster
               (West-)Deutscher startet Ulf Merbold mit der US-Raumfähre Columbia
               in den Weltraum. Mit an Bord ist das europäische Weltraumlabor
               Spacelab unter dem Gesamtkommando von John Young, der als erster
               Mensch einen sechsten Weltraumflug unternimmt. -->
-              <p><a href="templates/wissen.html">mehr ...</a></p>
-            </div>
+                <p>mehr ...</p></a
+              >
+            </hgroup>
           </div>
         </div>
 
@@ -247,43 +215,45 @@
                 alt="Ponta Da Ferraria"
               />
             </div>
-            <div class="back">
-              <h2>
-                <i class="fa fa-fw fa-map-pin sienna"></i>
-                <br />Kennen Sie diesen Ort?
-              </h2>
-              <!-- <br /> -->
-              <p><a href="templates/ueberraschung.html">zur Lösung</a></p>
-            </div>
+            <hgroup class="back">
+              <a href="templates/ueberraschung.html">
+                <h2>
+                  <i class="fa fa-fw fa-map-pin sienna"></i>
+                  <br />Kennen Sie diesen Ort?
+                </h2>
+                <!-- <br /> -->
+                <p>zur Lösung</p></a
+              >
+            </hgroup>
           </div>
         </div>
 
         <div id="lexikon-c2" class="quader">
-          <h2>
-            <a class="ignorestyle" href="templates/wissen.html">
+          <a class="ignorestyle" href="templates/wissen.html">
+            <h2>
               <i class="fa fa-fw fa-graduation-cap sienna"></i>
-              <br />Begriffe aus der Touristik</a
-            >
-          </h2>
+              <br />Begriffe aus der Touristik
+            </h2>
+          </a>
         </div>
 
         <div id="wissenwertes" class="quader flipbox">
           <div class="flipper">
-            <div class="front">
+            <hgroup class="front">
               <h2>
                 <i class="fa fa-fw fa-lightbulb-o sienna"></i>
                 <br />Wussten Sie, dass...
               </h2>
-            </div>
+            </hgroup>
             <div class="back">
-              <p>
-                … die älteste Airline, die noch ihren Gründernamen trägt, die
-                KLM Royal Dutch Airline ist, sie wurde am 7. Oktober 1919
-                gegründet.
-              </p>
-              <p>
-                <a href="templates/ueberraschung.html">mehr ...</a>
-              </p>
+              <a href="templates/ueberraschung.html">
+                <p class="ignorstylelink">
+                  … die älteste Airline, die noch ihren Gründernamen trägt, die
+                  KLM Royal Dutch Airline ist, sie wurde am 7. Oktober 1919
+                  gegründet.
+                </p>
+                <p>mehr ...</p></a
+              >
             </div>
           </div>
         </div>
@@ -298,64 +268,68 @@
                 alt="Heidelberg am Fluss"
               />
             </div>
-            <div class="back">
-              <h2>
-                <i class="fa fa-fw fa-map-signs sienna"></i>
-                <br />Regionen stellen sich vor
-              </h2>
-              <!-- <br /> -->
-              <p>
-                <a
-                  href="https://www.heidelberg.de/hd/HD/Besuchen.html
-              "
-                  alt="Link zur Seite von Heidelberg"
-                  >Heidelberg...</a
-                >
-              </p>
-            </div>
+            <hgroup class="back">
+              <a
+                href="https://www.heidelberg.de/hd/HD/Besuchen.html"
+                alt="Link zur Seite von Heidelberg"
+              >
+                <h2>
+                  <i class="fa fa-fw fa-map-signs sienna"></i>
+                  <br />Regionen stellen sich vor
+                </h2>
+                <!-- <br /> -->
+                <p>Heidelberg...</p></a
+              >
+            </hgroup>
           </div>
         </div>
 
-        <div id="lexikon" class="quader">
-          <h2>
-            <a class="ignorestyle" href="templates/wissen.html">
+        <hgroup id="lexikon" class="quader">
+          <a class="ignorestyle" href="templates/wissen.html">
+            <h2>
               <i class="fa fa-fw fa-graduation-cap sienna"></i>
-              <br />Begriffe aus der Touristik</a
-            >
-          </h2>
-        </div>
+              <br />Begriffe aus der Touristik
+            </h2>
+            <p>&nbsp;</p></a
+          >
+        </hgroup>
 
         <div id="heute" class="quader" alt="Kalendar">
           <div id="calendar">[Calendar JS by derletztekick.com]</div>
-          <div id="implink">
-            <a href="templates/impressum-dasch.html">Impressum & DSGVO</a>
-          </div>
+          <a href="templates/impressum-dasch.html">
+            <div id="implink">Impressum & Datenschutz</div>
+          </a>
         </div>
 
-        <div id="nachhaltigkeit" class="quader">
-          <h2>
-            <i class="fa fa-fw fa-globe sienna"></i>
-            <br />Umwelt- & Nachhaltigkeits-Initiativen in der Touristik
-          </h2>
-          <p><a href="templates/ueberzeugung.html">hier lang ...</a></p>
-        </div>
+        <hgroup id="nachhaltigkeit" class="quader">
+          <a href="templates/ueberzeugung.html">
+            <h2>
+              <i class="fa fa-fw fa-globe sienna"></i>
+              <br />Umwelt- & Nachhaltigkeits-Initiativen in der Touristik
+            </h2>
+            <p>hier lang ...</p></a
+          >
+        </hgroup>
 
-        <div id="sprechstunde-c2" class="quader">
-          <h2>
-            <i class="fa fa-fw fa-comments-o sienna"></i>
-            <br />Sprechstunde für Reiselustige
-          </h2>
-          <p>
-            <a href="templates/ueberzeugung.html">Was möchtest du wissen?</a>
-          </p>
-        </div>
+        <hgroup id="sprechstunde-c2" class="quader">
+          <a href="templates/ueberzeugung.html">
+            <h2>
+              <i class="fa fa-fw fa-comments-o sienna"></i>
+              <br />Sprechstunde für Reiselustige
+            </h2>
+            <p>Was möchtest du wissen?</p></a
+          >
+        </hgroup>
 
-        <div id="buchtipp" class="quader">
-          <h2>
-            <i class="fa fa-fw fa-book sienna"></i> <br />Reisezeit ist Lesezeit
-          </h2>
-          <p><a href="templates/ueberzeugung.html">einige Ideen ...</a></p>
-        </div>
+        <hgroup id="buchtipp" class="quader">
+          <a href="templates/ueberzeugung.html">
+            <h2>
+              <i class="fa fa-fw fa-book sienna"></i> <br />Reisezeit ist
+              Lesezeit
+            </h2>
+            <p>einige Ideen ...</p></a
+          >
+        </hgroup>
 
         <div id="visitenkarte" class="quader flipbox">
           <div class="flipper">
@@ -367,41 +341,39 @@
                 alt="Heidelberg am Fluss"
               />
             </div>
-            <div class="back">
-              <h2>
-                <i class="fa fa-fw fa-map-signs sienna"></i>
-                <br />Regionen stellen sich vor
-              </h2>
-              <!-- <br /> -->
-              <p>
-                <a
-                  href="https://www.heidelberg.de/hd/HD/Besuchen.html
-              "
-                  alt="Link zur Seite von Heidelberg"
-                  >Heidelberg...</a
-                >
-              </p>
-            </div>
+            <hgroup class="back">
+              <a
+                href="https://www.heidelberg.de/hd/HD/Besuchen.html"
+                alt="Link zur Seite von Heidelberg"
+              >
+                <h2>
+                  <i class="fa fa-fw fa-map-signs sienna"></i>
+                  <br />Regionen stellen sich vor
+                </h2>
+                <!-- <br /> -->
+                <p>Heidelberg...</p></a
+              >
+            </hgroup>
           </div>
         </div>
 
-        <div id="sprechstunde" class="quader">
-          <h2>
-            <i class="fa fa-fw fa-comments-o sienna"></i>
-            <br />
-            Sprechstunde für Reiselustige
-          </h2>
-          <p>
-            <a href="templates/ueberzeugung.html">Was möchtest du wissen?</a>
-          </p>
-        </div>
+        <hgroup id="sprechstunde" class="quader">
+          <a href="templates/ueberzeugung.html">
+            <h2>
+              <i class="fa fa-fw fa-comments-o sienna"></i>
+              <br />
+              Sprechstunde für Reiselustige
+            </h2>
+            <p>Was möchtest du wissen?</p></a
+          >
+        </hgroup>
       </main>
       <!-- Ende der 9-Quader-Section -->
 
       <!-- Footer innerhalb des Wrappers -->
       <footer id="footer">
         <p>
-          Copyright (c) 2023 |
+          <i class="fa fa-copyright" aria-hidden="true"></i> 2023 |
           <a href="templates/impressum-dasch.html">Impressum</a>
           <br />Hans-Peter Herrmann & Constanze Deten
         </p>

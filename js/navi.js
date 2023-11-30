@@ -1,12 +1,12 @@
 // responsive Nav-Bar
 function BuergerNav() {
   var x = document.getElementById("topnav");
-  let link;
+  let logo;
   if (x.className === "topnav") {
     x.className += " responsive";
-    link = document.getElementById("logo").style.display = "none";
+    logo = document.getElementById("logo").style.display = "none";
   } else {
     x.className = "topnav";
-    link = document.getElementById("logo").style.display = "flex";
+    logo = document.getElementById("logo").style.display = "flex";
   }
 }

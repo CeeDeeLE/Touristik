@@ -11,7 +11,7 @@ ul.topnav {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: var(--darkturquoise100);
+  background-color: var(--water100);
 }
 
 ul.topnav li,
