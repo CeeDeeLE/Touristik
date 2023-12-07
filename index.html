@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC>
 <!-- 
-/****************** DESIGNED BY *****************/
+/***************** DESIGNED BY ******************/
 /*               Constanze Deten                */
 /* Idee und Inhalt: Hans-Peter Herrmann         */
 /*                   c 2023                     */
@@ -97,11 +97,6 @@
     <script type="text/javascript" src="js/calendar.js"></script>
     <!-- Ende KOPIE Script Kalenderanzeige -->
 
-    <!-- ANFANG Datumsanzeige -->
-    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery.gallerax-0.2.js"></script>
-    <!-- ENDE Datumsanzeige -->
-
     <!-- Anfang Script für mobiles Menue -->
     <script type="text/javascript" src="js/navi.js"></script>
     <!-- Ende Script für mobiles Menue -->
@@ -135,18 +130,18 @@
     <div class="consent-wrapper">
       <header>
         <i class="bx bx-cookie"></i>
-        <h2>Cookies Consent</h2>
+        <h2>Cookies</h2>
       </header>
       <div class="data">
         <p>
-          This website uses cookies to help you have a superior and more
-          relevant browsing experience on the website.
+          Diese Website nutzt Cookies, um auf Basis des Browseverhaltens
+          Verbessungen umzusetzen. Vielen Dank für deine Unterstützung!
           <!-- <a href="#"> Read more...</a> -->
         </p>
       </div>
       <div class="buttons">
-        <button class="button" id="acceptBtn">Accept</button>
-        <button class="button" id="declineBtn">Decline</button>
+        <button class="button" id="acceptBtn">akzeptiert</button>
+        <button class="button" id="declineBtn">abgelehnt</button>
       </div>
     </div>
     <!-- Ende Cookie-Popup -->
@@ -154,14 +149,49 @@
     <!-- Beginn Website -->
     <div id="wrapper">
       <!-- Headline -->
-      <header id="header">
-        <h1>
+      <header class="header header-index">
+        <h1 id="head2cols">
           <span class="h1-all">Wissenskalender</span
           ><span class="h1-pc"> - Urlaub & Reisen</span>
         </h1>
         <!-- end #head -->
 
-        <!-- end #menu -->
+        <!-- Navigation bei 2- und 1-spaltiger Darstellung -->
+        <nav>
+          <!-- Beginn responsives menue ohne Subnav -->
+          <ul class="topnav" id="topnav">
+            <li>
+              <span id="logo">
+                <!-- LOGO !!! für Vergrößerungen fa-lg auf fa-2x, fa-3x etc ändern -->
+                <i class="fa fa-camera-retro fa-lg font-as"></i
+              ></span>
+            </li>
+            <li>
+              <!-- Wissen:  + nützliches (Lexikon) + historische Fakten -->
+              <a href="templates/wissen.html">Wissen</a>
+            </li>
+            <li>
+              <!-- täglich: neue Regionen + unnützes Wissen (wusstest du) -->
+              <a href="templates/ueberraschung.html">Überraschung</a>
+            </li>
+            <li>
+              <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
+              <a href="templates/ueberzeugung.html">Überzeugung</a>
+            </li>
+            <li>
+              <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre + Sprechstunde -->
+              <a href="templates/kontakt.html">Kontakt</a>
+            </li>
+            <li class="nav-icon">
+              <i
+                class="fa fa-bars font-as"
+                aria-hidden="true"
+                onclick="BuergerNav()"
+              ></i>
+            </li>
+          </ul>
+        </nav>
+        <!-- end #nav -->
       </header>
 
       <main class="index-page">
@@ -188,11 +218,10 @@
             <hgroup class="back">
               <a href="templates/wissen.html">
                 <h2>28. Nov. 1520:</h2>
-                <p class="ignorstylelink">
+                <p class="ignorestylelink">
                   Vier Wochen nach ihrer Entdeckung gelingt Ferdinand Magellan
                   die Durchfahrt durch die später nach ihm benannte
-                  Magellanstraße an der Südspitze Amerikas; er erreicht mit drei
-                  Schiffen den Pazifik.
+                  Magellanstraße an der Südspitze Amerikas ...
                 </p>
                 <!-- <b>28.11.1983:</b> <br />Als erster
               (West-)Deutscher startet Ulf Merbold mit der US-Raumfähre Columbia
@@ -247,7 +276,7 @@
             </hgroup>
             <div class="back">
               <a href="templates/ueberraschung.html">
-                <p class="ignorstylelink">
+                <p class="ignorestylelink">
                   … die älteste Airline, die noch ihren Gründernamen trägt, die
                   KLM Royal Dutch Airline ist, sie wurde am 7. Oktober 1919
                   gegründet.
@@ -295,10 +324,14 @@
         </hgroup>
 
         <div id="heute" class="quader" alt="Kalendar">
+          <div id="headcal">
+            Wissenskalender<br />
+            Urlaub & Reisen
+          </div>
           <div id="calendar">[Calendar JS by derletztekick.com]</div>
-          <a href="templates/impressum-dasch.html">
-            <div id="implink">Impressum & Datenschutz</div>
-          </a>
+          <!-- <a href="templates/impressum-dasch.html"> -->
+          <!-- <div id="implink">Impressum & Datenschutz</div> -->
+          <!-- </a> -->
         </div>
 
         <hgroup id="nachhaltigkeit" class="quader">

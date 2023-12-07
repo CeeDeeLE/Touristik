@@ -51,9 +51,10 @@
   --navbar-height: 1vh;
 }
 
+/* ##### INTRO all ##### */
+
 * {
   font-family: Helvetica, Tahoma, Verdana, sans-serif;
-  font-size: 2.5vh;
   font-weight: normal;
 
   word-wrap: normal;
@@ -66,12 +67,19 @@ html {
   height: 100%;
 }
 
-/* ################# ENDE Intro ################# */
+/* ##### ENDE Intro ##### */
+
+/* ##### Body - PC-Ansicht und hochauflösende Smartphones, Landscape mit 3x3-Grid ##### */
 
 body {
   width: 100%;
   height: 200vh;
+  font-size: 2.5vh;
   color: var(--anthrazit100);
+  /* border: none; */
+  /* background: none; */
+  /* text-decoration: none; */
+
   margin: 2vh auto;
 }
 
@@ -93,11 +101,17 @@ a:hover {
   color: var(--sienna100);
 }
 
+/* Farbe der Fontawesome-Icons */
 .font-as {
   color: var(--weisz80);
 }
 
-/* Wrapper - Inhalt über HG-Bild */
+/* WO WIRKSAM ????? */
+p {
+  padding: 0.9vh 0 0.5vh 0;
+}
+
+/* ##### Wrapper - ganze Inhaltsseite/ Inhalt über HG-Bild ##### */
 #wrapper {
   width: 90%;
   background: var(--weisz80);
@@ -105,120 +119,66 @@ a:hover {
   margin: 0 auto;
 }
 
-/* Header */
-
-#header {
-  width: 100%;
+/* ***** Header - Wrapper für head und nav ***** */
+.header,
+.header-index {
   text-align: center;
-  padding-top: 2vh;
+  padding: 0;
   margin: 0 auto;
 }
-/* geteilte Head für reponsive Darstellung */
+
+.header-index {
+  display: none;
+}
+
+/* .h1-all + .h1-pc - geteilte head für reponsive Darstellung 
+-> erst ab 2-spaltiger Darstellung */
 .h1-all,
 .h1-pc {
   font-family: "Cabin", Helvetica, sans-serif;
-  font-size: 5vh;
   font-weight: 900;
-  letter-spacing: -1px;
-  border: none;
-  background: none;
-  text-decoration: none;
   color: var(--water100);
   text-shadow: var(--h1-shadow-1);
 }
 
-header h1 {
-  margin: 0 auto 2vh auto;
+/* nav bei 3x3-Grid versteckt */
+/* Navigation im Header - nav bei 2x2-Grid und Column eingeblendet */
+nav {
+  width: 100%;
+  float: left;
+  padding: 0;
 }
 
-/* Navigation im Header */
+/* nur #topnav hier, alles andere in navi.css */
+#topnav {
+  margin-top: 1.2vh;
+}
+
+/* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
 .hidden-item {
   display: none;
 }
 
-.h1-cont {
-  width: 100%;
-  padding: 4vh 0 1vh 0;
-  margin: 0 auto;
-
+/* head in Card "Kalender im Zentrum" bei 3x3-Grid 
+-> Card sonst versteckt */
+#headcal {
   font-family: "Cabin", Helvetica, sans-serif;
-  font-size: 5vh;
-  font-weight: 900;
-
-  letter-spacing: -1px;
-  border: none;
-  background: none;
-  text-decoration: none;
-  color: var(--sienna100);
-  text-shadow: var(--h2-imp-shadow);
-  text-align: center;
-}
-
-.layer-1 {
-  position: absolute;
-  left: 15vw;
-  top: 20vh;
-  display: flex;
-  flex-direction: column;
-  row-gap: 2vh;
-  z-index: 3;
-}
-
-.obj-center {
-  width: 100%;
-  display: inline-block;
-  justify-content: space-between;
-  margin: 1vh auto;
-}
-
-.button-cont {
-  min-width: 15vw;
-  padding: 0.8vw;
-  background: var(--sand100);
-  border: 0.1vw solid var(--sand100);
-  border-radius: 1vw;
-  font-weight: 700;
+  font-size: 3.7vh;
+  font-weight: bolder;
   color: var(--water100);
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-.button-cont:hover {
-  background-color: var(--water100);
-  color: var(--weisz80);
+  text-shadow: var(--h1-shadow-1);
+
+  line-height: 110%;
+  padding: 0.05vh 0vw;
 }
 
-.h2-cont {
-  text-align: left;
-  padding: 2vh 0 1vh 0;
-  margin: 0;
-  color: var(--sienna100);
-  font-size: 4vh;
-  font-weight: 800;
-  text-shadow: var(--h2-shadow-1);
-}
+/* ***** ENDE header ***** */
 
-.h3-cont {
-  text-align: left;
-  padding: 2vh 0 1vh 0;
-  margin: 0;
-  font-size: 3vh;
-  font-weight: 600;
-}
+/* ***** main/ page mit content ***** */
 
-.h4-cont {
-  text-align: left;
-  padding: 2vh 0 1vh 0;
-  margin: 0;
-  font-size: 2.5vh;
-  font-weight: 600;
-}
+/* ***** A: Index-Seite: Content mit 9 bzw. 8 Flächen ***** */
 
-p {
-  padding: 0.9vh 0 0.5vh 0;
-}
-
-/* **************** Page ************************* */
-
+/* Klassen ignorestyle/-link für Links auf 8 bzw. 9 Cards der Index-Page */
 h2,
 .ignorestyle {
   font-family: "Cabin", Helvetica, sans-serif;
@@ -229,7 +189,7 @@ h2,
   margin: 0vh 0.7vw;
 }
 
-.ignorstylelink {
+.ignorestylelink {
   color: var(--anthrazit100);
 }
 
@@ -244,17 +204,6 @@ h2,
   grid-row-gap: 1vw;
 }
 
-/* liefert geringes Padding für gesamte Page, z.B. Impressum */
-.page-pad {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  text-align: block;
-  padding: 0 2vw;
-}
-
-/* ************ Index-Seite: Content mit 8/9 Flächen *********** */
-
 .quader {
   width: 100%;
   height: 100%;
@@ -268,9 +217,11 @@ h2,
   justify-content: center;
   align-items: center;
 
+  /* ursprüngklich nicht durch Padding, sondern Rahmen abgegrenzt */
   _border: 0.03vw solid sienna;
 }
 
+/* für Card-Umsortierung doppelte Cards -> zunächst ausgeblendet*/
 #lexikon-c2,
 #visitenkarte-c2,
 #sprechstunde-c2 {
@@ -329,7 +280,7 @@ h2,
   padding: 0 0.9vw;
 }
 
-/* z-index 1: #wrapper, z-index 2: .page */
+/* z-index 3: #wrapper, z-index 2: .page */
 .front {
   transform: rotateY(0deg);
   /* z-index 1 unter back-Div */
@@ -350,25 +301,34 @@ h2,
   z-index: 4;
 }
 
+/*
+spezielle Cards mit Flip-Effekt: 
+- hist. Fakt, 
+- Ortsrätsel, 
+- wusstest du, dass... , 
+- Visitenkarte Region, 
+*/
 #urlaubsdetektive .flipper .front,
 #visitenkarte .flipper .front,
-#visitenkarte-c2 .flipper .front {
-  /* übergroßes Fragezeichen */
-  font-size: 15vh;
-  color: brown;
-  font-weight: bold;
-  /* Flip-Cards mit 0px Padding und Margin */
+#visitenkarte-c2 .flipper .front,
+#urlaubsdetektive .flipper .front img,
+#visitenkarte .flipper .front img,
+#visitenkarte-c2 .flipper .front img {
+  /* Flip-Cards mit 0 Padding und Margin */
   padding: 0;
   border-radius: 2vw;
   margin: 0;
 }
 
-#urlaubsdetektive .flipper .front img,
-#visitenkarte .flipper .front img,
-#visitenkarte-c2 .flipper .front img {
-  border-radius: 2vw;
+/* Urlaubsdetektive mit 2. Layer über front-Div (uebergroszes Fragezeichen) */
+/* wird aktuell nicht dargestellt */
+#urlaubsdetektive .flipper .front {
+  font-size: 15vh;
+  color: brown;
+  font-weight: bold;
 }
 
+/* Kalender im Zentrum bei 3x3-Grid */
 #heute {
   display: flex;
   flex-direction: column;
@@ -381,14 +341,103 @@ h2,
     var(--bg-img) fixed;
 }
 
-/* Impressum unter Kalender */
+/* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
 
-#implink {
-  padding-top: 0.05vh;
-  font-size: 1.5vw;
-  font-weight: bold;
+/* geringes Padding für gesamte Content-Page */
+.page-pad {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: block;
+  padding: 0 2vw;
 }
 
+/* oberer Bereich - Bild mit NavItem-Layer */
+.h1-cont {
+  width: 100%;
+  padding: 4vh 0 1vh 0;
+  margin: 0 auto;
+
+  font-family: "Cabin", Helvetica, sans-serif;
+  font-size: 5vh;
+  font-weight: 900;
+
+  letter-spacing: -1px;
+  border: none;
+  background: none;
+  text-decoration: none;
+  color: var(--sienna100);
+  text-shadow: var(--h2-imp-shadow);
+  text-align: center;
+}
+
+.layer-1 {
+  position: absolute;
+  left: 15vw;
+  top: 20vh;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2vh;
+  z-index: 3;
+}
+
+.obj-center {
+  width: 100%;
+  display: inline-block;
+  justify-content: space-between;
+  margin: 1vh auto;
+}
+
+.button-cont {
+  min-width: 15vw;
+  padding: 0.8vw;
+  background: var(--sand100);
+  border: 0.1vw solid var(--sand100);
+  border-radius: 1vw;
+  font-weight: 700;
+  color: var(--water100);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.button-cont:hover {
+  background-color: var(--water100);
+  color: var(--weisz80);
+}
+
+/* unterer Bereich - Inhalte unter Bild mit NavItem-Layer */
+
+.h2-cont {
+  text-align: left;
+  padding: 2vh 0 1vh 0;
+  margin: 0;
+  color: var(--sienna100);
+  font-size: 4vh;
+  font-weight: 800;
+  text-shadow: var(--h2-shadow-1);
+}
+
+.h3-cont {
+  text-align: left;
+  padding: 2vh 0 1vh 0;
+  margin: 0;
+  font-size: 3vh;
+  font-weight: 600;
+}
+
+.h4-cont {
+  text-align: left;
+  padding: 2vh 0 1vh 0;
+  margin: 0;
+  font-size: 2.5vh;
+  font-weight: 600;
+}
+
+/* Content-Page mit zur Sub-Nav historische Fakten */
+/* einblenden der Tabelle mit den Fakten zum Sortieren / Filtern */
+
+/* Page-Teil mit historischen Fakten 
+-> beinhaltet Tabelle mit ID und Klasse (! - für JavaScript) "hist-fakt" */
 #hist-fakt {
   display: none;
   margin: 3vh 0;
@@ -431,9 +480,9 @@ table tr:nth-of-type(odd) td {
   padding: 1vh;
 }
 
-/* *************** ENDE Inhalt main ******************** */
+/* ***** ENDE Inhalt main / page ***** */
 
-/* ******************* Footer ********************* */
+/* ***** Footer **** */
 
 #footer {
   width: 100%;
@@ -449,64 +498,89 @@ table tr:nth-of-type(odd) td {
   text-shadow: var(--link-shadow);
   text-align: center;
 }
+/* ***** ENDE Footer **** */
+/* ##### ENDE Wrapper / Seiten-Inhalt ##### */
 
-/* #########################  Ende DESKTOP  ##################### */
+/* ***** Bildgröße wird immer auf 100% runtergerechnet ***** */
+img {
+  max-width: 100%;
+  height: auto;
+}
 
-/* ############## 1. Schritt 2-spaltig, Portrait ################ */
-@media only screen and (max-width: 1080px) and (orientation: portrait) {
-  /* hier kommen Angaben rein, die bei mobilder Darstellung anders sein sollen als auf dem Desktop 
-  -> zu sehen bei 390 bis 680px */
-  /* nie vergessen, die Elternelemente zu berücksichtigen und ggf. mit zu ändern 
-  -> ist die Navi-Zeile am PC flacher als im Mobil Phone, 
-  wird der Inhalt der 2. Box in einer höheren Navi am Handy dargestellt */
-  /* flexible Größen erreicht man mit 90%, .9em oder mit 2vw (viewport with) */
+/* ##### Ende DESKTOP ##### */
 
-  /* Body */
+/* ################################################################ */
+/* ############## 1. Schritt 2-spaltig, Landscape ################ */
+@media only screen and (min-width: 400px) and (max-width: 820px) and (orientation: landscape) {
+  /* flexible Größen durch %, em, vh/ vw (viewport with) */
+
+  /* ##### Body - PC-Ansicht, Tablets und hochauflösende Smartphones, queer ##### */
 
   body {
+    height: 250vh;
     font-size: 2.3vh;
     margin: 1.5vh auto;
   }
 
-  /* Wrapper - Inhalt über HG-Bild */
-  /* #header + #topnav - Inhalt des header */
-  /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
+  /* ##### Wrapper - ganze Inhaltsseite/ Inhalt über HG-Bild ##### */
 
-  #head {
-    padding-top: 1.8vh;
+  /* ***** #hader - Wrapper für head und nav ***** */
+  .header-index {
+    display: contents;
   }
 
-  /* Navigation im Header */
+  /* .h1-all + .h1-pc - geteilte head für reponsive Darstellung 
+-> erst ab 2-spaltiger Darstellung */
 
-  nav {
-    width: 100%;
-    float: left;
-    padding: 0;
+  #head2cols {
+    padding: 1.5vh 1vw 0.5vh 1vw;
   }
 
-  #topnav {
-    margin-top: 1.2vh;
-  }
-
-  /* .page + .flipbx - Inhalt der main */
-
-  /* geteilte Head für reponsive Darstellung */
   .h1-all,
-  .h1-pc,
-  .h1-cont {
-    font-size: 4vh;
+  .h1-pc {
+    font-size: 5vh;
   }
 
-  .h1-cont {
-    margin: 4vh auto;
+  /* nav bei 3x3-Grid versteckt 
+  -> sonst bei Landscape und hochauflösender Darstellung inlkine */
+  nav {
+    display: block;
   }
 
+  /* nur #topnav hier, alles andere in navi.css */
+
+  /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
+
+  /* head in Card "Kalender im Zentrum" bei 3x3-Grid -> Card sonst versteckt */
+
+  /* ***** ENDE header ***** */
+
+  /* ***** main/ page mit content ***** */
+
+  /* ***** A: Index-Seite: Content mit 9 bzw. 8 Flächen ***** */
+
+  /* Klassen ignorestyle/-link für Links auf 8 bzw. 9 Cards der Index-Page */
   h2,
   .ignorestyle {
     font-size: 3vh;
     text-shadow: var(--h2-shadow-2);
+    _margin: 0vh 0.7vw;
   }
 
+  .index-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    _grid-column-gap: 0.5vw;
+    _grid-row-gap: 0.5vw;
+  }
+
+  /* Cards auf index-Seite */
+  .quader {
+    border-radius: 2vw;
+  }
+
+  /* für Card-Umsortierung doppelte Cards -> zunächst ausgeblendet */
   #lexikon-c2,
   #visitenkarte-c2,
   #sprechstunde-c2 {
@@ -526,96 +600,221 @@ table tr:nth-of-type(odd) td {
     display: none !important;
   }
 
-  .index-page {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-  }
-
   /* Flipcards */
-  /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
 
-  .flipbox {
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    -o-perspective: 800px;
-    perspective: 800px;
-    perspective: 800px;
+  .front,
+  .back {
+    border-radius: 3vw;
+    padding: 0 0.7vw;
   }
 
+  /* z-index 3: #wrapper, z-index 2: .page */
+  /* Chil-Divs in Flipbox haben absolute Pos. */
+  /* z-index back-Div 1 über front-Div */
+
+  /*
+spezielle Cards mit Flip-Effekt: 
+- hist. Fakt, 
+- Ortsrätsel, 
+- wusstest du, dass... , 
+- Visitenkarte Region, 
+*/
+  #urlaubsdetektive .flipper .front,
+  #visitenkarte .flipper .front,
+  #visitenkarte-c2 .flipper .front,
+  #urlaubsdetektive .flipper .front img,
+  #visitenkarte .flipper .front img,
+  #visitenkarte-c2 .flipper .front img {
+    border-radius: 3vw;
+  }
+
+  /* Urlaubsdetektive mit 2. Layer über front-Div (groszes Fragezeichen) */
   #urlaubsdetektive .flipper .front {
-    font-size: 15vh;
-    color: brown;
-    font-weight: bold;
+    _font-size: 15vh;
   }
 
-  /* ENDE Inhalt main */
+  /* Kalender im Zentrum bei 3x3-Grid */
 
-  /* #footer - Inhalt Fuszzeile */
+  /* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
+
+  /* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
+
+  /* geringes Padding für gesamte Content-Page: .page-pad */
+
+  /* oberer Bereich - Bild mit NavItem-Layer */
+  .h1-cont {
+    _padding: 4vh 0 1vh 0;
+    _font-size: 5vh;
+    _text-shadow: var(--h2-imp-shadow);
+  }
+
+  .layer-1 {
+    _position: absolute;
+    _left: 15vw;
+    _top: 20vh;
+    _row-gap: 2vh;
+    _z-index: 3;
+  }
+
+  .obj-center {
+    _display: inline-block;
+    _justify-content: space-between;
+    _margin: 1vh auto;
+  }
+
+  .button-cont {
+    _min-width: 15vw;
+    _padding: 0.8vw;
+    _border: 0.1vw solid var(--sand100);
+    _border-radius: 1vw;
+  }
+
+  /* unterer Bereich - Inhalte unter Bild mit NavItem-Layer */
+
+  .h2-cont {
+    _padding: 2vh 0 1vh 0;
+    _font-size: 4vh;
+    _text-shadow: var(--h2-shadow-1);
+  }
+
+  .h3-cont {
+    _padding: 2vh 0 1vh 0;
+    _font-size: 3vh;
+  }
+
+  .h4-cont {
+    _padding: 2vh 0 1vh 0;
+    _font-size: 2.5vh;
+  }
+
+  /* Content-Page mit zur Sub-Nav historische Fakten */
+  /* einblenden der Tabelle mit den Fakten zum Sortieren / Filtern */
+
+  /* Page-Teil mit historischen Fakten 
+-> beinhaltet Tabelle mit ID und Klasse (! - für JavaScript) "hist-fakt" */
+  #hist-fakt {
+    _display: none;
+    _margin: 3vh 0;
+  }
+
+  .fakt {
+    _display: flex;
+    _flex-direction: row;
+    _margin: 2vh 0;
+  }
+
+  .fakt-detail {
+    _padding: 1vw;
+  }
+
+  .date {
+    _border: solid var(--sienna100) 0.5vw;
+    _border-radius: 0 0 0 2vw;
+    _margin: 0 2vw 0 0;
+  }
+  .date-y {
+    _text-align: center;
+    _padding: 1vh;
+  }
+  .date-date {
+    _border-radius: 0 0 0 2vw;
+    _text-align: center;
+    _padding: 1vh;
+  }
+
+  /* ***** ENDE Inhalt main / page ***** */
+
+  /* ***** Footer **** */
 
   #footer {
+    height: 10vh;
     padding: 2vh 0 2vh 0;
     font-size: 2vh;
-    font-weight: 700;
-    text-shadow: var(--link-shadow);
   }
+  /* ***** ENDE Footer **** */
+  /* ##### ENDE Wrapper / Seiten-Inhalt ##### */
 
-  /* Bildgröße wird immer auf 100% runtergerechnet */
-  img {
+  /* ***** Bildgröße wird immer auf 100% runtergerechnet ***** */
+  /* img {
     max-width: 100%;
     height: auto;
-  }
+  } */
 }
 
-/* ############## 2. Schritt 2-spaltig, Landscape ################ */
-@media only screen and (min-width: 400px) and (max-width: 820px) and (orientation: landscape) {
-  /* Body */
+/* ##### Ende 2-spaltig, Landscape ##### */
+
+/* ################################################################ */
+/* ##### 2. Schritt 2-spaltig, PC-Ansicht und hochauflösende Smartphones, hochkant ##### */
+@media only screen and (max-width: 1080px) and (orientation: portrait) {
+  /* flexible Größen durch %, em, vh/ vw (viewport with) */
+
+  /* ##### Body - PC-Ansicht, Tablets und hochauflösende Smartphones, hochkant ##### */
 
   body {
-    font-size: 5vh;
+    height: 160vh;
+    font-size: 2.1vh;
     margin: 1.5vh auto;
   }
 
-  /* Wrapper - Inhalt über HG-Bild */
-  /* #header + #topnav - Inhalt des header */
-  /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
+  /* ##### Wrapper - ganze Inhaltsseite/ Inhalt über HG-Bild ##### */
 
-  #head {
-    padding-top: 1.8vh;
+  /* ***** #hader - Wrapper für head und nav ***** */
+  .header-index {
+    display: contents;
   }
 
-  /* Navigation im Header */
+  /* .h1-all + .h1-pc - geteilte head für reponsive Darstellung 
+-> erst ab 2-spaltiger Darstellung */
 
-  nav {
-    width: 100%;
-    float: left;
-    padding: 0;
+  #head2cols {
+    padding: 1.5vh 1vw 0.5vh 1vw;
   }
 
-  #topnav {
-    margin-top: 1.2vh;
-  }
-
-  /* .page + .flipbx - Inhalt der main */
-
-  /* geteilte Head für reponsive Darstellung */
   .h1-all,
-  .h1-pc,
-  .h1-cont {
-    font-size: 6vh;
-  }
-
-  .h1-cont {
-    margin: 3vh auto;
-  }
-
-  h2,
-  .ignorestyle {
+  .h1-pc {
     font-size: 4vh;
   }
 
+  /* nav bei 3x3-Grid versteckt 
+  -> sonst bei Landscape und hochauflösender Darstellung inlkine */
+  nav {
+    display: block;
+  }
+
+  /* nur #topnav hier, alles andere in navi.css */
+
+  /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
+
+  /* head in Card "Kalender im Zentrum" bei 3x3-Grid -> Card sonst versteckt */
+
+  /* ***** ENDE header ***** */
+
+  /* ***** main/ page mit content ***** */
+
+  /* ***** A: Index-Seite: Content mit 9 bzw. 8 Flächen ***** */
+
+  /* Klassen ignorestyle/-link für Links auf 8 bzw. 9 Cards der Index-Page */
+  h2,
+  .ignorestyle {
+    font-size: 3vh;
+    text-shadow: var(--h2-shadow-2);
+    _margin: 0vh 0.7vw;
+  }
+
+  .index-page {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    _grid-column-gap: 0.5vw;
+    _grid-row-gap: 0.5vw;
+  }
+
+  /* Cards auf index-Seite */
+  .quader {
+    border-radius: 2vw;
+  }
+
+  /* für Card-Umsortierung doppelte Cards -> zunächst ausgeblendet */
   #lexikon-c2,
   #visitenkarte-c2,
   #sprechstunde-c2 {
@@ -635,63 +834,164 @@ table tr:nth-of-type(odd) td {
     display: none !important;
   }
 
-  .index-page {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-
-    font-size: 5vh;
-  }
-
   /* Flipcards */
-  /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
 
-  .flipbox {
-    -webkit-perspective: 800px;
-    -moz-perspective: 800px;
-    -o-perspective: 800px;
-    perspective: 800px;
-    perspective: 800px;
+  .front,
+  .back {
+    border-radius: 3vw;
+    padding: 0 0.7vw;
   }
 
+  /* z-index 3: #wrapper, z-index 2: .page */
+  /* Chil-Divs in Flipbox haben absolute Pos. */
+  /* z-index back-Div 1 über front-Div */
+
+  /*
+spezielle Cards mit Flip-Effekt: 
+- hist. Fakt, 
+- Ortsrätsel, 
+- wusstest du, dass... , 
+- Visitenkarte Region, 
+*/
+  #urlaubsdetektive .flipper .front,
+  #visitenkarte .flipper .front,
+  #visitenkarte-c2 .flipper .front,
+  #urlaubsdetektive .flipper .front img,
+  #visitenkarte .flipper .front img,
+  #visitenkarte-c2 .flipper .front img {
+    border-radius: 3vw;
+  }
+
+  /* Urlaubsdetektive mit 2. Layer über front-Div (groszes Fragezeichen) */
   #urlaubsdetektive .flipper .front {
-    font-size: 15vh;
-    color: brown;
-    font-weight: bold;
+    _font-size: 15vh;
   }
 
-  /* ENDE Inhalt main */
+  /* Kalender im Zentrum bei 3x3-Grid */
 
-  /* #footer - Inhalt Fuszzeile */
+  /* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
+
+  /* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
+
+  /* geringes Padding für gesamte Content-Page: .page-pad */
+
+  /* oberer Bereich - Bild mit NavItem-Layer */
+  .h1-cont {
+    _padding: 4vh 0 1vh 0;
+    _font-size: 5vh;
+    _text-shadow: var(--h2-imp-shadow);
+  }
+
+  .layer-1 {
+    _position: absolute;
+    _left: 15vw;
+    _top: 20vh;
+    _row-gap: 2vh;
+    _z-index: 3;
+  }
+
+  .obj-center {
+    _display: inline-block;
+    _justify-content: space-between;
+    _margin: 1vh auto;
+  }
+
+  .button-cont {
+    _min-width: 15vw;
+    _padding: 0.8vw;
+    _border: 0.1vw solid var(--sand100);
+    _border-radius: 1vw;
+  }
+
+  /* unterer Bereich - Inhalte unter Bild mit NavItem-Layer */
+
+  .h2-cont {
+    _padding: 2vh 0 1vh 0;
+    _font-size: 4vh;
+    _text-shadow: var(--h2-shadow-1);
+  }
+
+  .h3-cont {
+    _padding: 2vh 0 1vh 0;
+    _font-size: 3vh;
+  }
+
+  .h4-cont {
+    _padding: 2vh 0 1vh 0;
+    _font-size: 2.5vh;
+  }
+
+  /* Content-Page mit zur Sub-Nav historische Fakten */
+  /* einblenden der Tabelle mit den Fakten zum Sortieren / Filtern */
+
+  /* Page-Teil mit historischen Fakten 
+-> beinhaltet Tabelle mit ID und Klasse (! - für JavaScript) "hist-fakt" */
+  #hist-fakt {
+    _display: none;
+    _margin: 3vh 0;
+  }
+
+  .fakt {
+    _display: flex;
+    _flex-direction: row;
+    _margin: 2vh 0;
+  }
+
+  .fakt-detail {
+    _padding: 1vw;
+  }
+
+  .date {
+    _border: solid var(--sienna100) 0.5vw;
+    _border-radius: 0 0 0 2vw;
+    _margin: 0 2vw 0 0;
+  }
+  .date-y {
+    _text-align: center;
+    _padding: 1vh;
+  }
+  .date-date {
+    _border-radius: 0 0 0 2vw;
+    _text-align: center;
+    _padding: 1vh;
+  }
+
+  /* ***** ENDE Inhalt main / page ***** */
+
+  /* ***** Footer **** */
 
   #footer {
+    height: 10vh;
     padding: 2vh 0 2vh 0;
-    font-size: 3vh;
-    font-weight: 700;
-    _text-shadow: 0.03vw 0.03vw 0.1vw #444;
-    text-shadow: var(--link-shadow);
+    font-size: 2vh;
   }
+  /* ***** ENDE Footer **** */
+  /* ##### ENDE Wrapper / Seiten-Inhalt ##### */
 
-  /* Bildgröße wird immer auf 100% runtergerechnet */
-  img {
+  /* ***** Bildgröße wird immer auf 100% runtergerechnet ***** */
+  /* img {
     max-width: 100%;
     height: auto;
-  }
+  } */
 }
 
+/* ##### Ende 2-spaltig, Portrait ##### */
+
+/* ################################################################ */
 /* ################# 3. Schritt: 1-spaltig, Portrait ##############*/
 /* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
 @media only screen and (max-width: 430px) and (orientation: portrait) {
-  /* Body */
+  /* flexible Größen durch %, em, vh/ vw (viewport with) */
+
+  /* ##### Body - zusammengeschobener PC-Screen und Smartphones, hochkant ##### */
+
   body {
     font-size: 3vh;
     margin: 1.8vh auto 10vh auto;
   }
 
   /* Wrapper - Inhalt über HG-Bild */
-  /* #header + #topnav - Inhalt des header */
+  /* .header + #topnav - Inhalt des header */
   /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
 
   #head {
@@ -701,9 +1001,7 @@ table tr:nth-of-type(odd) td {
   /* Navigation im Header */
 
   nav {
-    width: 100%;
-    float: left;
-    padding: 0;
+    display: contents;
   }
 
   #topnav {
@@ -765,7 +1063,6 @@ table tr:nth-of-type(odd) td {
   }
 
   /* Flipcards */
-  /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
 
   .flipbox {
     -webkit-perspective: 800px;
@@ -799,17 +1096,23 @@ table tr:nth-of-type(odd) td {
   }
 }
 
+/* ##### Ende 1-spaltig, Portrait ##### */
+
+/* ################################################################ */
 /* ################# 4. Schritt: 1-spaltig, Landscape ##############*/
 /* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
 @media only screen and (max-width: 400px) and (orientation: landscape) {
-  /* Body */
+  /* flexible Größen durch %, em, vh/ vw (viewport with) */
+
+  /* ##### Body - zusammengeschobener PC-Screen und Smartphones, queer ##### */
+
   body {
     font-size: 2.7vh;
     margin: 1.8vh auto 10vh auto;
   }
 
   /* Wrapper - Inhalt über HG-Bild */
-  /* #header + #topnav - Inhalt des header */
+  /* .header + #topnav - Inhalt des header */
   /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
 
   #head {
@@ -876,7 +1179,6 @@ table tr:nth-of-type(odd) td {
   }
 
   /* Flipcards */
-  /* https://stackoverflow.com/questions/52697020/showing-full-content-of-the-flip-card-under-mobile-devices */
 
   .flipbox {
     -webkit-perspective: 800px;
@@ -909,3 +1211,4 @@ table tr:nth-of-type(odd) td {
     height: auto;
   }
 }
+/* ##### Ende 1-spaltig, Landscape */
