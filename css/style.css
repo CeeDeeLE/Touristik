@@ -151,6 +151,7 @@ nav {
 
 /* nur #topnav hier, alles andere in navi.css */
 #topnav {
+  overflow: hidden;
   margin-top: 1.2vh;
 }
 
@@ -986,63 +987,71 @@ spezielle Cards mit Flip-Effekt:
   /* ##### Body - zusammengeschobener PC-Screen und Smartphones, hochkant ##### */
 
   body {
+    height: 250vh;
     font-size: 3vh;
     margin: 1.8vh auto 10vh auto;
   }
 
-  /* Wrapper - Inhalt über HG-Bild */
-  /* .header + #topnav - Inhalt des header */
-  /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
+  /* ##### Wrapper - ganze Inhaltsseite/ Inhalt über HG-Bild ##### */
 
-  #head {
-    padding-top: 1.8vh;
-  }
-
-  /* Navigation im Header */
-
-  nav {
+  /* ***** #hader - Wrapper für head und nav ***** */
+  .header-index {
     display: contents;
   }
 
-  #topnav {
-    margin-top: 1.2vh;
+  /* .h1-all + .h1-pc - geteilte head für reponsive Darstellung 
+-> erst ab 2-spaltiger Darstellung */
+
+  #head2cols {
+    padding: 1.5vh 1vw 0.5vh 1vw;
   }
 
-  /* .page + .flipbx - Inhalt der main */
-
-  /* geteilte Head für reponsive Darstellung */
   .h1-all,
-  .h1-pc,
-  .h1-cont {
+  .h1-pc {
     font-size: 4vh;
   }
 
-  .h1-cont {
-    margin: 4vh auto;
+  /* nav bei 3x3-Grid versteckt 
+  -> sonst bei Landscape und hochauflösender Darstellung inlkine */
+  nav {
+    display: block;
   }
 
-  /* Page */
+  /* nur #topnav hier, alles andere in navi.css */
 
-  h2 {
+  /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
+
+  /* head in Card "Kalender im Zentrum" bei 3x3-Grid -> Card sonst versteckt */
+
+  /* ***** ENDE header ***** */
+
+  /* ***** main/ page mit content ***** */
+
+  /* ***** A: Index-Seite: Content mit 9 bzw. 8 Flächen ***** */
+
+  /* Klassen ignorestyle/-link für Links auf 8 bzw. 9 Cards der Index-Page */
+  h2,
+  .ignorestyle {
     font-size: 3vh;
-    _text-shadow: 0.02vw 0.02vw 0.05vw rgb(241, 239, 230);
-    _margin: 0vh 1vw;
+    text-shadow: var(--h2-shadow-2);
+    _margin: 0vh 0.7vw;
   }
 
   .index-page {
     display: flex;
     flex-direction: column;
-    padding: 0;
-    margin: 0 auto;
+    _padding: 0;
+    _margin: 0 auto;
   }
 
-  /* Content mit 8/9 Flächen */
-
+  /* Cards auf index-Seite */
   .quader {
-    height: 32vh;
-    border: 0.03vw solid var(--sienna100);
+    border-radius: 2vw;
+    min-height: 30vh;
+    max-height: 45vh;
   }
 
+  /* für Card-Umsortierung doppelte Cards -> zunächst ausgeblendet */
   #lexikon-c2,
   #visitenkarte-c2,
   #sprechstunde-c2 {
@@ -1063,37 +1072,80 @@ spezielle Cards mit Flip-Effekt:
   }
 
   /* Flipcards */
-
-  .flipbox {
+  /* .flipbox {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
     -o-perspective: 800px;
     perspective: 800px;
     perspective: 800px;
+  } */
+
+  .front,
+  .back {
+    border-radius: 3vw;
+    padding: 0 0.7vw;
   }
 
+  /* z-index 3: #wrapper, z-index 2: .page */
+  /* Chil-Divs in Flipbox haben absolute Pos. */
+  /* z-index back-Div 1 über front-Div */
+
+  /*
+spezielle Cards mit Flip-Effekt: 
+- hist. Fakt, 
+- Ortsrätsel, 
+- wusstest du, dass... , 
+- Visitenkarte Region, 
+*/
+  #urlaubsdetektive .flipper .front,
+  #visitenkarte .flipper .front,
+  #visitenkarte-c2 .flipper .front,
+  #urlaubsdetektive .flipper .front img,
+  #visitenkarte .flipper .front img,
+  #visitenkarte-c2 .flipper .front img {
+    border-radius: 3vw;
+  }
+
+  /* Urlaubsdetektive mit 2. Layer über front-Div (groszes Fragezeichen) */
   #urlaubsdetektive .flipper .front {
-    font-size: 15vh;
-    color: brown;
-    font-weight: bold;
+    _font-size: 15vh;
   }
 
-  /* ENDE Inhalt main */
+  /* Kalender im Zentrum bei 3x3-Grid */
 
-  /* #footer - Inhalt Fuszzeile */
+  /* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
+
+  /* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
+
+  /* geringes Padding für gesamte Content-Page: .page-pad */
+
+  /* oberer Bereich - Bild mit NavItem-Layer */
+
+  /* unterer Bereich - Inhalte unter Bild mit NavItem-Layer */
+
+  /* Content-Page mit zur Sub-Nav historische Fakten */
+  /* einblenden der Tabelle mit den Fakten zum Sortieren / Filtern */
+
+  /* Page-Teil mit historischen Fakten 
+-> beinhaltet Tabelle mit ID und Klasse (! - für JavaScript) "hist-fakt" */
+  /* ***** ENDE Inhalt main / page ***** */
+
+  /* ***** Footer **** */
 
   #footer {
+    height: 10vh;
     padding: 2vh 0 2vh 0;
     font-size: 2vh;
-    font-weight: 700;
-    text-shadow: var(--link-shadow);
   }
 
-  /* Bildgröße wird immer auf 100% runtergerechnet */
-  img {
+  /* ***** ENDE Footer **** */
+  /* ##### ENDE Wrapper / Seiten-Inhalt ##### */
+
+  /* ***** Bildgröße wird immer auf 100% runtergerechnet ***** */
+  /* img {
     max-width: 100%;
     height: auto;
-  }
+  } */
 }
 
 /* ##### Ende 1-spaltig, Portrait ##### */
@@ -1107,58 +1159,71 @@ spezielle Cards mit Flip-Effekt:
   /* ##### Body - zusammengeschobener PC-Screen und Smartphones, queer ##### */
 
   body {
-    font-size: 2.7vh;
+    height: 250vh;
+    font-size: 3vh;
     margin: 1.8vh auto 10vh auto;
   }
 
-  /* Wrapper - Inhalt über HG-Bild */
-  /* .header + #topnav - Inhalt des header */
-  /* Navi-Item Impressum bei 3 x 3 -Grid versteckt */
+  /* ##### Wrapper - ganze Inhaltsseite/ Inhalt über HG-Bild ##### */
 
-  #head {
-    padding-top: 1.8vh;
+  /* ***** #hader - Wrapper für head und nav ***** */
+  .header-index {
+    display: contents;
   }
 
-  /* Navigation im Header */
+  /* .h1-all + .h1-pc - geteilte head für reponsive Darstellung 
+-> erst ab 2-spaltiger Darstellung */
 
-  nav {
-    width: 100%;
-    float: left;
-    padding: 0;
+  #head2cols {
+    padding: 1.5vh 1vw 0.5vh 1vw;
   }
 
-  #topnav {
-    margin-top: 1.2vh;
-  }
-
-  /* .page + .flipbx - Inhalt der main */
-
-  /* geteilte Head für reponsive Darstellung */
   .h1-all,
-  .h1-pc,
-  .h1-cont {
+  .h1-pc {
     font-size: 4vh;
   }
 
-  .h1-cont {
-    margin: 4vh auto;
+  /* nav bei 3x3-Grid versteckt 
+  -> sonst bei Landscape und hochauflösender Darstellung inlkine */
+  nav {
+    display: block;
   }
 
-  /* Page */
+  /* nur #topnav hier, alles andere in navi.css */
 
-  h2 {
+  /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
+
+  /* head in Card "Kalender im Zentrum" bei 3x3-Grid -> Card sonst versteckt */
+
+  /* ***** ENDE header ***** */
+
+  /* ***** main/ page mit content ***** */
+
+  /* ***** A: Index-Seite: Content mit 9 bzw. 8 Flächen ***** */
+
+  /* Klassen ignorestyle/-link für Links auf 8 bzw. 9 Cards der Index-Page */
+  h2,
+  .ignorestyle {
     font-size: 3vh;
-    _text-shadow: 0.02vw 0.02vw 0.05vw rgb(241, 239, 230);
-    _margin: 0vh 1vw;
+    text-shadow: var(--h2-shadow-2);
+    _margin: 0vh 0.7vw;
   }
 
   .index-page {
     display: flex;
     flex-direction: column;
-    padding: 0;
-    margin: 0 auto;
+    _padding: 0;
+    _margin: 0 auto;
   }
 
+  /* Cards auf index-Seite */
+  .quader {
+    border-radius: 2vw;
+    min-height: 30vh;
+    max-height: 45vh;
+  }
+
+  /* für Card-Umsortierung doppelte Cards -> zunächst ausgeblendet */
   #lexikon-c2,
   #visitenkarte-c2,
   #sprechstunde-c2 {
@@ -1179,36 +1244,79 @@ spezielle Cards mit Flip-Effekt:
   }
 
   /* Flipcards */
-
-  .flipbox {
+  /* .flipbox {
     -webkit-perspective: 800px;
     -moz-perspective: 800px;
     -o-perspective: 800px;
     perspective: 800px;
     perspective: 800px;
+  } */
+
+  .front,
+  .back {
+    border-radius: 3vw;
+    padding: 0 0.7vw;
   }
 
+  /* z-index 3: #wrapper, z-index 2: .page */
+  /* Chil-Divs in Flipbox haben absolute Pos. */
+  /* z-index back-Div 1 über front-Div */
+
+  /*
+spezielle Cards mit Flip-Effekt: 
+- hist. Fakt, 
+- Ortsrätsel, 
+- wusstest du, dass... , 
+- Visitenkarte Region, 
+*/
+  #urlaubsdetektive .flipper .front,
+  #visitenkarte .flipper .front,
+  #visitenkarte-c2 .flipper .front,
+  #urlaubsdetektive .flipper .front img,
+  #visitenkarte .flipper .front img,
+  #visitenkarte-c2 .flipper .front img {
+    border-radius: 3vw;
+  }
+
+  /* Urlaubsdetektive mit 2. Layer über front-Div (groszes Fragezeichen) */
   #urlaubsdetektive .flipper .front {
-    font-size: 15vh;
-    color: brown;
-    font-weight: bold;
+    _font-size: 15vh;
   }
 
-  /* ENDE Inhalt main */
+  /* Kalender im Zentrum bei 3x3-Grid */
 
-  /* #footer - Inhalt Fuszzeile */
+  /* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
+
+  /* ***** B: Conten-Seiten -> nur über Index-Seite erreichbar ***** */
+
+  /* geringes Padding für gesamte Content-Page: .page-pad */
+
+  /* oberer Bereich - Bild mit NavItem-Layer */
+
+  /* unterer Bereich - Inhalte unter Bild mit NavItem-Layer */
+
+  /* Content-Page mit zur Sub-Nav historische Fakten */
+  /* einblenden der Tabelle mit den Fakten zum Sortieren / Filtern */
+
+  /* Page-Teil mit historischen Fakten 
+-> beinhaltet Tabelle mit ID und Klasse (! - für JavaScript) "hist-fakt" */
+  /* ***** ENDE Inhalt main / page ***** */
+
+  /* ***** Footer **** */
 
   #footer {
+    height: 10vh;
     padding: 2vh 0 2vh 0;
     font-size: 2vh;
-    font-weight: 700;
-    text-shadow: var(--link-shadow);
   }
 
-  /* Bildgröße wird immer auf 100% runtergerechnet */
-  img {
+  /* ***** ENDE Footer **** */
+  /* ##### ENDE Wrapper / Seiten-Inhalt ##### */
+
+  /* ***** Bildgröße wird immer auf 100% runtergerechnet ***** */
+  /* img {
     max-width: 100%;
     height: auto;
-  }
+  } */
 }
 /* ##### Ende 1-spaltig, Landscape */
