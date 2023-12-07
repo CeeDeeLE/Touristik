@@ -24,12 +24,24 @@
 
 @import url(style.css);
 
+/* div mit Kalender als Tabelle -> wird von js erzeugt */
 #calendar {
-  /* Fuer IE <= 6 */
   width: 95%;
   margin: 2.25%;
 }
 
+/* Formatoierung der Tabelle - allgemein */
+#calendar table {
+  width: 90%;
+  border-collapse: collapse;
+  border: solid var(--sienna100) 0.11em;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #f6f6f6;
+}
+
+/* Zellen im Tabellenkopf - allgemein */
 #calendar table thead th {
   font-weight: bold;
   font-size: 0.75em;
@@ -39,6 +51,7 @@
   background-color: var(--weisz80);
 }
 
+/* Zellen im Tabellenkopf - Wochentage */
 #calendar table thead th.weekday {
   font-weight: bold;
   font-size: 0.5em;
@@ -49,6 +62,7 @@
   border: solid var(--sienna100) 0.1em;
 }
 
+/* Zellen im Tabellenbody und Tabellenfusz - allgemein */
 #calendar table tbody td,
 #calendar table tfoot td {
   font-weight: normal;
@@ -59,36 +73,35 @@
   padding-right: 0.6em;
   color: var(--darkturtoise100);
   text-align: right;
-  border: solid #ccd2d8 0.1em;
+  border: solid var(--sienna100) 0.1em;
 }
 
+/* Zellen im Tabellenbody - Anzeige Text Datum Wochenende */
+#calendar table tbody td.weekend {
+  color: #9a2525;
+}
+/* Zellen im Tabellenbody - Anzeige Text Datum Sonntag, zusätzlich fett */
+#calendar table tbody td.sunday {
+  font-weight: bolder;
+}
+
+/* Zellen im Tabellenbody - Anzeige Hintergrund für aktuelles Datum */
+#calendar table tbody td.today {
+  background-color: #ff0;
+}
+
+/* Zellen im Tabellenfusz - Font groeszer, Border entfernt */
 #calendar table tfoot td {
   font-size: 0.65em;
   border: none;
 }
 
+/* Zellen im Tabellenfusz - Anzeige der Kalenderwoche */
 #calendar table tfoot td.calendar_week {
   text-align: left;
 }
 
-#calendar table tbody td.saturday {
-  color: #9a2525;
-  font-weight: normal;
-}
-
-#calendar table tbody td.sunday {
-  color: #9a2525;
-  font-weight: bold;
-}
-
-#calendar table tbody td.weekend {
-  color: #9a2525;
-}
-
-#calendar table tbody td.today {
-  background-color: #ff0;
-}
-
+/* Zellen im Tabellenfusz - Anzeige der Jahr vor/ zurueck-Icons */
 #calendar table thead th.prev_year,
 #calendar table thead th.next_year {
   margin: 0.1em;
@@ -97,17 +110,8 @@
   font-size: 0.65em;
 }
 
+/* Zellen im Tabellenfusz - Anzeige der Tage des vorherigen/ nächsten Monats */
 #calendar table tbody td.last_month,
 #calendar table tbody td.next_month {
   color: #a3afc4;
-}
-
-#calendar table {
-  width: 90%;
-  border-collapse: collapse;
-  border: solid var(--sienna100) 0.11em;
-  padding: 0;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: #f6f6f6;
 }

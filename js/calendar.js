@@ -1,8 +1,8 @@
-/**********************************************************************
+/************************************************************************
  *          Calendar JavaScript [DOM] v3.11 by Michael Loesler          *
+ *                modified by Constanze Deten, c 2023                   *
  ************************************************************************
  * Copyright (C) 2005-09 by Michael Loesler, http//derletztekick.com    *
- *                                                                      *
  *                                                                      *
  * This program is free software; you can redistribute it and/or modify *
  * it under the terms of the GNU General Public License as published by *
@@ -20,7 +20,7 @@
  * Free Software Foundation, Inc.,                                      *
  * 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.            *
  *                                                                      *
- **********************************************************************/
+ ***********************************************************************/
 
 function CalendarJS() {
   this.now = new Date();
@@ -66,8 +66,8 @@ function CalendarJS() {
     if (!initDate) this.checkDate();
   }),
     (this.checkDate = function () {
-      var self = this;
-      var today = new Date();
+      let self = this;
+      let today = new Date();
       if (this.date != today.getDate()) {
         this.tableHead = this.createTableHead();
         this.tableFoot = this.createTableFoot();
@@ -100,27 +100,27 @@ function CalendarJS() {
         this.monthCell.firstChild.nodeValue.length,
         this.monthname[this.mm] + "\u00a0" + this.yy
       );
-      var table = document.createElement("table");
+      let table = document.createElement("table");
       table.appendChild(this.createTableBody());
       table.appendChild(this.tableHead);
       table.appendChild(this.tableFoot);
       this.parEl.appendChild(table);
     }),
     (this.createTableFoot = function () {
-      var tfoot = document.createElement("tfoot");
-      var tr = document.createElement("tr");
-      var td = this.getCell(
+      let tfoot = document.createElement("tfoot");
+      let tr = document.createElement("tr");
+      td = this.getCell(
         "td",
         "KW\u00a0" + this.getCalendarWeek(this.year, this.month, this.date),
         "calendar_week"
       );
       td.colSpan = 3;
       tr.appendChild(td);
-      var td = this.getCell("td", this.timeTrigger(), "clock");
+      td = this.getCell("td", this.timeTrigger(), "clock");
       td.colSpan = 4;
       tr.appendChild(td);
       tfoot.appendChild(tr);
-      var self = this;
+      let self = this;
       window.setInterval(function () {
         td.firstChild.nodeValue = self.timeTrigger();
       }, 500);
@@ -128,9 +128,9 @@ function CalendarJS() {
     });
 
   (this.createTableHead = function () {
-    var thead = document.createElement("thead");
-    var tr = document.createElement("tr");
-    var th = this.getCell("th", "\u00AB", "prev_month");
+    let thead = document.createElement("thead");
+    let tr = document.createElement("tr");
+    let th = this.getCell("th", "\u00AB", "prev_month");
     th.rowSpan = 2;
     th.Instanz = this;
     th.onclick = function () {
@@ -197,24 +197,24 @@ function CalendarJS() {
     tr.appendChild(th);
     thead.appendChild(tr);
     tr = document.createElement("tr");
-    for (var i = 0; i < this.dayname.length; i++)
+    for (let i = 0; i < this.dayname.length; i++)
       tr.appendChild(this.getCell("th", this.dayname[i], "weekday"));
     thead.appendChild(tr);
     return thead;
   }),
     (this.createTableBody = function () {
-      var dayspermonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-      var sevendaysaweek = 0;
-      var begin = new Date(this.yy, this.mm, 1);
-      var firstday = begin.getDay() - 1;
+      let dayspermonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      let sevendaysaweek = 0;
+      let begin = new Date(this.yy, this.mm, 1);
+      let firstday = begin.getDay() - 1;
       if (firstday < 0) firstday = 6;
       if (this.yy % 4 == 0 && (this.yy % 100 != 0 || this.yy % 400 == 0))
         dayspermonth[1] = 29;
-      var tbody = document.createElement("tbody");
-      var tr = document.createElement("tr");
+      let tbody = document.createElement("tbody");
+      let tr = document.createElement("tr");
       if (firstday == 0) {
-        for (var i = 0; i < this.dayname.length; i++) {
-          var prevMonth = this.mm == 0 ? 11 : this.mm - 1;
+        for (let i = 0; i < this.dayname.length; i++) {
+          let prevMonth = this.mm == 0 ? 11 : this.mm - 1;
           tr.appendChild(
             this.getCell("td", dayspermonth[prevMonth] - 6 + i, "last_month")
           );
@@ -223,8 +223,8 @@ function CalendarJS() {
         tr = document.createElement("tr");
       }
 
-      for (var i = 0; i < firstday; i++, sevendaysaweek++) {
-        var prevMonth = this.mm == 0 ? 11 : this.mm - 1;
+      for (let i = 0; i < firstday; i++, sevendaysaweek++) {
+        let prevMonth = this.mm == 0 ? 11 : this.mm - 1;
         tr.appendChild(
           this.getCell(
             "td",
@@ -234,29 +234,39 @@ function CalendarJS() {
         );
       }
 
-      for (var i = 1; i <= dayspermonth[this.mm]; i++, sevendaysaweek++) {
+      for (let i = 1; i <= dayspermonth[this.mm]; i++, sevendaysaweek++) {
         if (this.dayname.length == sevendaysaweek) {
           tbody.appendChild(tr);
           tr = document.createElement("tr");
           sevendaysaweek = 0;
         }
 
-        var td = null;
+        // Klassen today, saturday, sunday, weekend oder null vergeben
+        let td = null;
         if (
           i == this.date &&
           this.mm == this.month &&
           this.yy == this.year &&
-          (sevendaysaweek == 5 || sevendaysaweek == 6)
+          sevendaysaweek == 5
         )
-          td = this.getCell("td", i, "today weekend");
+          td = this.getCell("td", i, "today saturday weekend");
+        else if (
+          i == this.date &&
+          this.mm == this.month &&
+          this.yy == this.year &&
+          sevendaysaweek == 6
+        )
+          td = this.getCell("td", i, "today sunday weekend");
         else if (
           i == this.date &&
           this.mm == this.month &&
           this.yy == this.year
         )
           td = this.getCell("td", i, "today");
-        else if (sevendaysaweek == 5 || sevendaysaweek == 6)
-          td = this.getCell("td", i, "weekend");
+        else if (sevendaysaweek == 5)
+          td = this.getCell("td", i, "saturday weekend");
+        else if (sevendaysaweek == 6)
+          td = this.getCell("td", i, "sunday weekend");
         else td = this.getCell("td", i, null);
 
         td.setDate = this.setDate;
@@ -264,21 +274,21 @@ function CalendarJS() {
         td.mm = this.mm;
         td.yy = this.yy;
         td.onclick = function (e) {
-          var currentDate = new Date(this.yy, this.mm, this.dd);
+          let currentDate = new Date(this.yy, this.mm, this.dd);
           this.setDate(currentDate);
         };
         tr.appendChild(td);
       }
 
-      var daysNextMonth = 1;
-      for (var i = sevendaysaweek; i < this.dayname.length; i++)
+      let daysNextMonth = 1;
+      for (let i = sevendaysaweek; i < this.dayname.length; i++)
         tr.appendChild(this.getCell("td", daysNextMonth++, "next_month"));
 
       tbody.appendChild(tr);
 
       while (tbody.getElementsByTagName("tr").length < 6) {
         tr = document.createElement("tr");
-        for (var i = 0; i < this.dayname.length; i++)
+        for (let i = 0; i < this.dayname.length; i++)
           tr.appendChild(this.getCell("td", daysNextMonth++, "next_month"));
         tbody.appendChild(tr);
       }
@@ -286,18 +296,18 @@ function CalendarJS() {
       return tbody;
     }),
     (this.getCalendarWeek = function (j, m, t) {
-      var cwDate = this.now;
+      let cwDate = this.now;
       if (!t) {
         j = cwDate.getFullYear();
         m = cwDate.getMonth();
         t = cwDate.getDate();
       }
       cwDate = new Date(j, m, t);
-      var doDat = new Date(
+      let doDat = new Date(
         cwDate.getTime() + (3 - ((cwDate.getDay() + 6) % 7)) * 86400000
       );
       cwYear = doDat.getFullYear();
-      var doCW = new Date(
+      let doCW = new Date(
         new Date(cwYear, 0, 4).getTime() +
           (3 - ((new Date(cwYear, 0, 4).getDay() + 6) % 7)) * 86400000
       );
@@ -309,17 +319,17 @@ function CalendarJS() {
       // window.alert( date );
     }),
     (this.timeTrigger = function () {
-      var now = new Date();
-      var ss =
+      let now = new Date();
+      let ss =
         now.getSeconds() < 10 ? "0" + now.getSeconds() : now.getSeconds();
-      var mm =
+      let mm =
         now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes();
-      var hh = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
-      var str = hh + ":" + mm + ":" + ss;
+      let hh = now.getHours() < 10 ? "0" + now.getHours() : now.getHours();
+      let str = hh + ":" + mm + ":" + ss;
       return str;
     }),
     (this.getCell = function (tag, str, cssClass) {
-      var El = document.createElement(tag);
+      let El = document.createElement(tag);
       El.appendChild(document.createTextNode(str));
       if (cssClass != null) El.className = cssClass;
       return El;
@@ -351,10 +361,10 @@ function CalendarJS() {
     });
 }
 
-var DOMContentLoaded = false;
+let DOMContentLoaded = false;
 function addContentLoadListener(func) {
   if (document.addEventListener) {
-    var DOMContentLoadFunction = function () {
+    let DOMContentLoadFunction = function () {
       window.DOMContentLoaded = true;
       func();
     };
@@ -364,7 +374,7 @@ function addContentLoadListener(func) {
       false
     );
   }
-  var oldfunc = window.onload || new Function();
+  let oldfunc = window.onload || new Function();
   window.onload = function () {
     if (!window.DOMContentLoaded) {
       oldfunc();
@@ -375,5 +385,5 @@ function addContentLoadListener(func) {
 
 addContentLoadListener(function () {
   new CalendarJS().init("calendar");
-  //new CalendarJS().init("calendar", new Date(2009, 1, 15));
+  //new CalendarJS().init("calendar", new Date(2024, 1, 15));
 });
