@@ -207,6 +207,13 @@ header h2 {
   }
   /* position right muss soweit neg. rücken, dass sie aus dem Bild weg ist, entspr. max-width */
   .consent-wrapper {
+    max-width: 60vw;
+    min-width: 45vw;
+
+    position: fixed;
+    bottom: 20vh;
+    right: -60vw;
+
     border-radius: 2vw;
     padding: 2vh 1.5vw;
 
@@ -245,6 +252,13 @@ header h2 {
   }
   /* position right muss soweit neg. rücken, dass sie aus dem Bild weg ist, entspr. max-width */
   .consent-wrapper {
+    max-width: 60vw;
+    min-width: 45vw;
+
+    position: fixed;
+    bottom: 20vh;
+    right: -60vw;
+
     border-radius: 2vw;
     padding: 2vh 1.5vw;
 
