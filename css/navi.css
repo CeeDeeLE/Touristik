@@ -4,52 +4,65 @@
 /*                   c 2023                     */
 /************************************************/
 
-/* ÜBERARBEITEN !!!!! 
--> https://www.w3schools.com/howto/howto_js_responsive_navbar_dropdown.asp */
+/* ÜBERARBEITEN !!!!! */
 @import url(style.css);
 
-ul.topnav {
-  list-style-type: none;
+.topnav {
   margin: 0;
+  border: 0;
   padding: 0;
   overflow: hidden;
   background-color: var(--water100);
 }
 
-ul.topnav li,
-#logo {
+.topnav div {
   float: left;
 }
 
-ul.topnav li a,
-.nav-icon,
-#logo {
-  display: inline-block;
-  color: var(--weisz80);
-  text-align: center;
-  padding: 0.2em 0.5em;
-  text-decoration: none;
-  transition: 0.3s;
-  font-size: 17px;
+.home-icon .fa-fw {
+  width: 100%;
+  font-size: 2.2vw;
+  padding: 0.2vh 2vw 0.1vh 1vw;
+}
+.nav-icon {
+  font-size: 3.5vw;
+  padding: 0 0.8vw 0;
 }
 
-ul.topnav li a:hover {
+.topnav .drop-item .nav-item a,
+.topnav div div a {
+  color: var(--weisz80);
+  padding: 0.2vh 2vw 0.2vh 0vw;
+  line-height: 130%;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 3vh;
+}
+
+.home-icon:hover,
+.topnav div div a:hover,
+.nav-icon:hover {
   background-color: var(--greyturquoise100);
 }
 
-ul.topnav li.nav-icon {
+.topnav div.nav-icon {
   float: right;
   display: none;
+}
+
+.nav-item a {
+  width: 100%;
+  text-align: left;
 }
 
 /* Optional für eine second level Navigation in der Screen Ansicht */
 .innen {
   color: var(--weisz80);
   display: none;
-  padding: 3px;
+  padding: 0.5vh;
 }
 
-li:hover .innen {
+div:hover .innen {
   color: var(--sienna100);
   display: inline-block;
 }
@@ -57,32 +70,40 @@ li:hover .innen {
 
 /* ##################### Media Screen für Switch ###############*/
 @media only screen and (max-width: 800px) and (orientation: landscape) {
-  ul.topnav li:not(:first-child) {
+  .topnav div:not(:first-child) {
     display: none;
   }
 
-  ul.topnav li.nav-icon {
-    display: inline-block;
-  }
-
-  ul.topnav.responsive {
+  .topnav {
     position: relative;
   }
 
-  ul.topnav.responsive li.nav-icon {
+  .home-icon .fa-fw {
+    font-size: 3.5vw;
+  }
+
+  .nav-icon {
+    font-size: 3.5vw;
+  }
+
+  #drop-item.drop-item.responsive,
+  #drop-item.drop-item.responsive div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-item:hover {
+    background-color: var(--greyturquoise100);
+  }
+
+  .topnav div.nav-icon {
+    display: inline-block;
+  }
+  .topnav.responsive div.nav-icon {
     position: absolute;
     right: 0;
     top: 0;
-  }
-
-  ul.topnav.responsive li {
-    float: none;
-    display: inline;
-  }
-
-  ul.topnav.responsive li a {
-    display: block;
-    text-align: left;
   }
 
   /* Optional für eine second level Navigation in der Mobile Ansicht */
@@ -94,32 +115,40 @@ li:hover .innen {
 
 /* ##################### Media Screen für Switch ###############*/
 @media screen and (max-width: 680px) and (orientation: portrait) {
-  ul.topnav li:not(:first-child) {
+  .topnav div:not(:first-child) {
     display: none;
   }
 
-  ul.topnav li.nav-icon {
-    display: inline-block;
-  }
-
-  ul.topnav.responsive {
+  .topnav {
     position: relative;
   }
 
-  ul.topnav.responsive li.nav-icon {
+  .home-icon .fa-fw {
+    font-size: 3.5vw;
+  }
+
+  .nav-icon {
+    font-size: 3.5vw;
+  }
+
+  #drop-item.drop-item.responsive,
+  #drop-item.drop-item.responsive div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-item:hover {
+    background-color: var(--greyturquoise100);
+  }
+
+  .topnav div.nav-icon {
+    display: inline-block;
+  }
+  .topnav.responsive div.nav-icon {
     position: absolute;
     right: 0;
     top: 0;
-  }
-
-  ul.topnav.responsive li {
-    float: none;
-    display: inline;
-  }
-
-  ul.topnav.responsive li a {
-    display: block;
-    text-align: left;
   }
 
   /* Optional für eine second level Navigation in der Mobile Ansicht */

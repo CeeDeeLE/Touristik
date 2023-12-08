@@ -135,36 +135,30 @@
 
         <nav>
           <!-- Beginn responsives menue ohne Subnav -->
-          <ul class="topnav" id="topnav">
-            <li>
+          <div class="topnav">
+            <div class="home-icon">
               <a href="../index.html"
-                ><i class="fa fa-fw fa-home font-as"></i
+                ><i class="fa fa-fw fa-home font-as nav-icon"></i
               ></a>
-            </li>
-            <li>
-              <!-- Wissen:  + nützliches (Lexikon) + historische Fakten -->
-              <a href="wissen.html">Wissen</a>
-            </li>
-            <li class="hidden-item">
-              <!-- täglich: neue Regionen + unnützes Wissen (wusstest du) -->
-              <a href="ueberraschung.html">Überraschung</a>
-            </li>
-            <li>
-              <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre -->
-              <a href="ueberzeugung.html">Überzeugung</a>
-            </li>
-            <li>
-              <!-- Kontaktformular + Sprechstunde -->
-              <a href="kontakt.html">Kontakt</a>
-            </li>
-            <li class="nav-icon">
-              <i
-                class="fa fa-bars font-as"
-                aria-hidden="true"
-                onclick="BuergerNav()"
-              ></i>
-            </li>
-          </ul>
+            </div>
+            <div onclick="BuergerNav()" class="nav-icon">
+              <i class="fa fa-bars font-as nav-icon" aria-hidden="true"></i>
+            </div>
+            <div id="drop-item" class="drop-item">
+              <div class="nav-item">
+                <!-- Wissen:  + nützliches (Lexikon) + historische Fakten -->
+                <a href="wissen.html">Wissen</a>
+              </div>
+              <div class="nav-item">
+                <!-- Rat: Nachhaltigkeit + Regionen stelllen sich vor + Lektüre -->
+                <a href="ueberzeugung.html">Überzeugung</a>
+              </div>
+              <div class="nav-item">
+                <!-- Kontaktformular + Sprechstunde -->
+                <a href="kontakt.html">Kontakt</a>
+              </div>
+            </div>
+          </div>
         </nav>
         <!-- end #menu -->
 
