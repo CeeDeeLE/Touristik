@@ -255,13 +255,6 @@ h2,
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
-
-  /* Drehen des Textes -> spiegelverkehrt */
-  _-moz-transform: scaleX(-1);
-  _-webkit-transform: scaleY(-1);
-  _-o-transform: scaleX(-1);
-  _-ms-transform: scaleX(-1);
-  _transform: scaleX(-1);
 }
 
 .flipper {
@@ -913,7 +906,7 @@ spezielle Cards mit Flip-Effekt:
 
   .navlayer {
     left: 7%;
-    top: 16%;
+    top: 18%;
     float: left;
 
     row-gap: 1.5vh;
@@ -1155,7 +1148,7 @@ spezielle Cards mit Flip-Effekt:
 
   .navlayer {
     left: 10%;
-    top: 16%;
+    top: 18%;
     float: left;
 
     row-gap: 1.5vh;
@@ -1399,7 +1392,7 @@ spezielle Cards mit Flip-Effekt:
 
   .navlayer {
     left: 10%;
-    top: 13%;
+    top: 18%;
     float: left;
 
     row-gap: 1.5vh;
