@@ -1,5 +1,6 @@
+// ausklappbare Liste mit historischen Fakten zum aktuellen Datum
 function histFakt() {
-  var x = document.getElementById("hist-fakt");
+  let x = document.getElementById("hist-fakt");
   let anchorHF;
   let anchdisplay;
   let anchalign;

@@ -10,7 +10,7 @@
 .topnav {
   margin: 0;
   border: 0;
-  padding: 0;
+  padding: 0.5vw;
   overflow: hidden;
   background-color: var(--water100);
 }
@@ -27,6 +27,10 @@
 .nav-icon {
   font-size: 3.5vw;
   padding: 0 0.8vw 0;
+}
+
+.nav-item {
+  padding: 0.2vh 2vw 0.1vh 1vw;
 }
 
 .topnav .drop-item .nav-item a,
@@ -66,10 +70,16 @@ div:hover .innen {
   color: var(--sienna100);
   display: inline-block;
 }
-/* ############Ende second level Navigation Screen ###############*/
 
-/* ##################### Media Screen für Switch ###############*/
-@media only screen and (max-width: 800px) and (orientation: landscape) {
+/* ##### Ende DESKTOP ##### */
+
+/* ################################################################ */
+/* ############## 1. Schritt 2-spaltig, Landscape ################ */
+@media only screen and (min-width: 400px) and (max-width: 820px) and (orientation: landscape) {
+  /* flexible Größen durch %, em, vh/ vw (viewport with) */
+
+  /* @media only screen and (max-width: 800px) and (orientation: landscape) { */
+
   .topnav div:not(:first-child) {
     display: none;
   }
@@ -113,8 +123,14 @@ div:hover .innen {
   /* Ende second level Navigation Mobile */
 }
 
-/* ##################### Media Screen für Switch ###############*/
-@media screen and (max-width: 680px) and (orientation: portrait) {
+/* ##### Ende 2-spaltig, Landscape ##### */
+
+/* ################################################################ */
+/* ##### 2. Schritt 2-spaltig, PC-Ansicht und hochauflösende Smartphones, hochkant ##### */
+@media only screen and (max-width: 1080px) and (orientation: portrait) {
+  /* flexible Größen durch %, em, vh/ vw (viewport with) */
+  /* @media screen and (max-width: 680px) and (orientation: portrait) { */
+
   .topnav div:not(:first-child) {
     display: none;
   }
@@ -129,6 +145,109 @@ div:hover .innen {
 
   .nav-icon {
     font-size: 3.5vw;
+  }
+
+  #drop-item.drop-item.responsive,
+  #drop-item.drop-item.responsive div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-item:hover {
+    background-color: var(--greyturquoise100);
+  }
+
+  .topnav div.nav-icon {
+    display: inline-block;
+  }
+  .topnav.responsive div.nav-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* Optional für eine second level Navigation in der Mobile Ansicht */
+  .innen {
+    display: inline-block;
+  }
+  /* Ende second level Navigation Mobile */
+}
+
+/* ##### Ende 2-spaltig, Portrait ##### */
+
+/* ################################################################ */
+/* ################# 3. Schritt: 1-spaltig, Portrait ##############*/
+/* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
+@media only screen and (max-width: 430px) and (orientation: portrait) {
+  /* flexible Größen durch %, em, vh/ vw (viewport with) */
+
+  .topnav div:not(:first-child) {
+    display: none;
+  }
+
+  .topnav {
+    position: relative;
+  }
+
+  .home-icon .fa-fw {
+    font-size: 3.5vw;
+  }
+
+  .nav-icon {
+    font-size: 3.5vw;
+  }
+
+  #drop-item.drop-item.responsive,
+  #drop-item.drop-item.responsive div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-item:hover {
+    background-color: var(--greyturquoise100);
+  }
+
+  .topnav div.nav-icon {
+    display: inline-block;
+  }
+  .topnav.responsive div.nav-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  /* Optional für eine second level Navigation in der Mobile Ansicht */
+  .innen {
+    display: inline-block;
+  }
+  /* Ende second level Navigation Mobile */
+}
+
+/* ##### Ende 1-spaltig, Portrait ##### */
+
+/* ################################################################ */
+/* ################# 4. Schritt: 1-spaltig, Landscape ##############*/
+/* Smartphone hochkant mit 1-spaltiger Darstellung der Inhalte  */
+@media only screen and (max-width: 400px) and (orientation: landscape) {
+  /* flexible Größen durch %, em, vh/ vw (viewport with) */
+
+  .topnav div:not(:first-child) {
+    display: none;
+  }
+
+  .topnav {
+    position: relative;
+    font-size: 2.5vwvh;
+  }
+
+  .home-icon .fa-fw {
+    font-size: 2.5vw;
+  }
+
+  .nav-icon {
+    font-size: 2.5vw;
   }
 
   #drop-item.drop-item.responsive,

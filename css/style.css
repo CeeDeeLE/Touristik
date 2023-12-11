@@ -14,12 +14,14 @@
     url("/css/webfonts/Sundayscript.ttf") format("truetype"),
     url("/css/webfonts/Sundayscript.woff") format("woff");
   font-weight: normal;
-  font-style: normal;
+  font-style: normal;button
 } */
 
 :root {
   /* schmutziges weisz, Wrapper, Text NavBar */
   --weisz80: rgba(250, 250, 250, 0.8);
+  /* schmutziges weisz hinter sticky Header */
+  --weisz100: rgba(250, 250, 250, 1);
   /* dark-türkis, urspr. rgb(7, 125, 146), #077c91 */
   --water100: rgb(5, 109, 113);
   /* light-water, Schatten für H1 */
@@ -61,10 +63,12 @@
   word-wrap: break-word;
   padding: 0;
   margin: 0 auto;
+
+  scroll-behavior: smooth;
 }
 
 html {
-  height: 100%;
+  _height: 100%;
 }
 
 /* ##### ENDE Intro ##### */
@@ -118,6 +122,8 @@ p {
 /* ***** Header - Wrapper für head und nav ***** */
 .header,
 .header-index {
+  background: var(--weisz100);
+
   text-align: center;
   padding: 0;
   margin: 0 auto;
@@ -149,6 +155,14 @@ nav {
 #topnav {
   overflow: hidden;
   margin-top: 1.2vh;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  _top: 1.2vh;
+  z-index: 3;
 }
 
 /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
@@ -235,12 +249,19 @@ h2,
   perspective: 2000px;
 }
 
-.flipbox:hover .flipper,
-.flipbox.hover .flipper {
+.flipbox:hover .flipper
+/* , .flipbox.hover .flipper  */ {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);
   transform: rotateY(180deg);
+
+  /* Drehen des Textes -> spiegelverkehrt */
+  _-moz-transform: scaleX(-1);
+  _-webkit-transform: scaleY(-1);
+  _-o-transform: scaleX(-1);
+  _-ms-transform: scaleX(-1);
+  _transform: scaleX(-1);
 }
 
 .flipper {
@@ -279,9 +300,10 @@ h2,
 
 /* z-index 3: #wrapper, z-index 2: .page */
 .front {
+  position: relative;
   transform: rotateY(0deg);
   /* z-index 1 unter back-Div */
-  z-index: 3;
+  z-index: 2;
 }
 
 .back {
@@ -318,11 +340,17 @@ spezielle Cards mit Flip-Effekt:
 }
 
 /* Urlaubsdetektive mit 2. Layer über front-Div (uebergroszes Fragezeichen) */
-/* wird aktuell nicht dargestellt */
-#urlaubsdetektive .flipper .front {
-  font-size: 15vh;
-  color: brown;
+.layer-flipimg {
+  width: 100%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 20vh;
+  color: red;
   font-weight: bold;
+
+  z-index: 3;
 }
 
 /* Kalender im Zentrum bei 3x3-Grid */
@@ -374,21 +402,22 @@ article {
   text-align: center;
 }
 
-.layer-1 {
-  position: absolute;
-  left: 15vw;
-  top: 20vh;
-  display: flex;
-  flex-direction: column;
-  row-gap: 2vh;
-  z-index: 3;
+head {
+  display: block;
+  float: left;
 }
 
-.obj-center {
-  width: 100%;
-  display: inline-block;
-  justify-content: space-between;
-  margin: 1vh auto;
+.navlayer {
+  position: absolute;
+  left: 10%;
+  top: 18%;
+
+  display: flex;
+  flex-direction: column;
+  float: left;
+
+  row-gap: 2vh;
+  z-index: 0;
 }
 
 .button-cont {
@@ -654,18 +683,11 @@ spezielle Cards mit Flip-Effekt:
     _text-shadow: var(--h2-imp-shadow);
   }
 
-  .layer-1 {
-    _position: absolute;
-    _left: 15vw;
-    _top: 20vh;
-    _row-gap: 2vh;
-    _z-index: 3;
-  }
-
-  .obj-center {
-    _display: inline-block;
-    _justify-content: space-between;
-    _margin: 1vh auto;
+  .navlayer {
+    left: 7%;
+    top: 18%;
+    float: left;
+    row-gap: 1.5vh;
   }
 
   .button-cont {
@@ -889,18 +911,13 @@ spezielle Cards mit Flip-Effekt:
     _text-shadow: var(--h2-imp-shadow);
   }
 
-  .layer-1 {
-    _position: absolute;
-    _left: 15vw;
-    _top: 20vh;
-    _row-gap: 2vh;
-    _z-index: 3;
-  }
+  .navlayer {
+    left: 7%;
+    top: 16%;
+    float: left;
 
-  .obj-center {
-    _display: inline-block;
-    _justify-content: space-between;
-    _margin: 1vh auto;
+    row-gap: 1.5vh;
+    _z-index: 0;
   }
 
   .button-cont {
@@ -1136,18 +1153,13 @@ spezielle Cards mit Flip-Effekt:
     _text-shadow: var(--h2-imp-shadow);
   }
 
-  .layer-1 {
-    _position: absolute;
-    _left: 15vw;
-    _top: 20vh;
-    _row-gap: 2vh;
-    _z-index: 3;
-  }
+  .navlayer {
+    left: 10%;
+    top: 16%;
+    float: left;
 
-  .obj-center {
-    _display: inline-block;
-    _justify-content: space-between;
-    _margin: 1vh auto;
+    row-gap: 1.5vh;
+    _z-index: 0;
   }
 
   .button-cont {
@@ -1385,18 +1397,13 @@ spezielle Cards mit Flip-Effekt:
     _text-shadow: var(--h2-imp-shadow);
   }
 
-  .layer-1 {
-    _position: absolute;
-    _left: 15vw;
-    _top: 20vh;
-    _row-gap: 2vh;
-    _z-index: 3;
-  }
+  .navlayer {
+    left: 10%;
+    top: 13%;
+    float: left;
 
-  .obj-center {
-    _display: inline-block;
-    _justify-content: space-between;
-    _margin: 1vh auto;
+    row-gap: 1.5vh;
+    _z-index: 3;
   }
 
   .button-cont {
