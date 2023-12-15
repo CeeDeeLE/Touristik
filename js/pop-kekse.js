@@ -20,22 +20,3 @@ const executeCodes = () => {
 };
 //executeCodes function will be called on webpage load
 window.addEventListener("load", executeCodes);
-
-// // malicious iframe im HTML-head neutralisieren
-// document.body.innerText = "Loaded into a frame.";
-
-// let parent = window.parent;
-// let oldIframe = parent.document.getElementById("mountPoint");
-// if (oldIframe != null) {
-//   // Build a new iframe to replace the old one.
-//   let newIframe = parent.document.createElement("iframe");
-//   newIframe.setAttribute("src", "malicious_child.html");
-//   newIframe.setAttribute("id", "maliciousFrame");
-//   // Replace Old iFrame
-//   oldIframe.replaceWith(newIframe);
-// } else {
-//   // When new frame is mounted you will see this alert
-//   alert(
-//     "This should not happen since the original iframe did not have 'allow-modals'."
-//   );
-// }

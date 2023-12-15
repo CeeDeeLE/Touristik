@@ -65,11 +65,14 @@ iframe,
 * {
   font-family: Helvetica, Tahoma, Verdana, sans-serif;
   font-weight: normal;
+  font-size: 2.2vh;
   color: var(--anthrazit100);
+  text-decoration: none;
 
   word-wrap: normal;
   word-wrap: break-word;
   padding: 0;
+  border: none;
   margin: 0 auto;
 
   scroll-behavior: smooth;
@@ -81,12 +84,6 @@ iframe,
 
 body {
   width: 100%;
-  font-size: 2.5vh;
-  _color: var(--anthrazit100);
-  /* border: none; */
-  /* background: none; */
-  /* text-decoration: none; */
-
   margin: 2vh auto;
 }
 
@@ -94,7 +91,6 @@ body {
   height: 200vh;
   background: var(--bg-img) var(--water100) fixed;
   background-size: cover;
-  _color: var(--anthrazit100);
 }
 
 .content-body {
@@ -102,12 +98,27 @@ body {
   background: var(--bg-img-sand) var(--sand40);
 }
 
-a {
+.h1-all,
+.h1-pc,
+.h1-cont,
+h2,
+.ignorestyle,
+#headcal {
+  font-family: "Cabin", Helvetica, sans-serif;
+}
+
+.fa {
+  color: var(--anthrazit100);
+}
+
+a,
+.link {
   text-decoration: none;
   color: var(--water100);
   clear: both;
 }
-a:hover {
+a:hover,
+.link:hover {
   color: var(--sienna100);
 }
 
@@ -142,7 +153,6 @@ p {
 -> erst ab 2-spaltiger Darstellung */
 .h1-all,
 .h1-pc {
-  font-family: "Cabin", Helvetica, sans-serif;
   font-weight: 900;
   color: var(--water100);
   text-shadow: var(--h1-shadow-1);
@@ -160,6 +170,7 @@ nav {
 #topnav {
   overflow: hidden;
   margin-top: 1.2vh;
+  line-height: 120%;
 }
 
 .sticky {
@@ -178,7 +189,6 @@ nav {
 /* head in Card "Kalender im Zentrum" bei 3x3-Grid 
 -> Card sonst versteckt */
 #headcal {
-  font-family: "Cabin", Helvetica, sans-serif;
   font-size: 3.7vh;
   font-weight: bolder;
   color: var(--water100);
@@ -197,7 +207,6 @@ nav {
 /* Klassen ignorestyle/-link für Links auf 8 bzw. 9 Cards der Index-Page */
 h2,
 .ignorestyle {
-  font-family: "Cabin", Helvetica, sans-serif;
   color: var(--sienna100);
   font-size: 3.5vh;
   text-shadow: var(--h2-shadow-2);
@@ -387,7 +396,6 @@ article {
   padding: 4vh 0 1vh 0;
   margin: 0 auto;
 
-  font-family: "Cabin", Helvetica, sans-serif;
   font-size: 5vh;
   font-weight: 900;
 
@@ -521,7 +529,7 @@ table tr:nth-of-type(odd) td {
   padding: 2vh 0 2vh 0;
 
   _border-top: 0.05vh solid var(--water100);
-  font-family: Arial, Helvetica, sans-serif;
+  _font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5vh;
   font-weight: 700;
   color: var(--water100);
@@ -581,6 +589,9 @@ img {
   }
 
   /* nur #topnav hier, alles andere in navi.css */
+  #topnav {
+    margin-top: 0.9vh;
+  }
 
   /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
 
@@ -811,6 +822,9 @@ spezielle Cards mit Flip-Effekt:
   }
 
   /* nur #topnav hier, alles andere in navi.css */
+  #topnav {
+    margin-top: 0.9vh;
+  }
 
   /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
 
@@ -911,7 +925,7 @@ spezielle Cards mit Flip-Effekt:
 
   .navlayer {
     left: 7%;
-    top: 18%;
+    top: 20%;
     float: left;
 
     row-gap: 1.5vh;
@@ -1045,6 +1059,9 @@ spezielle Cards mit Flip-Effekt:
   }
 
   /* nur #topnav hier, alles andere in navi.css */
+  #topnav {
+    margin-top: 1vh;
+  }
 
   /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
 
@@ -1153,7 +1170,7 @@ spezielle Cards mit Flip-Effekt:
 
   .navlayer {
     left: 10%;
-    top: 18%;
+    top: 20%;
     float: left;
 
     row-gap: 1.5vh;
@@ -1289,6 +1306,9 @@ spezielle Cards mit Flip-Effekt:
   }
 
   /* nur #topnav hier, alles andere in navi.css */
+  #topnav {
+    margin-top: 1vh;
+  }
 
   /* der jeweilige Navi-Punkt ist ausgeblendet .hidden-item */
 
