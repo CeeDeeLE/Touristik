@@ -4,8 +4,15 @@
 /*                   c 2023                     */
 /************************************************/
 @import url(navi.css);
-@import url(popup-cookies.css);
-@import url(calendar_js.css);
+@import url(pop-kekse.css);
+@import url(calendar.css);
+
+/* zum Neutralisiereen des iframe mit andbox in HTML-head !!!! */
+iframe,
+.allow-forms {
+  display: none;
+  height: 0;
+}
 
 /* Android benötigt die .ttf-Datei */
 /* @font-face {
@@ -58,6 +65,7 @@
 * {
   font-family: Helvetica, Tahoma, Verdana, sans-serif;
   font-weight: normal;
+  color: var(--anthrazit100);
 
   word-wrap: normal;
   word-wrap: break-word;
@@ -67,10 +75,6 @@
   scroll-behavior: smooth;
 }
 
-html {
-  _height: 100%;
-}
-
 /* ##### ENDE Intro ##### */
 
 /* ##### Body - PC-Ansicht und hochauflösende Smartphones, Landscape mit 3x3-Grid ##### */
@@ -78,7 +82,7 @@ html {
 body {
   width: 100%;
   font-size: 2.5vh;
-  color: var(--anthrazit100);
+  _color: var(--anthrazit100);
   /* border: none; */
   /* background: none; */
   /* text-decoration: none; */
@@ -90,6 +94,7 @@ body {
   height: 200vh;
   background: var(--bg-img) var(--water100) fixed;
   background-size: cover;
+  _color: var(--anthrazit100);
 }
 
 .content-body {

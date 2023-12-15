@@ -59,15 +59,12 @@
     <link
       rel="stylesheet"
       type="text/css"
-      href="css/calendar_js.css"
+      href="css/calendar.css"
       media="screen"
     />
+    <link rel="stylesheet" type="text/css" href="css/pop-kekse.css" />
 
     <!-- Link zur Vorlage für Symbole und Icons -->
-    <!-- <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    /> -->
     <link rel="stylesheet" href="css/fonts/font-awesome.min.css" />
 
     <!-- Google Webfont Cabin einbinden -->
@@ -102,50 +99,43 @@
     <!-- Ende Script für mobiles Menue -->
 
     <!-- JS für Flipbox -->
-    <script>
-      const flipbox = document.querySelector(".flipbox");
-      flipbox.ontouchstart = this.classList.toggle("hover");
-    </script>
+    <script type="text/javascript" src="js/flipbox.js"></script>
     <!-- Ende Flippbox -->
 
     <!-- Anfang Script für Inhaltsaufruf durch Button-Click -->
     <script type="text/javascript" src="js/btn-toggle.js"></script>
     <!-- Ende Kopie Script für mobiles Menue -->
 
-    <!-- ############# für Cookie-Popup ########### -->
-    <!-- inaktive wegen Vwercel-Policy ############ -->
-    <!-- Boxicons CSS -->
-    <!-- <link
-      href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <script src="js/pop-c.js" defer></script> -->
-    <!-- ######## Ende Cookie-Popup ############# -->
+    <!-- ############# für Keks-Popup ########### -->
+    <link rel="stylesheet" type="text/css" href="css/pop-kekse.css" />
+    <script type="text/javascript" src="js/pop-kekse.js" defer></script>
+    <!-- ######## Ende Keks-Popup ############# -->
   </head>
 
   <!-- Beginn Body -->
   <body class="index-body">
     <!-- Page für Suchmaschionen optimieren mit Rubriken-Layout header, section, nav -->
 
-    <!-- Beginn Cookie-Popup -->
-    <!-- <div class="consent-wrapper">
+    <!-- Beginn Keks-Popup -->
+    <div class="consent-wrapper">
       <header>
         <i class="bx bx-cookie"></i>
         <h2>Cookies</h2>
       </header>
       <div class="data">
         <p>
-          Diese Website nutzt Cookies, um auf Basis des Browseverhaltens
-          Verbessungen umzusetzen. Vielen Dank für deine Unterstützung! -->
-    <!-- <a href="#"> Read more...</a> -->
-    <!-- </p>
+          Wir lieben Kekse. Und das Schöne: nach dem essen wird auch die Seite
+          gleich viel besser. Kekse werden anonym gespendet. Es gibt keine
+          Nachteile für die Spender. Vielen Dank für deine Unterstützung!
+          <a href="#"> Read more...</a>
+        </p>
       </div>
       <div class="buttons">
         <button class="button" id="acceptBtn">akzeptiert</button>
         <button class="button" id="declineBtn">abgelehnt</button>
       </div>
-    </div> -->
-    <!-- Ende Cookie-Popup -->
+    </div>
+    <!-- Ende Keks-Popup -->
 
     <!-- Beginn Website -->
     <div id="wrapper">
@@ -378,7 +368,9 @@
       <footer id="footer">
         <p>
           <i class="fa fa-copyright" aria-hidden="true"></i> 2023 |
-          <a href="templates/impressum-dasch.html">Impressum</a>
+          <a href="templates/impressum-dasch.html" alt="Impressum & Datenschutz"
+            >Impressum</a
+          >
           <br />Hans-Peter Herrmann & Constanze Deten
         </p>
       </footer>
